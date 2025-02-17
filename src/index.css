@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme{
+    --color-deepblue: rgb(45, 61, 112);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://use.typekit.net/tgz2uil.css");
+
+:root {
+    --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
+    --deepBlue: rgba(45, 61, 112, 1);
+}
+
+body{
+    /* font-family: "Inter Tight", serif; */
+    font-family: "inter-tight-variable", sans-serif;
+}
+
+
+.blueRedGradient {
+    background: var(--blueRedGradient);
+    
+}
+
+.heroBgImg {
+    object-fit: cover;
+}
+
+.navigation li {
+    margin-left: 50px;
+    color: white;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bubbleIcon {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.bubbleIcon.donotIcon {
+    transform: translateY(150px);
+    z-index: 0;
+}
+
+.deepBlue{
+    
+}
+
+
+.textGradient {
+    background-image: linear-gradient(90deg, #7CB1FF 31.5%, #FE12AB 88.5%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@media (max-width: 1000px){
+    .navigation li {
+        margin-left: 20px;
+    }
+}
