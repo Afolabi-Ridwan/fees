@@ -19,7 +19,7 @@ const HeroSection = () => {
 
                 <img src={donotIcon} alt="donotIcon" className="bubbleIcon donotIcon absolute bottom-0 left-[40%] lg:w-[362px] w-[250px] h-[345px] z-2" />
 
-                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-white z-30">
+                <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-white z-10">
                     <h1 className="lg:text-[60px] text-[50px] font-extrabold lg:w-[800px] w-[85vw] text-center leading-[70px] tracking-[-3px]">
                         We <span className="textGradient"> Shape Leaders</span> Who Define Tomorrow
                     </h1>
