@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import HeroSection from "./HeroSection"
+import AboutSection from "./AboutSection";
 
 const Home = () => {
 
@@ -18,11 +19,7 @@ const Home = () => {
       
       <HeroSection />
       <div className="relative z-10 bg-white">
-        <p>...</p>
-        <p>...</p>
-        <p>...</p>
-        <p>...</p>
-        <p>...</p>
+        <AboutSection/>
       </div>
     </>
   );

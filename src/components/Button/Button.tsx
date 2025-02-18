@@ -4,11 +4,12 @@ interface propType {
     bgOnHover?: string;
     textColorOnHover: string;
     ml?: string;
+    width?: string
 }
 
-const Button: React.FC<propType> = ({ text, style, bgOnHover, textColorOnHover, ml}) => {
+const Button: React.FC<propType> = ({ text, style, bgOnHover, textColorOnHover, ml, width}) => {
     return (
-        <div className={`group w-[200px] h-[40px] relative duration-300  ${ml}`}>
+        <div className={`group ${width} h-[40px] relative duration-300  ${ml}`}>
             <button className={`${style} cursor-pointer absolute top-0 w-[100%] flex items-center justify-center font-[600] h-[100%] border rounded-[7px] border-2 py-2 ${textColorOnHover}`}>
                 {text}
             </button>

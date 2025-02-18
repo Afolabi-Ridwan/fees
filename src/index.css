@@ -2,6 +2,7 @@
 
 @theme{
     --color-deepblue: rgb(45, 61, 112);
+    --color-logoBlue: rgba(45, 61, 112, 1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -13,7 +14,6 @@
 }
 
 body{
-    /* font-family: "Inter Tight", serif; */
     font-family: "inter-tight-variable", sans-serif;
 }
 
@@ -21,6 +21,19 @@ body{
 .blueRedGradient {
     background: var(--blueRedGradient);
     
+}
+
+.header{
+    background: rgba(247, 249, 255, 0.1);
+    border-bottom: 1px solid rgba(247, 249, 255, 0.3);
+}
+
+.headerOnScroll{
+    background: white;
+}
+
+.navigation.navOnScroll li{ 
+    color:  rgb(45, 61, 112);
 }
 
 .heroBgImg {
@@ -31,6 +44,7 @@ body{
     margin-left: 50px;
     color: white;
     cursor: pointer;
+    font-weight: normal;
 }
 
 .border-bottom {
@@ -43,15 +57,9 @@ body{
     opacity: 0.3;
 }
 
-.bubbleIcon.donotIcon {
-    transform: translateY(150px);
-    z-index: 0;
+.cubeIcon{
+    opacity: 0.6;
 }
-
-.deepBlue{
-    
-}
-
 
 .textGradient {
     background-image: linear-gradient(90deg, #7CB1FF 31.5%, #FE12AB 88.5%);
@@ -103,6 +111,13 @@ body{
 @media (max-width: 1000px){
     .navigation li {
         margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        background: none;
+        border-bottom: none;
     }
 }
 
