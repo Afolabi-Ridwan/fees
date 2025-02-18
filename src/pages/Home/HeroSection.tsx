@@ -1,9 +1,9 @@
 import Layout from "../../components/Layout/Layout";
-import heroBgImg from "/public/assets/image/heroImg.png";
-import cubeIcon from "/public/assets/icons/icons-cube-2@3x.png";
-import cubeIconTwo from "/public/assets/icons/icons-cube@3x.png";
-import cylinderIcon from "/public/assets/icons/icons-cylinder@3x.png";
-import donotIcon from "/public/assets/icons/icons-donot-2@3x.png";
+import heroBgImg from "/assets/image/heroImg.png";
+import cubeIcon from "/assets/icons/icons-cube-2@3x.png";
+import cubeIconTwo from "/assets/icons/icons-cube@3x.png";
+import cylinderIcon from "/assets/icons/icons-cylinder@3x.png";
+import donotIcon from "/assets/icons/icons-donot-2@3x.png";
 import Button from "../../components/Button/Button";
 
 const HeroSection = () => {
@@ -16,7 +16,6 @@ const HeroSection = () => {
                 <img src={cubeIcon} alt="cubeIcon" className="bubbleIcon absolute top-0 right-[45%] w-[240px] z-10" />
                 <img src={cubeIconTwo} alt="cubeIconTwo" className="bubbleIcon absolute right-0 top-[45%] w-[160px] z-10" />
                 <img src={cylinderIcon} alt="cylinderIcon" className="bubbleIcon absolute top-[30%] lg:w-[100px] w-[50px] z-10" />
-
                 <img src={donotIcon} alt="donotIcon" className="bubbleIcon donotIcon absolute bottom-0 left-[40%] lg:w-[362px] w-[250px] h-[345px] z-2" />
 
                 <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-white z-10">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loader from "../../components/Loader/loader";
+import Loader from "../../components/Loader/Loader";
 import HeroSection from "./HeroSection"
 
 const Home = () => {

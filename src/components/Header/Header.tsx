@@ -1,6 +1,5 @@
 import logo from "/assets/image/Logo Horizontal white 2.png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-// import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -14,7 +13,6 @@ const Header = () => {
         <li>Team</li>
         <li>Contact</li>
       </ul>
-
     
     </div>
   )

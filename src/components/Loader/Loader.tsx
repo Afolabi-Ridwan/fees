@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import logo from "/public/assets/image/Logo Horizontal white 2.png";
+import { useState, useEffect } from "react";
+import logo from "/assets/image/Logo Horizontal white 2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
