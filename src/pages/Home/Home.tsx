@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
-import HeroSection from "./HeroSection"
-import AboutSection from "./AboutSection";
+import HeroSection from "./HeroSection/HeroSection"
+import AboutSection from "./AboutSection/AboutSection";
 
 const Home = () => {
 

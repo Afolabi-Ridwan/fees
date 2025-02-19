@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
     --color-deepblue: rgb(45, 61, 112);
-    --color-logoBlue: rgba(45, 61, 112, 1);
+    --color-fadedblack: rgb(0, 0, 0, 0);
+    --color-gray: rgb(96, 100, 111 );
+    --color-blueOnAccordion: rgb(167, 190, 251 );
+    --color-lightGray: rgba(239, 240, 245, 1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -11,29 +14,35 @@
 :root {
     --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
     --deepBlue: rgba(45, 61, 112, 1);
+    --greyBoxShadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    --slateBlue: rgba(74, 97, 170, 1);
+    --colorGray: rgba(96, 100, 111, 1);
+    --blueOnAccordion: rgba(167, 190, 251, 1);
 }
 
-body{
+body {
     font-family: "inter-tight-variable", sans-serif;
 }
 
 
 .blueRedGradient {
     background: var(--blueRedGradient);
-    
 }
 
-.header{
+/* header */
+
+.headerOnNoScroll {
     background: rgba(247, 249, 255, 0.1);
     border-bottom: 1px solid rgba(247, 249, 255, 0.3);
 }
 
-.headerOnScroll{
+.headerOnScroll {
     background: white;
+    box-shadow: var(--greyBoxShadow);
 }
 
-.navigation.navOnScroll li{ 
-    color:  rgb(45, 61, 112);
+.navigation.navOnScroll li {
+    color: rgb(45, 61, 112);
 }
 
 .heroBgImg {
@@ -42,14 +51,34 @@ body{
 
 .navigation li {
     margin-left: 50px;
-    color: white;
     cursor: pointer;
     font-weight: normal;
 }
 
+.navigation .subMenu {
+    box-shadow: var(--greyBoxShadow);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.group:hover .subMenu {
+    opacity: 1;
+    max-height: 300px;
+}
+
+.navigation .subMenu li {
+    margin-left: 0;
+    padding: 0 20px;
+    font-weight: 500;
+}
+/*  */
 .border-bottom {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
+
+/*  hero section*/
 
 .bubbleIcon {
     position: absolute;
@@ -57,7 +86,7 @@ body{
     opacity: 0.3;
 }
 
-.cubeIcon{
+.cubeIcon {
     opacity: 0.6;
 }
 
@@ -66,6 +95,8 @@ body{
     -webkit-background-clip: text;
     color: transparent;
 }
+
+/* loader */
 
 .loader {
     position: fixed;
@@ -80,9 +111,9 @@ body{
     align-items: center;
     transition: transform 1s ease-in-out;
     z-index: 999;
-  }
-  
-  .count {
+}
+
+.count {
     font-size: 50px;
     font-weight: bold;
     font-family: var(--fontJost);
@@ -91,31 +122,54 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  
-  .show {
+}
+
+.show {
     transform: translateY(0%);
-  }
-  
-  .hide {
+}
+
+.hide {
     transform: translateY(-100%);
-  }
-  
-  .loader .count img {
+}
+
+.loader .count img {
     position: relative;
     bottom: 90%;
     width: 200px;
-  }
-  
+}
 
-@media (max-width: 1000px){
+/* About section */
+
+.aboutSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutSection .header{
+    color: var(--slateBlue);
+    border: 2px solid var(--slateBlue);
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    width: 106px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 1000px) {
     .navigation li {
         margin-left: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .header{
+    .header {
         background: none;
         border-bottom: none;
     }
@@ -123,10 +177,10 @@ body{
 
 @media (max-width: 550px) {
     .loader .count img {
-      width: 250px;
+        width: 250px;
     }
-  
+
     .count {
-      font-size: 60px;
+        font-size: 60px;
     }
-  }
+}
