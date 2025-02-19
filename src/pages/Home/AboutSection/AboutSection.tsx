@@ -9,8 +9,8 @@ const AboutSection = () => {
   return (
     <div className='aboutSection py-20 md:px-20 px-6 w-[100%]'>
       <p className="header">About</p>
-      <h1 className="text-[29px]  max-md:text-[24px] font-[600] mt-6">The FEES Leadership Academy</h1>
-      <p className="text-gray text-[14px] leading-[10px]">Discover the nitty gritty, the perks of the Academy</p>
+      <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6 text-center">The FEES Leadership Academy</h1>
+      <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px]">Discover the nitty gritty, the perks of the Academy</p>
 
       <div className="mt-16 flex justify-between max-md:flex-col-reverse">
         <div className="md:w-[48%]">
