@@ -2,7 +2,7 @@ interface propType {
     text: string;
     style: string;
     bgOnHover?: string;
-    textColorOnHover: string;
+    textColorOnHover?: string;
     ml?: string;
     width?: string;
     contStyle?: string;
