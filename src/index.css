@@ -165,7 +165,7 @@ body {
 .brochureTab {
     width: 90%;
     height: 138px;
-    background: url(/assets/image/frame-bg.png);
+    background: url(../public/assets/image/frame-bg.png);
     background-position: center bottom 200px;
     background-size: cover;
     margin-top: 70px;
