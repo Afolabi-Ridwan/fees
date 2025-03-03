@@ -1,5 +1,6 @@
 import AccordionItem from "./AccordionItem"
 import aboutSectionImg from "/assets/image/gambardella.png"
+import brochureBg from "/assets/image/frame-bg.png"
 import mapPinIcon from "/assets/icons/MapPinArea.png"
 import pathIcon from "/assets/icons/Path.png"
 import chartLineIcon from "/assets/icons/ChartLineUp.png"
@@ -58,6 +59,7 @@ const AboutSection = () => {
                 icon={item.icon} id={item.id}
                 isOpen={openItemId === item.id}
                 toggleItem={() => accordionItemHandler(item.id)}
+                key={item.id}
               />)}
           </ul>
         </div>
@@ -66,15 +68,16 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="brochureTab">
-        <div className="text-white md:w-[40%] w-[100%]">
+      <div className={"w-[100%] h-[100%] md:py-8 relative flex max-md:flex-col justify-between items-center mt-12 "}>
+        <img src={brochureBg} alt="brochureBg" className="absolute w-[100%] h-[100%] object-cover object-left-top rounded-[10px]" />
+        <div className="text-white md:w-[40%] w-[100%] z-4 md:pl-6 px-4 max-md:pt-6">
           <h1 className="md:text-[20px] text-[25px]">Explore Further</h1>
 
-          <p className="md:text-[13px] text-[15px]">For detailed information on the curriculum,
+          <p className="md:text-[13px] text-[15px]">For detailed information on the curvriculum,
             key learning elements, and outcomes, download our
             Academy Brochure below.</p>
         </div>
-        <div className="max-md:w-[100%]">
+        <div className="max-md:w-[100%] md:pr-6 px-4 max-md:pb-6">
           <Button text="Download Brochure" style="bg-white border-none" width="sm:w-[200px]  max-md:mt-[30px] text-deepblue" textColorOnHover="" />
         </div>
       </div>
@@ -82,4 +85,4 @@ const AboutSection = () => {
   )
 }
 
-export default AboutSection
+export default AboutSection 

@@ -178,15 +178,7 @@ body {
 
 
 /* Who you are Section  */
-.whoYouAreSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(248, 249, 252, 1);
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
+
 
 @media (max-width: 1000px) {
     .navigation li {
