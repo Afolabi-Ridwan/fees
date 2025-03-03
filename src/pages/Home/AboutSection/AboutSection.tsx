@@ -68,7 +68,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className={"w-[100%] h-[100%] md:py-8 relative flex max-md:flex-col justify-between items-center mt-12 "}>
+      <div className={"md:w-[85%] w-[100%] h-[100%]  md:py-8 relative flex max-md:flex-col justify-between items-center mt-12 "}>
         <img src={brochureBg} alt="brochureBg" className="absolute w-[100%] h-[100%] object-cover object-left-top rounded-[10px]" />
         <div className="text-white md:w-[40%] w-[100%] z-4 md:pl-6 px-4 max-md:pt-6">
           <h1 className="md:text-[20px] text-[25px]">Explore Further</h1>
