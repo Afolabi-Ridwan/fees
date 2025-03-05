@@ -28,8 +28,8 @@ const HeroSection = () => {
                         leaders  who inspire change and drive impact
                         in their communities and workplaces.</p>
                     <div className="mt-12 md:flex">
-                        <Button text="Join the Academy" style=" border-white   bg-white text-deepblue group-hover:bg-transparent" bgOnHover="bg-transparent" width="md:w-[200px] w-[300px]" textColorOnHover="group-hover:text-white" />
-                        <Button text="Learn More" style="border-white text-white" contStyle="md:mt-0 mt-6" ml="md:ml-8" bgOnHover="bg-white" textColorOnHover="group-hover:text-deepblue" width="md:w-[200px] w-[300px]" />
+                        <Button text="Join the Academy" style=" border-white   bg-white text-deepBlue group-hover:bg-transparent" bgOnHover="bg-transparent" width="md:w-[200px] w-[300px]" textColorOnHover="group-hover:text-white" />
+                        <Button text="Learn More" style="border-white text-white" contStyle="md:mt-0 mt-6" ml="md:ml-8" bgOnHover="bg-white" textColorOnHover="group-hover:text-deepBlue" width="md:w-[200px] w-[300px]" />
                     </div>
 
                 </div>

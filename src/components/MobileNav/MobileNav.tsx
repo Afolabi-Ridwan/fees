@@ -25,7 +25,7 @@ const MobileNav = ({ sideBarState, closeSideBar }: SideBarProps) => {
                     <IoClose />
                 </button>
 
-                <ul className="p-6 space-y-6 text-lg font-medium font-semibold text-deepblue mt-16">
+                <ul className="p-6 space-y-6 text-lg font-medium font-semibold text-deepBlue mt-16">
                     <li className="font-[20px] bg-[#E8EDFC] px-4 py-2 rounded-lg">Home</li>
                     <li className="font-[20px] px-4">About FEES</li>
 

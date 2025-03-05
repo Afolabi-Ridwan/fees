@@ -78,7 +78,7 @@ const AboutSection = () => {
             Academy Brochure below.</p>
         </div>
         <div className="max-md:w-[100%] md:pr-6 px-4 max-md:pb-6">
-          <Button text="Download Brochure" style="bg-white border-none" width="sm:w-[200px]  max-md:mt-[30px] text-deepblue" textColorOnHover="" />
+          <Button text="Download Brochure" style="bg-white border-none" width="sm:w-[200px]  max-md:mt-[30px] text-deepBlue" textColorOnHover="" />
         </div>
       </div>
     </section>

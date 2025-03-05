@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-deepblue: rgb(45, 61, 112);
+    --color-deepBlue: rgb(45, 61, 112);
     --color-fadedblack: rgb(0, 0, 0, 0);
     --color-gray: rgb(96, 100, 111);
     --color-grayFaded: rgba(96, 100, 111, 0.1);
@@ -20,8 +20,8 @@
     --colorGray: rgba(96, 100, 111, 1);
     --blueOnAccordion: rgba(167, 190, 251, 1);
 }
-
-body {
+ body {
+    overflow-x: hidden;
     font-family: "inter-tight-variable", sans-serif;
 }
 

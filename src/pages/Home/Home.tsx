@@ -3,6 +3,7 @@ import Loader from "../../components/Loader/Loader";
 import HeroSection from "./HeroSection/HeroSection"
 import AboutSection from "./AboutSection/AboutSection";
 import WhoYouAreSection from "./WhoYouAreSection/WhoYouAreSection";
+import QuizSection from "./QuizSection/QuizSection";
 
 const Home = () => {
 
@@ -23,6 +24,7 @@ const Home = () => {
         <AboutSection />
       </div>
       <WhoYouAreSection />
+      <QuizSection/>
     </>
   );
 };

@@ -38,7 +38,7 @@ const Header = () => {
         <li className="relative group flex items-center cursor-pointer">
           Services
           <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
-          <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] py-6 space-y-4 text-deepblue bg-white 
+          <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] py-6 space-y-4 text-deepBlue bg-white 
           transition-all duration-1000 overflow-hidden rounded-md opacity-0 max-h-0 
           group-hover:opacity-100 group-hover:max-h-[300px] shadow-md">
             <li>Skill Acquisition</li>
@@ -52,7 +52,7 @@ const Header = () => {
         <li>Contact</li>
       </ul>
 
-      <FaBars className={`md:hidden inline ${isScrolled ? "text-deepblue" : "text-white"} text-[25px] cursor-pointer`} onClick={openSideBarHandler} />
+      <FaBars className={`md:hidden inline ${isScrolled ? "text-deepBlue" : "text-white"} text-[25px] cursor-pointer`} onClick={openSideBarHandler} />
       <MobileNav sideBarState={sideBarState} closeSideBar={closeSideBarHandler} />
     </div>
   )
