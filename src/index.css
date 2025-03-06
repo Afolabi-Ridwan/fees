@@ -21,7 +21,6 @@
     --blueOnAccordion: rgba(167, 190, 251, 1);
 }
  body {
-    overflow-x: hidden;
     font-family: "inter-tight-variable", sans-serif;
 }
 
