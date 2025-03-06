@@ -4,7 +4,6 @@ import HeroSection from "./HeroSection/HeroSection"
 import AboutSection from "./AboutSection/AboutSection";
 import WhoYouAreSection from "./WhoYouAreSection/WhoYouAreSection";
 import QuizSection from "./QuizSection/QuizSection";
-import FacultiesSection from "./FacultiesSection/FacultiesSection";
 
 const Home = () => {
 
@@ -26,7 +25,6 @@ const Home = () => {
       </div>
       <WhoYouAreSection />
       <QuizSection/>
-      {/* <FacultiesSection/> */}
     </div>
   );
 };
