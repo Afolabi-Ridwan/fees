@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://use.typekit.net/tgz2uil.css");
 
 @theme {
     --color-deepBlue: rgb(45, 61, 112);
@@ -9,9 +11,6 @@
     --color-lightGray: rgba(239, 240, 245, 1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url("https://use.typekit.net/tgz2uil.css");
-
 :root {
     --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
     --deepBlue: rgba(45, 61, 112, 1);
@@ -20,7 +19,9 @@
     --colorGray: rgba(96, 100, 111, 1);
     --blueOnAccordion: rgba(167, 190, 251, 1);
 }
- body {
+
+body {
+    
     font-family: "inter-tight-variable", sans-serif;
 }
 
@@ -173,6 +174,131 @@
     border-bottom-right-radius: 50px;
 }
 
+
+/* Faculties Section */
+
+.facultiesSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(248, 249, 252, 1);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 50px 0;
+}
+
+.cards-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    transition: height 0.3s ease-in-out;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    background-color: #0c2c69;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.active {
+    z-index: 10;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card-image img {
+    width: 264px;
+    border-radius: 10px;
+}
+
+.card-image p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.card-info {
+    width: 65%;
+}
+
+.card-info .heading {
+    margin-bottom: 10px;
+    color: rgb(189, 209, 255);
+}
+
+.card-info .bio {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-info .courses h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-info .courses ul {
+    list-style-type: initial;
+    padding-left: 30px;
+}
+
+.card-info .courses ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.slider-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-buttons button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-footer p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card-footer p:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
     .navigation li {
         margin-left: 20px;
@@ -191,6 +317,31 @@
         height: auto;
         padding: 10px 20px;
     }
+
+    .slider-buttons {
+        bottom: 100px;
+    }
+
+    .card-image img {
+        width: 100%;
+    }
+
+    .card-footer {
+        margin-top: 40px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card-footer p {
+        display: none;
+    }
+
+   
+    .cards-container {
+        width: 85%;
+    }
 }
 
 @media (max-width: 550px) {
@@ -200,5 +351,9 @@
 
     .count {
         font-size: 60px;
+    }
+
+    .facultiesSection{
+        margin-top: -300px;
     }
 }

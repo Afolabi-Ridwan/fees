@@ -4,6 +4,8 @@ import HeroSection from "./HeroSection/HeroSection"
 import AboutSection from "./AboutSection/AboutSection";
 import WhoYouAreSection from "./WhoYouAreSection/WhoYouAreSection";
 import QuizSection from "./QuizSection/QuizSection";
+import FacultiesSection from "./FacultiesSection/FacultiesSection";
+
 
 const Home = () => {
 
@@ -16,7 +18,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden w-full">
+    <div className="w-full">
       {!loadingComplete ? <Loader /> : null}
 
       <HeroSection />
@@ -25,6 +27,7 @@ const Home = () => {
       </div>
       <WhoYouAreSection />
       <QuizSection/>
+      <FacultiesSection/>
     </div>
   );
 };

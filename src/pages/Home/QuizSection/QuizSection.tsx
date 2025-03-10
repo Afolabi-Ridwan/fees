@@ -20,9 +20,9 @@ const QuizSection = () => {
             <div className="relative w-full h-full">
                 <div className="absolute max-md:left-[45%] max-md:transform 
                     max-md:-translate-x-1/2 max-sm:-translate-x-[55%] md:right-0 
-                    lg:translate-y-[-550px] md:translate-y-[-400px] translate-y-[-150px] md:top-0 
+                    lg:translate-y-[-550px] md:translate-y-[-400px] translate-y-[-50px] md:top-0 
                     xl:w-[900px] lg:w-[800px] md:w-[500px]
-                    max-md:w-[100%] max-sm:w-[150%]">
+                    max-md:w-[100%] max-sm:w-[100%]">
 
                     <div className="relative max-w-none ">
                         <img src={spiralPattern} className='w-[100%]' alt="spiralPattern" />
