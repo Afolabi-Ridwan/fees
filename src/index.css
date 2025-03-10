@@ -193,7 +193,7 @@ body {
     position: relative;
     width: 80%;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 20px auto;
     transition: height 0.3s ease-in-out;
 }
 
@@ -354,6 +354,6 @@ body {
     }
 
     .facultiesSection{
-        margin-top: -300px;
+        margin-top: -350px;
     }
 }

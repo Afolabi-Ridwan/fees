@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState,  useRef, useEffect } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { BsArrowsAngleContract } from "react-icons/bs";
 
@@ -121,14 +121,21 @@ const FacultiesSection = () => {
   const [activeHeight, setActiveHeight] = useState<number | null>(null);
   const activeCardRef = useRef<HTMLDivElement>(null);
 
-  
-  useLayoutEffect(() => {
-    if (activeCardRef.current) {
-      setActiveHeight(activeCardRef.current.offsetHeight);
-      console.log(activeCardRef.current.offsetHeight);
-    }
-  }, [index]);
+  useEffect(() => {
+    if (!activeCardRef.current) return;
 
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const height = entry.contentRect.height;
+        setActiveHeight(height);
+        console.log("ResizeObserver height:", height);
+      }
+    });
+
+    observer.observe(activeCardRef.current);
+
+    return () => observer.disconnect();
+  }, [index]);
 
   const nextSlide = () => {
     setIndex((prev) => (prev + 1) % cardsData.length);
@@ -139,11 +146,19 @@ const FacultiesSection = () => {
   };
 
   return (
-    <div className="facultiesSection lg:mt-[-100px] mt-[-100px] max-sm:mt-[-100px] relative">
-      <img src={spiralPattern} alt="spiralPattern" className="absolute top-0 left-[15%] max-md:left-[-100px] md:w-[500px] w-[300px]"/>
+    <div className="facultiesSection lg:mt-[-100px] mt-[-100px] relative">
+      <img
+        src={spiralPattern}
+        alt="spiralPattern"
+        className="absolute top-0 left-[15%] max-md:left-[-100px] md:w-[500px] w-[300px]"
+      />
       <p className="header z-[2]">Faculty</p>
-      <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center"> Meet Your Faculties</h1>
-      <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px] mb-12 z-4">Get to know a few details about your potential faculties</p>
+      <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center">
+        Meet Your Faculties
+      </h1>
+      <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px] mb-12 z-4">
+        Get to know a few details about your potential faculties
+      </p>
       <div
         className="cards-container"
         style={{ height: activeHeight ? `${activeHeight}px` : "auto" }}
@@ -152,25 +167,25 @@ const FacultiesSection = () => {
           const position = (i - index + cardsData.length) % cardsData.length;
           return (
             <div
-              key={card.id}
-              ref={position === 0 ? activeCardRef : null}
-              className={`card ${position === 0 ? "active" : ""}`}
-              style={{
-                zIndex: cardsData.length - position,
-                transform: `translateX(${position === 0 ? 0 : position * 10}px)`,
-                opacity: position === 0 ? 1 : 0.8 - position * 0.05,
-                height:
-                  position === 0
-                    ? "auto"
-                    : activeHeight
-                      ? `${activeHeight * (1 - position * 0.1)}px`
-                      : "auto",
-                top: position === 0 ? "0" : `${position * 25}px`,
-                right: position === 0 ? "auto" : `-${position * 1}px`,
-                display: position < 3 ? "block" : "none",
-                overflow: "hidden",
-              }}
-            >
+            key={card.id}
+            ref={position === 0 ? activeCardRef : null}
+            className={`card ${position === 0 ? "active" : ""}`}
+            style={{
+              zIndex: cardsData.length - position,
+              transform: `translateX(${position === 0 ? 0 : position * 10}px)`,
+              opacity: position === 0 ? 1 : 0.8 - position * 0.05,
+              height:
+                position === 0
+                  ? "auto"
+                  : activeHeight
+                  ? `${activeHeight * (1 - (0.05 + (position - 1) * 0.15))}px` // Dynamic scaling
+                  : "auto",
+              top: position === 0 ? "0" : `${position * 35}px`, // Adjusted top spacing
+              right: position === 0 ? "auto" : `-${position * 1}px`,
+              display: position < 3 ? "block" : "none",
+              overflow: "hidden",
+            }}
+          >
               {position === 0 && (
                 <>
                   <div className="card-content">
@@ -180,10 +195,16 @@ const FacultiesSection = () => {
 
                     <div className="card-info max-md:hidden">
                       <p className="heading">BIO</p>
-                      <p className="bio" dangerouslySetInnerHTML={{ __html: card.bio }} />
+                      <p
+                        className="bio"
+                        dangerouslySetInnerHTML={{ __html: card.bio }}
+                      />
                       <div>
                         <img src={headingIcon} alt="headingIcon" />
-                        <p className="mt-4">Leadership is not about being in charge; it's about taking care of those in your charge.</p>
+                        <p className="mt-4">
+                          Leadership is not about being in charge; it's about
+                          taking care of those in your charge.
+                        </p>
                       </div>
                       <div className="courses mt-6">
                         <p className="heading">Courses Taught</p>
@@ -198,15 +219,21 @@ const FacultiesSection = () => {
 
                   <div className="flex justify-between items-center max-md:flex-col max-md:items-start max-md:mt-6">
                     <div>
-                      <h1 className="text-[40px] font-[600]">{card.name.split(" ")[0]}</h1>
-                      <h1 className="text-[40px] font-[600]">{card.name.split(" ")[1]}</h1>
+                      <h1 className="text-[40px] font-[600]">
+                        {card.name.split(" ")[0]}
+                      </h1>
+                      <h1 className="text-[40px] font-[600]">
+                        {card.name.split(" ")[1]}
+                      </h1>
                     </div>
                     <div>
                       <span className="text-[45px] font-[600] max-md:hidden">
                         {index + 1}/{cardsData.length}
                       </span>
                     </div>
-                    <p className="border-l-2 pl-2 italic md:hidden">{card.title}</p>
+                    <p className="border-l-2 pl-2 italic md:hidden">
+                      {card.title}
+                    </p>
                   </div>
                   <div className="card-footer">
                     <div>
