@@ -14,7 +14,8 @@ const QuizSection = () => {
                     Discover the track that best aligns with your leadership journey.
                     Take our quick quiz to find your fit!
                 </p>
-                <Button text='Take the quiz' style='bg-deepBlue text-white border-none mt-6 z-2' width='w-[200px]' />
+                <Button text='Take the quiz' bgType='deepBlueBg' contStyle='mt-6' width='w-[200px]' />
+
             </div>
 
             <div className="relative w-full h-full">
@@ -22,11 +23,11 @@ const QuizSection = () => {
                     max-md:-translate-x-1/2 max-sm:-translate-x-[55%] md:right-0 
                     lg:translate-y-[-550px] md:translate-y-[-400px] translate-y-[-50px] md:top-0 
                     xl:w-[900px] lg:w-[800px] md:w-[500px]
-                    max-md:w-[100%] max-sm:w-[100%]">
+                    max-md:w-[100%] max-sm:w-[100%] z-2">
 
                     <div className="relative max-w-none ">
-                        <img src={spiralPattern} className='w-[100%]' alt="spiralPattern" />
-                        <img src={quizImg} className='w-[65%] absolute top-[20%] left-[25%]' alt="quizImg" />
+                        <img src={spiralPattern} loading="lazy" className='w-[100%]' alt="spiralPattern" />
+                        <img src={quizImg} loading="lazy" className='w-[65%] absolute top-[20%] left-[25%]' alt="quizImg" />
                     </div>
                 </div>
             </div>

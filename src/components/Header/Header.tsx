@@ -28,8 +28,8 @@ const Header = () => {
   return (
     <div className={`flex items-center justify-between xl:px-[80px] px-[30px] py-4 ${isScrolled ? "headerOnScroll" : "headerOnNoScroll"} fixed top-0 w-[100%] z-20`}>
       {isScrolled ?
-        <img src={logoColored} alt="" className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]" /> :
-        <img src={logoWhite} alt="" className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]" />
+        <img src={logoColored} loading="lazy" alt="" className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]" /> :
+        <img src={logoWhite} loading="lazy" alt="" className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]" />
       }
 
       <ul className={`navigation ${isScrolled && "navOnScroll"} text-white  hidden md:flex`}>

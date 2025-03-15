@@ -17,7 +17,7 @@ const AccordionItem: React.FC<accordionItemPropType> = ({ header, text, icon, id
         rounded-md p-4 ${(id == 2 || id == 3) && "mt-6"}`} onClick={toggleItem}>
             <div className="w-[100%] flex justify-between items-center">
                 <div className="flex items-start space-x-2">
-                    <img src={icon} alt="mapPinicon" className="w-[28px]" />
+                    <img src={icon} loading="lazy" alt="mapPinicon" className="w-[28px]" />
                     <span className="font-semibold text-[17px] max-sm:text-[15px]">{header}</span>
                 </div>
                 <div>

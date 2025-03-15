@@ -29,7 +29,7 @@ const Loader = () => {
   return (
     <div className={`loader ${loading ? "show" : "hide"}`}>
       <div className="count">
-        <img src={logo} alt="logo"  data-aos="flip-right"/>
+        <img loading="lazy" src={logo} alt="logo"  data-aos="flip-right"/>
         {count}%
       </div>
     </div>

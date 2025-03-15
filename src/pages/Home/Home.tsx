@@ -5,6 +5,8 @@ import AboutSection from "./AboutSection/AboutSection";
 import WhoYouAreSection from "./WhoYouAreSection/WhoYouAreSection";
 import QuizSection from "./QuizSection/QuizSection";
 import FacultiesSection from "./FacultiesSection/FacultiesSection";
+import CallToActionSection from "./CallToActionSection/CallToActionSection";
+import FaqsSection from "./FaqsSection/FaqsSection";
 
 
 const Home = () => {
@@ -28,6 +30,8 @@ const Home = () => {
       <WhoYouAreSection />
       <QuizSection/>
       <FacultiesSection/>
+      <CallToActionSection/>
+      <FaqsSection/>
     </div>
   );
 };

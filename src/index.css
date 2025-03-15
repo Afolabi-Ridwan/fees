@@ -8,26 +8,42 @@
     --color-gray: rgb(96, 100, 111);
     --color-grayFaded: rgba(96, 100, 111, 0.1);
     --color-blueOnAccordion: rgb(167, 190, 251);
-    --color-lightGray: rgba(239, 240, 245, 1);
+    --color-lightGray: rgb(239, 240, 245);
+    --color-textGrey: rgb(126, 131, 145);
+    --color-borderGrey: rgb(214, 218, 227);
 }
 
 :root {
     --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
-    --deepBlue: rgba(45, 61, 112, 1);
+    --deepBlue: rgb(45, 61, 112);
     --greyBoxShadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-    --slateBlue: rgba(74, 97, 170, 1);
-    --colorGray: rgba(96, 100, 111, 1);
-    --blueOnAccordion: rgba(167, 190, 251, 1);
+    --slateBlue: rgb(74, 97, 170);
+    --colorGray: rgb(96, 100, 111);
+    --blueOnAccordion: rgb(167, 190, 251);
+    --sectionGreyBg: rgb(248, 249, 252);
 }
 
 body {
-    
+
     font-family: "inter-tight-variable", sans-serif;
 }
 
 
 .blueRedGradient {
     background: var(--blueRedGradient);
+}
+
+.header {
+    color: var(--slateBlue);
+    border: 2px solid var(--slateBlue);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 30px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* header */
@@ -149,18 +165,7 @@ body {
     align-items: center;
 }
 
-.header {
-    color: var(--slateBlue);
-    border: 2px solid var(--slateBlue);
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 0 30px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 /* Who you are Section  */
@@ -169,7 +174,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(248, 249, 252, 1);
+    background: var(--sectionGreyBg);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
@@ -183,10 +188,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(248, 249, 252, 1);
+    background: var(--sectionGreyBg);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    padding: 50px 0;
+    padding: 70px 0 110px 0;
 }
 
 .cards-container {
@@ -222,7 +227,11 @@ body {
 
 .card-image img {
     width: 264px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
     border-radius: 10px;
+
 }
 
 .card-image p {
@@ -299,6 +308,34 @@ body {
     text-decoration: underline;
 }
 
+
+/* Call to Action section */
+.callToActionSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+/* FAQS section */
+.faqsSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--sectionGreyBg);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 100px 0;
+}
+
+
+
 @media (max-width: 1000px) {
     .navigation li {
         margin-left: 20px;
@@ -322,8 +359,13 @@ body {
         bottom: 100px;
     }
 
+    .card-content {
+        display: block;
+    }
+
     .card-image img {
         width: 100%;
+        object-fit: cover;
     }
 
     .card-footer {
@@ -338,9 +380,17 @@ body {
         display: none;
     }
 
-   
+
     .cards-container {
         width: 85%;
+    }
+
+    .faqsSection {
+        padding: 50px 0;
+    }
+
+    .callToActionSection {
+        padding: 50px 0;
     }
 }
 
@@ -353,7 +403,7 @@ body {
         font-size: 60px;
     }
 
-    .facultiesSection{
+    .facultiesSection {
         margin-top: -350px;
     }
 }
