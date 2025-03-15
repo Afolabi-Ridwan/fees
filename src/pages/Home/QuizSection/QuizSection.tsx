@@ -27,7 +27,7 @@ const QuizSection = () => {
 
                     <div className="relative max-w-none ">
                         <img src={spiralPattern} loading="lazy" className='w-[100%]' alt="spiralPattern" />
-                        <img src={quizImg} loading="lazy" className='w-[65%] absolute top-[20%] left-[25%]' alt="quizImg" />
+                        <img src={quizImg} loading="lazy" className='w-[65%] max-sm:w-[80%] absolute top-[20%] left-[25%] max-sm:top-[13%] max-sm:left-[20%]' alt="quizImg" />
                     </div>
                 </div>
             </div>

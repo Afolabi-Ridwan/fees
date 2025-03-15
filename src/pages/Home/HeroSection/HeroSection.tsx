@@ -1,4 +1,3 @@
-import Layout from "../../../components/Layout/Layout";
 import heroBgImg from "/assets/image/heroImg.png";
 import cubeIcon from "/assets/icons/icons-cube-2@3x.png";
 import cubeIconTwo from "/assets/icons/icons-cube@3x.png";
@@ -8,7 +7,6 @@ import Button from "../../../components/Button/Button";
 
 const HeroSection = () => {
     return (
-        <Layout>
             <div className="relative w-full h-[100vh]">
                 <img src={heroBgImg} loading="lazy" alt="heroBgImg" className="heroBgImg w-full h-full" />
                 <div className="blueRedGradient absolute top-0 left-0 w-full h-full"></div>
@@ -35,7 +33,6 @@ const HeroSection = () => {
                 </div>
 
             </div>
-        </Layout>
     );
 };
 

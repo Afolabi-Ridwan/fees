@@ -1,14 +1,18 @@
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 
 interface propType {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
-const Layout: React.FC<propType> = ({children}) => {
+const Layout: React.FC<propType> = ({ children }) => {
   return (
     <>
-        <Header/>
-      {children}
+      <Header />
+      <div>
+        {children}
+      </div>
+      <Footer />
     </>
   )
 }
