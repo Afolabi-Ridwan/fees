@@ -605,6 +605,15 @@ border: solid 2px rgba(236, 74, 10, 1);
     .facultiesSection {
         margin-top: -250px;
     }
+
+    .tracks {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .track{
+        width: 100%;
+    }
 }
 
 @media (max-width: 450px) {
