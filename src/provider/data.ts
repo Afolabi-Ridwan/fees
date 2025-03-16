@@ -1,5 +1,5 @@
 import consultant1 from "/assets/image/consultantOne.png";
-import consultant2 from "/assets/image/consultantTwo.jpg";
+import consultant2 from "/assets/image/consultantTwo.png";
 import consultant3 from "/assets/image/consultantThree.jpg";
 import consultant4 from "/assets/image/consultantFour.jpg";
 import consultant5 from "/assets/image/consultantFive.jpg";
@@ -146,32 +146,52 @@ export const faqs = [
     ];
 
    export  const aboutSectionData = [
-        {
-          header: "Welcome Home, Leaders",
-          text: `The FEES Leadership Academy is beyond a programme- it’s a community committed to grooming 
+    {
+        header: "Welcome Home, Leaders",
+        text: `The FEES Leadership Academy is beyond a programme- it’s a community committed to grooming 
             leaders with authentic impact. Leadership is more than the title, it is legacy and purpose. 
             This is what stands us out as we are dedicated to developing 
             leaders who lead effectively, evoke change and create significant and lasting impact.`,
-          icon: mapPinIcon, id: 1
-        },
-        {
-          header: "Two Tracks, Tailored to Your Stage",
-          text: `The FEES Leadership Academy is beyond a programme- it’s a community committed to grooming 
-            leaders with authentic impact. Leadership is more than the title, it is legacy and purpose. 
-            This is what stands us out as we are dedicated to developing 
-            leaders who lead effectively, evoke change and create significant and lasting impact.`,
-          icon: pathIcon, id: 2
-        },
-        {
-          header: "A Unique Approach to Leadership Growth",
-          text: `The FEES Leadership Academy is beyond a programme- it’s a community committed to grooming 
-            leaders with authentic impact. Leadership is more than the title, it is legacy and purpose. 
-            This is what stands us out as we are dedicated to developing 
-            leaders who lead effectively, evoke change and create significant and lasting impact.`,
-          icon: chartLineIcon, id: 3
-        },
-    
-      ]
+        icon: mapPinIcon, id: 1
+    },
+    {
+        header: "Two Tracks, Tailored to Your Stage",
+        text: `
+            <div class="track-container">
+                <p class="heading">FEES Leadership Academy offers two specialized tracks to meet you where you are:</p>
+                <div class="tracks">
+                <div class="track">
+                  <div>
+                <img src="/assets/icons/PuzzlePiece.png" class="image"/>
+                  </div>
+                  <div>
+                    <h3>Foundational Track</h3>
+                    <p>Designed for early-stage leaders who are building their skills and looking to make their first significant impact.</p>
+                </div>
+                </div>
+                <div class="track">
+                <div>
+                  <img src="/assets/icons/Crown.png" class="image"/>
+                </div>
+                <div>
+                    <h3>Advanced Track</h3>
+                    <p>Tailored for managers, executives, and business owners ready to elevate their leadership skills and drive meaningful change.</p>
+                </div>
+                </div>
+                </div>
+            </div>
+        `,
+        icon: pathIcon, id: 2
+    },
+    {
+        header: "A Unique Approach to Leadership Growth",
+        text: `What sets FEES apart is our commitment to personalized leadership journeys. 
+          We recognize that each leader’s path is unique, and our academy is structured to support different 
+          timelines and goals. Whether you’re early in your career or already established, we work with you to ensure you reach your highest potential. A highlight of our program is the Mentor Mixer—an exclusive experience where participants engage with 
+          accomplished mentors, learning directly from leaders who have made significant strides in their fields`,
+        icon: chartLineIcon, id: 3
+    },
+];
 
 
     export const whoYouAre = [

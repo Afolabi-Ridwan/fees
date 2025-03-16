@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { faqs } from "../../../provider/data";
+import { FaPlus} from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
 
 const FaqsSection = () => {
@@ -33,11 +35,11 @@ const FaqsSection = () => {
                         >
                             <span className="font-semibold text-[16px]">{faq.question}</span>
                             <span
-                                className={`${openIndex === index ? "text-[14px] pt-1" : "text-[20px]"} 
-                                    text-[#60646f] border border-[#60646f] px-1 
+                                className={`text-[13px] 
+                                    text-[#60646f] border border-[1.5px] border-[#60646f] p-[1px] rounded-[2px] 
                                     inline-flex items-center justify-center leading-none ml-6`}
                             >
-                                {openIndex === index ? "✖" : "+"}
+                                {openIndex === index ? <FaTimes /> : <FaPlus />}
                             </span>
                         </button>
 
