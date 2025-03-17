@@ -17,7 +17,6 @@ const ProfileCard = () => {
             for (const entry of entries) {
                 const height = entry.contentRect.height;
                 setActiveHeight(height);
-                console.log("ResizeObserver height:", height);
             }
         });
 
@@ -36,7 +35,7 @@ const ProfileCard = () => {
     
     return (
         <div
-            className="cards-container"
+            className="cards-container w-[1000px]  max-lg:w-[85%]"
             style={{ height: activeHeight ? `${activeHeight}px` : "auto" }}
         >
             {cardsData.map((card, i) => {

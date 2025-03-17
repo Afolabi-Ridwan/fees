@@ -259,7 +259,6 @@ border: solid 2px rgba(236, 74, 10, 1);
 
 .cards-container {
     position: relative;
-    width: 1000px;
     max-width: 1200px;
     margin: 20px 30px 20px 0;
     transition: height 0.3s ease-in-out;
@@ -284,13 +283,13 @@ border: solid 2px rgba(236, 74, 10, 1);
 
 .card-content {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    align-items: stretch;
+    gap: 100px;
 }
 
 .card-image img {
     width: 264px;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     object-position: top;
     border-radius: 10px;
