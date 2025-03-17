@@ -49,7 +49,7 @@ const ProfileCard = () => {
                         style={{
                             zIndex: cardsData.length - position,
                             transform: `translateX(${position === 0 ? 0 : position * 10}px)`,
-                            opacity: position === 0 ? 1 : 0.8 - position * 0.05,
+                            opacity: position === 0 ? 1 : 0.9 - position * 0.05,
                             height:
                                 position === 0
                                     ? "auto"
@@ -57,7 +57,7 @@ const ProfileCard = () => {
                                         ? `${activeHeight * (1 - (0.05 + (position - 1) * 0.15))}px`
                                         : "auto",
                             top: position === 0 ? "0" : `${position * 35}px`,
-                            right: position === 0 ? "auto" : `-${position * 1}px`,
+                            right: position === 0 ? "auto" : `-${position * 10}px`,
                             display: position < 3 ? "block" : "none",
                             overflow: "hidden",
                         }}

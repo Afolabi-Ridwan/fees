@@ -7,7 +7,7 @@ import Button from "../../../components/Button/Button";
 
 const HeroSection = () => {
     return (
-            <div className="relative w-full h-[100vh]">
+            <div id="hero-section" className="relative w-full h-[100vh]">
                 <img src={heroBgImg} loading="lazy" alt="heroBgImg" className="heroBgImg w-full h-full" />
                 <div className="blueRedGradient absolute top-0 left-0 w-full h-full"></div>
 
