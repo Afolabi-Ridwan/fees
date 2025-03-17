@@ -404,7 +404,9 @@ border: solid 2px rgba(236, 74, 10, 1);
     color: white;
     height: 500px;
     margin-top: -130px;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
   }
+
 
   .footer-container{
     display: flex;
@@ -446,12 +448,14 @@ border: solid 2px rgba(236, 74, 10, 1);
   .sliding-text-wrapper {
     overflow: hidden;
     background: white;
-    padding: 80px 0 0px 0;
+    padding: 10px 0 0px 0;
     white-space: nowrap;
     display: flex;
     flex-direction: column;
     gap: 0px; 
     transform: skewY(10deg); 
+    position: relative;
+    z-index: 5; margin-top: 100px;
 }
 
 .move-right {
@@ -621,6 +625,10 @@ border: solid 2px rgba(236, 74, 10, 1);
     .track{
         width: 100%;
     }
+
+  .sliding-text-wrapper {
+    margin-top: 60px;
+  }
 }
 
 @media (max-width: 450px) {
