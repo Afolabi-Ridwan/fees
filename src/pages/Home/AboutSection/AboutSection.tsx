@@ -48,8 +48,8 @@ const AboutSection = () => {
             key learning elements, and outcomes, download our
             Academy Brochure below.</p>
         </div>
-        <div className="max-md:w-[100%] md:pr-6 px-4 max-md:pb-6">
-          <Button text="Download Brochure" bgType="whiteBg" width="sm:w-[200px]  max-md:mt-[30px]" />
+        <div className="max-md:w-[100%] md:pr-6 px-4 max-md:pb-6 z-6">
+          <Button text="Download Brochure" bgType="whiteBg" style="sm:w-[200px] max-md:mt-[30px]" />
         </div>
       </div>
     </section>

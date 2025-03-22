@@ -9,6 +9,7 @@ import consultant8 from "/assets/image/consultantEight.jpg";
 import mapPinIcon from "/assets/icons/MapPinArea.png"
 import pathIcon from "/assets/icons/Path.png"
 import chartLineIcon from "/assets/icons/ChartLineUp.png"
+import { BadgeCheck, Crown } from "lucide-react";
 
 interface CardData {
   id: number;
@@ -208,3 +209,84 @@ export const faqs = [
         { title: "Access to Industry-Leading Faculty", desc: "Learn from seasoned experts dedicated to your growth." },
         { title: "Hands-On Leadership Skills", desc: "Practical skills development for immediate impact in real-world settings." }
     ]
+
+
+
+    export const infos = [
+        {
+            id: 1,
+            icon: <BadgeCheck />,
+            name: "Foundational Track",
+            shortNote: `The <span className="font-bold">foundational track</span> is ideal for those looking to
+                    build a strong base in leadership principles, self-awareness, and foundational skills.
+                    If your answers lean toward building core skills, mastering communication basics, and
+                    understanding essential strategies, the Foundational Level Curriculum will provide the stepping stones you need.`,
+    
+            buttonType: "deepBlueBg"
+        }, {
+            id: 2,
+            icon: <Crown />,
+            name: "Advanced Track",
+            shortNote: `The <span className="font-bold">Advanced Track</span> is suited for those ready to
+                    tackle strategic leadership challenges, refine their influence, and make high-impact decisions. If
+                    you’re comfortable with the basics and seeking to deepen your expertise in complex areas like emotional intelligence, advanced
+                    financial management, and team dynamics, the Advanced Level Curriculum will help you achieve those goals`,
+    
+            buttonType: "whiteBg"
+        }
+    
+    ]
+    
+
+    export const questions = [
+      {
+          question: "How do you typically approach learning new skills?",
+          answers: [
+              { id: "A", text: "I prefer to start with the basics and build a strong foundation." },
+              { id: "B", text: "I like diving into complex challenges and applying what I already know." },
+          ],
+      },
+      {
+          question:
+              "When faced with a major change, like a new job or shifting industry trends, how do you feel?",
+          answers: [
+              { id: "A", text: "I’m interested in understanding the fundamentals of adapting to change." },
+              { id: "B", text: "I enjoy exploring strategic ways to thrive and lead through change." },
+          ],
+      },
+      {
+          question: "How would you rate your comfort level with managing financial decisions?",
+          answers: [
+              { id: "A", text: "I’d like to learn essential skills to make better decisions." },
+              { id: "B", text: "I’m comfortable with the basics and ready for advanced strategies." },
+          ],
+      },
+      {
+          question: "When it comes to presenting ideas, what best describes you?",
+          answers: [
+              { id: "A", text: "I’m focused on improving my basic communication and storytelling skills." },
+              { id: "B", text: "I aim to refine and influence others with advanced presentation techniques." },
+          ],
+      },
+      {
+          question: "How do you typically handle team dynamics?",
+          answers: [
+              { id: "A", text: "I’m learning to navigate group settings and want to improve my empathy and integrity." },
+              { id: "B", text: "I’m ready to tackle complex team challenges like conflict resolution and talent development." },
+          ],
+      },
+      {
+          question: "What’s your approach to problem-solving in challenging situations?",
+          answers: [
+              { id: "A", text: "I’m focused on developing creative solutions to familiar problems." },
+              { id: "B", text: "I look for innovative ways to solve complex, strategic issues." },
+          ],
+      },
+      {
+          question: "How would you describe your career development goals?",
+          answers: [
+              { id: "A", text: "I want to develop a solid foundation for long-term growth." },
+              { id: "B", text: "I’m focused on advancing my career to achieve ambitious leadership goals." },
+          ],
+      },
+  ];

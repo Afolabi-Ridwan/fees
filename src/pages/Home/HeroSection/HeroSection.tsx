@@ -26,8 +26,8 @@ const HeroSection = () => {
                         leaders  who inspire change and drive impact
                         in their communities and workplaces.</p>
                     <div className="mt-12 md:flex">
-                        <Button text="Join the Academy" bgType="whiteBg" width="md:w-[200px] w-[300px]"  />
-                        <Button text="Learn More" bgType="transparentBg" contStyle="md:mt-0 mt-6 md:ml-8" width="md:w-[200px] w-[300px]" />
+                        <Button text="Join the Academy" bgType="whiteBg" style="md:w-[200px] w-[300px]"  />
+                        <Button text="Learn More" bgType="transparentBg" style="md:mt-0 mt-6 md:ml-8 border-2 md:w-[200px] w-[300px]" />
                     </div>
 
                 </div>

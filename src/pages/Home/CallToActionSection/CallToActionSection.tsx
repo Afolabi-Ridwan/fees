@@ -15,8 +15,8 @@ const CallToActionSection = () => {
             </p>
 
             <div className="flex">
-                <Button text="Join the academy" bgType="deepBlueBg"   width='sm:w-[200px] w-[170px]'/>
-                <Button text="Stay updated!" bgType="transparentBgBlueBorder" contStyle="ml-4" width='sm:w-[200px] w-[170px]'/>
+                <Button text="Join the academy" bgType="deepBlueBg"   style='mr-2 sm:w-[200px] w-[170px]'/>
+                <Button text="Stay updated!" bgType="transparentBgBlueBorder" style="ml-4 sm:w-[200px] w-[170px]"/>
             </div>
         </div>
     )

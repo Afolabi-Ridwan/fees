@@ -4,13 +4,15 @@
 
 @theme {
     --color-deepBlue: rgb(45, 61, 112);
-    --color-fadedblack: rgb(0, 0, 0, 0);
+    --color-fadedBlue: rgba(237, 242, 255, 1);
+    --color-fadedBlack: rgb(0, 0, 0, 0);
     --color-gray: rgb(96, 100, 111);
     --color-grayFaded: rgba(96, 100, 111, 0.1);
     --color-blueOnAccordion: rgb(167, 190, 251);
     --color-lightGray: rgb(239, 240, 245);
     --color-textGrey: rgb(126, 131, 145);
     --color-borderGrey: rgb(214, 218, 227);
+    --color-slateBlue: rgb(74, 97, 170);
 }
 
 :root {
@@ -55,7 +57,7 @@ body {
     border-bottom: 1px solid rgba(247, 249, 255, 0.3);
 }
 
-.headerOnScroll {
+.headerOnScroll, .boxShadow {
     background: white;
     box-shadow: var(--greyBoxShadow);
 }
@@ -402,8 +404,10 @@ border: solid 2px rgba(236, 74, 10, 1);
 .footer {
     background: #0b132b;
     color: white;
-    height: 500px;
-    margin-top: -130px;
+  }
+
+
+  .polygon{
     clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
   }
 
@@ -492,9 +496,15 @@ border: solid 2px rgba(236, 74, 10, 1);
 .sliding-text {
     font-size: 70px;
     font-weight: bold;
-    color: navy;
+    color: #07075e53;
     display: flex;
     gap: 0; 
+}
+
+
+/* Recommendation Page */
+.noticeGradientColor{
+    background: linear-gradient(270.03deg, rgba(45, 61, 112, 0.66) 4.39%, rgba(27, 41, 90, 0.88) 55.38%);
 }
 
 @keyframes slideRight {
@@ -585,7 +595,6 @@ border: solid 2px rgba(236, 74, 10, 1);
 
       .footer {
         padding: 40px 30px;
-        height: 700px;
       }
     
 

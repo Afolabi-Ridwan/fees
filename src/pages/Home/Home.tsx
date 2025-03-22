@@ -9,11 +9,12 @@ import CallToActionSection from "./CallToActionSection/CallToActionSection";
 import FaqsSection from "./FaqsSection/FaqsSection";
 import SlidingText from "./SlidingText/SlidingText";
 import Layout from "../../components/Layout/Layout";
-
+import QuizModal from "./QuizModal/QuizModal";
 
 const Home = () => {
 
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,22 +22,25 @@ const Home = () => {
     }, 12000);
   }, []);
 
+
+
   return (
     <div className="w-full">
       {!loadingComplete ? <Loader /> : null}
+        <Layout >
+          <HeroSection />
+          <div className="relative z-10 bg-white">
+            <AboutSection />
+          </div>
+          <WhoYouAreSection />
+          <QuizSection />
+          <FacultiesSection />
+          <CallToActionSection />
+          <FaqsSection />
+          <SlidingText />
+        </Layout>
 
-      <Layout>
-        <HeroSection />
-        <div className="relative z-10 bg-white">
-          <AboutSection />
-        </div>
-        <WhoYouAreSection />
-        <QuizSection />
-        <FacultiesSection />
-        <CallToActionSection />
-        <FaqsSection />
-        <SlidingText />
-      </Layout>
+      <QuizModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

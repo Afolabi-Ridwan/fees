@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+
 type onScrollHandlerProp = {
   setIsScrolled: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -24,4 +26,20 @@ export const onScrollHandler = ({setIsScrolled}: onScrollHandlerProp) => {
 
 export const subMenuStateHandler = ({ setSubMenuState }: subMenuStatePropType) => {
   setSubMenuState(prev => !prev);
+};
+
+
+export const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile;
 };

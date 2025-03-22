@@ -1,9 +1,12 @@
+import { useLocation } from "react-router";
 import logoWhite from "/assets/image/Logo Horizontal white 2.png";
 
 const Footer = () => {
+
+    const home = "/" === useLocation().pathname
     return (
 
-        <footer className="footer px-[100px] max-lg:px-[30px] py-[40px]">
+        <footer className={`footer ${home && "polygon h-[500px] max-md:h-[700px] mt-[-130px]" } px-[100px] max-lg:px-[30px] py-[40px]`}>
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-section">

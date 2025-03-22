@@ -1,8 +1,11 @@
 import Button from '../../../components/Button/Button';
+import { useModalStateContext } from '../../../contexts/ModalContext';
 import spiralPattern from "/assets/image/pattern.png";
 import quizImg from "/assets/image/Quiz-Coloured.png";
 
 const QuizSection = () => {
+
+    const {modalStateHandler} = useModalStateContext()
     return (
         <div className='relative lg:min-h-[600px] md:min-h-[400px] min-h-[900px]'>
             <div className='xl:pl-64 lg:pl-32 md:pl-12 mt-20 max-md:flex flex-col justify-center items-center max-md:text-center'>
@@ -14,7 +17,7 @@ const QuizSection = () => {
                     Discover the track that best aligns with your leadership journey.
                     Take our quick quiz to find your fit!
                 </p>
-                <Button text='Take the quiz' bgType='deepBlueBg' contStyle='mt-6' width='w-[200px]' />
+                <Button text='Take the quiz' bgType='deepBlueBg' style='mt-6 z-4 w-[200px]' onClick={() => modalStateHandler(true)}/>
 
             </div>
 
@@ -31,6 +34,7 @@ const QuizSection = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

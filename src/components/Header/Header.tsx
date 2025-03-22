@@ -33,9 +33,12 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   const openSideBarHandler = () => updateSideBarState(true);
   const closeSideBarHandler = () => updateSideBarState(false);
+
+
 
   return (
     <div
@@ -73,7 +76,7 @@ const Header = () => {
       </ul>
 
       <FaBars
-        className={`md:hidden inline ${isHeroSecScrolled ? "text-deepBlue" : "text-white"} text-[25px] cursor-pointer`}
+        className={`md:hidden inline ${!hasUserScrolled ? "text-white" : isHeroSectionInView ? "text-white" : "text-deepBlue"} text-[25px] cursor-pointer`}
         onClick={openSideBarHandler}
       />
       <MobileNav sideBarState={sideBarState} closeSideBar={closeSideBarHandler} />
