@@ -170,7 +170,12 @@ const QuizModal: React.FC = () => {
                             )}
 
                             {currentQuestion === questions.length - 1 && (
-                                <button onClick={handleSubmit} className="px-4 py-2 max-sm:w-[100%] focus:outline-none bg-deepBlue text-white rounded-md cursor-pointer hover:bg-[#1e2d5e] ml-4">
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={!selectedAnswers[currentQuestion]}
+                                    className={`px-4 py-2 max-sm:w-[100%] focus:outline-none bg-deepBlue text-white rounded-md cursor-pointer 
+        hover:bg-[#1e2d5e] ml-4 ${!selectedAnswers[currentQuestion] && "opacity-50 cursor-not-allowed"}`}
+                                >
                                     Submit
                                 </button>
                             )}
