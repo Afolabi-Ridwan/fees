@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { countries } from "../../provider/data";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
-import { BadgeCheck, Crown } from "lucide-react";
 import { FaCrown, FaPuzzlePiece } from "react-icons/fa6";
-import { BiCrown } from "react-icons/bi";
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
