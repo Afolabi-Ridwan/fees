@@ -301,15 +301,13 @@ export const faqs = [
     { code: "ZA", name: "South Africa", dialCode: "+27" },
     { code: "IN", name: "India", dialCode: "+91" },
     { code: "CA", name: "Canada", dialCode: "+1" },
-    { code: "AU", name: "Australia", dialCode: "+61" },
     { code: "DE", name: "Germany", dialCode: "+49" },
     { code: "FR", name: "France", dialCode: "+33" },
     { code: "IT", name: "Italy", dialCode: "+39" },
     { code: "ES", name: "Spain", dialCode: "+34" },
-    { code: "BR", name: "Brazil", dialCode: "+55" },
-    { code: "MX", name: "Mexico", dialCode: "+52" },
     { code: "CN", name: "China", dialCode: "+86" },
-    { code: "JP", name: "Japan", dialCode: "+81" },
-    { code: "SA", name: "Saudi Arabia", dialCode: "+966" },
     { code: "AE", name: "United Arab Emirates", dialCode: "+971" },
   ];
+
+
+  

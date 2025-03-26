@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import Recommendation from './pages/Recommendation/Recommendation'
 import { ModalStateProvider } from './contexts/ModalContext'
 import RegistrationForm from './pages/Registration/Registration'
+import RegistrationSuccess from './pages/RegistrationSuccess/RegistrationSuccess'
 function App() {
 
   return (
@@ -14,6 +15,8 @@ function App() {
             <Route path={"/"} element={<Home />} />
             <Route path={"/recommendation-page"} element={<Recommendation />} />
             <Route path={"/registration-page"} element={<RegistrationForm />} />
+            <Route path={"/registration-success"} element={<RegistrationSuccess />} />
+            
           </Routes>
         </BrowserRouter>
       </ModalStateProvider>

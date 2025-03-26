@@ -1,33 +1,63 @@
 import { useState } from "react";
 import { countries } from "../../provider/data";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
-import { FaCrown, FaPuzzlePiece } from "react-icons/fa6";
+import Button from "../../components/Button/Button";
+import { Crown, Puzzle } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const RegistrationForm = () => {
+
+    const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         confirmEmail: "",
         phone: "",
-        countryCode: "NG",
+        countryCode: "NG", 
+        country: "NG", 
         track: "",
         termsAccepted: false,
     });
 
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
 
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-        });
+        }));
+    };
+
+
+
+
+    const isFormValid = () => {
+        const requiredFields = ["firstName", "lastName", "email", "confirmEmail", "phone", "track"];
+        const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+
+        if (missingFields.length > 0) {
+            return false;
+        }
+
+        if (formData.email !== formData.confirmEmail) {
+            return false;
+        }
+
+        return formData.termsAccepted;
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(formData);
+        if (!isFormValid()) {
+            return;
+        }
+        console.log("Form submitted:", formData)
+        navigate("/registration-success")
     };
+
 
     return (
         <ConversionLayout>
@@ -87,7 +117,7 @@ const RegistrationForm = () => {
                                         name="countryCode"
                                         value={formData.countryCode}
                                         onChange={handleChange}
-                                        className="border-r  focus:outline-none"
+                                        className="border-r focus:outline-none"
                                     >
                                         {countries.map((country) => (
                                             <option key={country.code} value={country.code}>
@@ -95,6 +125,7 @@ const RegistrationForm = () => {
                                             </option>
                                         ))}
                                     </select>
+
 
                                     <div className="flex items-center ">
                                         <span className="px-2">
@@ -117,13 +148,19 @@ const RegistrationForm = () => {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Country of Residence <span className="text-asteriskRed">*</span>
                                 </label>
-                                <select name="country" value={formData.countryCode} onChange={handleChange} className="w-full h-[50px] border rounded-md text-[16px] px-[10px]">
+                                <select
+                                    name="country"
+                                    value={formData.country}
+                                    onChange={handleChange} 
+                                    className="w-full h-[50px] border rounded-md text-[16px] px-[10px]"
+                                >
                                     {countries.map((country) => (
                                         <option key={country.code} value={country.code}>
                                             {country.name}
                                         </option>
                                     ))}
                                 </select>
+
                             </div>
                         </div>
                     </div>
@@ -131,20 +168,20 @@ const RegistrationForm = () => {
                     <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
                         <div>
                             <h3 className="text-[24px] font-medium">Select a track</h3>
-                            <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline">Click here</span> to find out</p>
+                            <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline cursor-pointer">Click here</span> to find out</p>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {[
-                                    { label: "Foundational Track", price: "₦100,000", value: "Foundational", icon: <FaPuzzlePiece /> },
-                                    { label: "Advanced Track", price: "₦200,000", value: "Advanced", icon: <FaCrown /> }
+                                    { label: "Foundational Track", price: "₦100,000", value: "Foundational", icon: <Puzzle /> },
+                                    { label: "Advanced Track", price: "₦200,000", value: "Advanced", icon: <Crown /> }
                                 ].map((track) => (
                                     <button
                                         key={track.value}
                                         type="button"
-                                        className={`border rounded-md p-4 text-center ${formData.track === track.value ? "border-blue-500 bg-blue-100" : "border-gray-300"
+                                        className={`border border-[1.5px] rounded-md p-4 text-center ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                             }`}
                                         onClick={() => setFormData({ ...formData, track: track.value })}
                                     >
-                                        <div className="text-[24px] text-deepBlue">
+                                        <div className={`text-[24px]  ${formData.track === track.value && "text-deepBlue"}`}>
                                             {track.icon}
                                         </div>
                                         <div className="flex items-center justify-between mt-6">
@@ -161,14 +198,18 @@ const RegistrationForm = () => {
                     <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
                         <div className="mt-4 flex items-center">
                             <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2" required />
-                            <label>
-                                I agree to the <a href="#" className="text-blue-500">terms and conditions</a>
+                            <label className="text-14px">
+                                I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a>
                             </label>
                         </div>
 
-                        <div className="mt-6 flex justify-between">
-                            <button type="button" className="px-6 py-2 border rounded-md">Cancel</button>
-                            <button type="submit" className="px-6 py-2 bg-blue-500 text-white rounded-md disabled:bg-gray-300" disabled={!formData.termsAccepted}>
+                        <div className="mt-6 flex max-sm:justify-between">
+                            <Button bgType="transparentBgBlueBorder" text="Cancel" style="sm:w-[188px] w-[48%] px-6 py-2 border border-deepBlue text-deepBlue border-[1.5px] cursor-pointer rounded-md" />
+                            <button
+                                type="submit"
+                                className="sm:w-[188px] w-[48%] px-6 py-2 sm:ml-8 bg-deepBlue cursor-pointer text-white rounded-md disabled:bg-[#d0dfff]"
+                                disabled={!isFormValid()}
+                            >
                                 Submit
                             </button>
                         </div>
