@@ -18,7 +18,6 @@ const QuizSection = () => {
                     Take our quick quiz to find your fit!
                 </p>
                 <Button text='Take the quiz' bgType='deepBlueBg' style='mt-6 z-4 w-[200px]' onClick={() => modalStateHandler(true)}/>
-
             </div>
 
             <div className="relative w-full h-full">

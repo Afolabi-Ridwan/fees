@@ -13,7 +13,11 @@
     --color-textGrey: rgb(126, 131, 145);
     --color-borderGrey: rgb(214, 218, 227);
     --color-slateBlue: rgb(74, 97, 170);
+    --color-asteriskRed: rgb(217, 45, 32);
+    --color-registrationPageForm: rgba(251, 252, 254, 1);
+    --color-registrationPageFormBorder:rgba(202, 207, 218, 1)
 }
+
 
 :root {
     --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
@@ -34,6 +38,11 @@ body {
 .blueRedGradient {
     background: var(--blueRedGradient);
 }
+
+input:focus{
+    outline: none;
+}
+
 
 .header {
     color: var(--slateBlue);

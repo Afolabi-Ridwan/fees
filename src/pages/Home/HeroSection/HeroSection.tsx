@@ -4,8 +4,12 @@ import cubeIconTwo from "/assets/icons/icons-cube@3x.png";
 import cylinderIcon from "/assets/icons/icons-cylinder@3x.png";
 import donotIcon from "/assets/icons/icons-donot-2@3x.png";
 import Button from "../../../components/Button/Button";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
+
+    const navigate = useNavigate()
+
     return (
             <div id="hero-section" className="relative w-full h-[100vh]">
                 <img src={heroBgImg} loading="lazy" alt="heroBgImg" className="heroBgImg w-full h-full" />
@@ -26,7 +30,7 @@ const HeroSection = () => {
                         leaders  who inspire change and drive impact
                         in their communities and workplaces.</p>
                     <div className="mt-12 md:flex">
-                        <Button text="Join the Academy" bgType="whiteBg" style="md:w-[200px] w-[300px]"  />
+                        <Button text="Join the Academy" bgType="whiteBg" style="md:w-[200px] w-[300px]"  onClick={() => navigate('/registration-page')}/>
                         <Button text="Learn More" bgType="transparentBg" style="md:mt-0 mt-6 md:ml-8 border-2 md:w-[200px] w-[300px]" />
                     </div>
 

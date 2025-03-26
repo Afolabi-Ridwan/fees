@@ -1,23 +1,18 @@
-import HeaderOnQuizSection from "../../components/HeaderOnQuizSection/HeaderOnQuizSection";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 import Button from "../../components/Button/Button";
 import nogticeBg from "../../../public/assets/image/book.jpeg"
-import spiralPattern from "../../../public/assets/image/Vector 14.png"
-import spiralPatternOne from "../../../public/assets/image/Vector 15.png"
 import TrackOptions from "./TrackOptions";
+import ConversionLayout from "../../components/Layout/ConversionLayout";
 
 const Recommendation = () => {
 
   const [activeTrack, setActiveTrack] = useState<"foundational" | "advanced">("foundational");
 
   return (
-    <div className="pt-[130px] relative ">
-      <img src={spiralPattern} alt="spiralPattern" className="absolute top-0 w-[550px] max-md:top-16 max-md:w-[250px] " />
-      <img src={spiralPatternOne} alt="spiralPatternOne" className="absolute top-0 w-[470px] max-md:top-16 max-md:h-32 max-md:w-[200px] right-0 " />
-      <HeaderOnQuizSection />
-      <div className="min-h-screen  flex flex-col items-center py-10 pb-[100px]">
-        <div className="text-center mb-8">
+    <ConversionLayout>
+      <div className="min-h-screen  flex flex-col items-center py-16 pb-[80px] ">
+        <div className="text-center mb-8 z-4">
           <div className="px-4 py-1 text-sm font-medium border border-2 font-[600] rounded-full text-slateBlue border-slateBlue inline-block">Recommendation</div>
           <h1 className="text-[36px] font-[500] mt-4">Foundational Track!</h1>
           <p className="text-gray mt-[-7px]">
@@ -60,7 +55,7 @@ const Recommendation = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </ConversionLayout>
   );
 };
 

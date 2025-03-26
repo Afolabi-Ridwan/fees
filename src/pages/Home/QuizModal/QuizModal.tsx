@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useIsMobile } from "../../../components/Utils/Utils";
-import HeaderOnQuizSection from "../../../components/HeaderOnQuizSection/HeaderOnQuizSection";
+import PagesHeader from "../../../components/Header/PagesHeader";
 import { useModalStateContext } from "../../../contexts/ModalContext";
 import LoaderModal from "../../../components/LoaderModal/LoaderModal";
 import { questions } from "../../../provider/data";
@@ -57,7 +57,7 @@ const QuizModal: React.FC<QuizModalProps> = () => {
         setTimeout(() => {
             setIsSubmitting(false);
             modalStateHandler(false);
-            navigate("/recommendationPage")
+            navigate("/recommendation-page")
         }, 3000);
 
 
@@ -66,7 +66,7 @@ const QuizModal: React.FC<QuizModalProps> = () => {
 
     return (
         <div id="quiz-modal">
-            {isMobile ? <HeaderOnQuizSection /> : ""}
+            {isMobile ? <PagesHeader /> : ""}
             <div className={`fixed inset-0 flex justify-center items-center z-30 ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
                 <div className="bg-white flex flex-col justify-center items-center p-6 rounded-lg w-[65%] max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg  relative">
                     <i

@@ -4,6 +4,7 @@ import logoColored from "/assets/image/Logo Horizontal color .png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import MobileNav from "../MobileNav/MobileNav";
+import { useNavigate } from "react-router";
 
 const Header = () => {
   const [isHeroSecScrolled, setIsHeroSecScrolled] = useState(false);
@@ -37,7 +38,7 @@ const Header = () => {
 
   const openSideBarHandler = () => updateSideBarState(true);
   const closeSideBarHandler = () => updateSideBarState(false);
-
+  const navigate = useNavigate()
 
 
   return (
@@ -53,7 +54,8 @@ const Header = () => {
         src={!hasUserScrolled ? logoWhite : isHeroSectionInView ? logoWhite : logoColored}
         loading="lazy"
         alt="Logo"
-        className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]"
+        className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px] cursor-pointer"
+        onClick={() => navigate('/')}
       />
 
       <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex`}>
