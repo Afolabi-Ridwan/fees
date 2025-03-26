@@ -27,11 +27,11 @@ const Ribbon = () => {
 const RegistrationSuccess = () => {
     return (
         <ConversionLayout>
-            <div className="flex flex-col w-full items-center justify-center px-4 relative overflow-x-hidden">
-                <div className="w-[250px]  pt-30">
+            <div className="flex flex-col w-full items-center justify-center md:px-4 relative overflow-x-hidden">
+                <div className="w-[250px]  md:pt-30 pt-6">
                     <Check />
                 </div>
-                <div className="w-full max-w-[750px] text-center px-8 pb-30 ">
+                <div className="w-full max-w-[750px] text-center md:px-8 px-2 pb-30 ">
 
                     <h2 className="text-[36px] font-semibold text-gray-900">Submission Received!</h2>
 

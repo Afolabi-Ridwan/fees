@@ -177,7 +177,7 @@ const RegistrationForm = () => {
                                     <button
                                         key={track.value}
                                         type="button"
-                                        className={`border border-[1.5px] rounded-md p-4 text-center ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
+                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:bg-blueOnAccordion ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                             }`}
                                         onClick={() => setFormData({ ...formData, track: track.value })}
                                     >

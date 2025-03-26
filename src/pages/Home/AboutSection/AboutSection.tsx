@@ -15,7 +15,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className='aboutSection py-20 lg:px-20 md:px-10  px-6 w-[100%]'>
+    <section id="about-section" className='aboutSection py-20 lg:px-20 md:px-10  px-6 w-[100%]'>
       <p className="header">About</p>
       <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6 text-center">The FEES Leadership Academy</h1>
       <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px]">Discover the nitty gritty, the perks of the Academy</p>
