@@ -14,7 +14,6 @@ import QuizModal from "./QuizModal/QuizModal";
 const Home = () => {
 
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,7 +39,7 @@ const Home = () => {
           <SlidingText />
         </Layout>
 
-      <QuizModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <QuizModal  />
     </div>
   );
 };
