@@ -21,9 +21,6 @@ const Ribbon = () => {
     );
 };
 
-
-
-
 const RegistrationSuccess = () => {
     return (
         <ConversionLayout>

@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 import Button from "../../components/Button/Button";
 import nogticeBg from "../../../public/assets/image/book.jpeg"
@@ -54,7 +53,6 @@ const Recommendation = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </ConversionLayout>
   );
 };

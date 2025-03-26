@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router";
 import Button from "../../../components/Button/Button";
 import spiralPattern from "/assets/image/Vector 13.png";
 
 
 const CallToActionSection = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="callToActionSection relative">
             <img src={spiralPattern} loading="lazy" alt="spiralPattern" className="absolute top-0 w-[349px] max-sm:hidden" />
@@ -15,8 +19,8 @@ const CallToActionSection = () => {
             </p>
 
             <div className="flex">
-                <Button text="Join the academy" bgType="deepBlueBg"   style='mr-2 sm:w-[200px] w-[170px]'/>
-                <Button text="Stay updated!" bgType="transparentBgBlueBorder" style="ml-4 sm:w-[200px] w-[170px]"/>
+                <Button text="Join the academy" bgType="deepBlueBg"   style='mr-2 sm:w-[200px] w-[170px]' onClick={() => navigate("/registration-page")}/>
+                <Button text="Stay updated!" bgType="transparentBgBlueBorder" style="ml-4 sm:w-[200px] w-[170px]" onClick={() => navigate("/subscription-page")}/>
             </div>
         </div>
     )

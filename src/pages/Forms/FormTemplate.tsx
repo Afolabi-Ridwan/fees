@@ -5,7 +5,10 @@ import Button from "../../components/Button/Button";
 import { Crown, Puzzle } from "lucide-react";
 import { useNavigate } from "react-router";
 
-const RegistrationForm = () => {
+const FormTemplate = ({ heading, formType }: {
+    heading: string,
+    formType: string,
+}) => {
 
     const navigate = useNavigate()
 
@@ -15,8 +18,8 @@ const RegistrationForm = () => {
         email: "",
         confirmEmail: "",
         phone: "",
-        countryCode: "NG", 
-        country: "NG", 
+        countryCode: "NG",
+        country: "NG",
         track: "",
         termsAccepted: false,
     });
@@ -35,7 +38,12 @@ const RegistrationForm = () => {
 
 
     const isFormValid = () => {
-        const requiredFields = ["firstName", "lastName", "email", "confirmEmail", "phone", "track"];
+        const requiredFields = ["firstName", "lastName", "email", "confirmEmail", "phone"];
+
+        if (formType === "Registration Form") {
+            requiredFields.push("track");
+        }
+
         const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
 
         if (missingFields.length > 0) {
@@ -49,21 +57,22 @@ const RegistrationForm = () => {
         return formData.termsAccepted;
     };
 
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!isFormValid()) {
             return;
         }
         console.log("Form submitted:", formData)
-        navigate("/registration-success")
+        navigate("/")
     };
 
 
     return (
         <ConversionLayout>
             <div className="flex flex-col items-center">
-                <p className="header mt-8">Registration</p>
-                <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6 text-center">Registration Form</h1>
+                <p className="header mt-8">{heading}</p>
+                <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6 text-center">{formType}</h1>
                 <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px]">Kindly fill the form below</p>
             </div>
 
@@ -151,7 +160,7 @@ const RegistrationForm = () => {
                                 <select
                                     name="country"
                                     value={formData.country}
-                                    onChange={handleChange} 
+                                    onChange={handleChange}
                                     className="w-full h-[50px] border rounded-md text-[16px] px-[10px]"
                                 >
                                     {countries.map((country) => (
@@ -165,7 +174,7 @@ const RegistrationForm = () => {
                         </div>
                     </div>
 
-                    <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
+                    {formType === "Registration Form" && <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
                         <div>
                             <h3 className="text-[24px] font-medium">Select a track</h3>
                             <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline cursor-pointer">Click here</span> to find out</p>
@@ -192,7 +201,7 @@ const RegistrationForm = () => {
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </div>}
 
 
                     <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
@@ -220,4 +229,4 @@ const RegistrationForm = () => {
     );
 };
 
-export default RegistrationForm;
+export default FormTemplate;
