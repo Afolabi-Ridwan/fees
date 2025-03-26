@@ -132,7 +132,7 @@ const RegistrationForm = () => {
                         <div>
                             <h3 className="text-[24px] font-medium">Select a track</h3>
                             <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline">Click here</span> to find out</p>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid sm:grid-cols-2 gap-4">
                                 {[
                                     { label: "Foundational Track", price: "₦100,000", value: "Foundational", icon: <FaPuzzlePiece /> },
                                     { label: "Advanced Track", price: "₦200,000", value: "Advanced", icon: <FaCrown /> }
