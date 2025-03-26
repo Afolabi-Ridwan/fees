@@ -218,8 +218,8 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                         <div className="mt-4 flex items-center">
                             <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2 text-[70px]" required />
                             <label className="text-[14px] mt-[2px]">
-                            {formType === "Registration Form" ? <span>I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a></span>
-                               : <span>I agree to receive updates and promotions from FEES Leadership Academy</span> }
+                                {formType === "Registration Form" ? <span>I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a></span>
+                                    : <span>I agree to receive updates and promotions from FEES Leadership Academy</span>}
                             </label>
                         </div>
 

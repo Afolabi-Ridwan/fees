@@ -10,7 +10,7 @@ const FacultiesSection = () => {
         src={spiralPattern}
         loading="lazy"
         alt="spiralPattern"
-        className="absolute top-0 left-[7%] max-md:left-[-100px] md:w-[500px] w-[300px]"
+        className="absolute top-0 left-[10%] max-md:left-[-100px] md:w-[500px] w-[300px]"
       />
       <p className="header z-[2]">Faculty</p>
       <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center">
