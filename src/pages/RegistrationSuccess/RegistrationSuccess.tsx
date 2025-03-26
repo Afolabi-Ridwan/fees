@@ -23,7 +23,7 @@ const Ribbon = () => {
 
 const RegistrationSuccess = () => {
     return (
-        <ConversionLayout>
+        <ConversionLayout currentPage="Registration"> 
             <div className="flex flex-col w-full items-center justify-center md:px-4 relative overflow-x-hidden">
                 <div className="w-[250px]  md:pt-30 pt-6">
                     <Check />

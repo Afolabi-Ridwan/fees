@@ -8,7 +8,7 @@ import { useModalStateContext } from "../../contexts/ModalContext";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useNavigate } from "react-router";
 
-const PagesHeader = () => {
+const PagesHeader = ({currentPage}: {currentPage: string}) => {
     const [sideBarState, updateSideBarState] = useState(false);
 
 
@@ -57,11 +57,14 @@ const PagesHeader = () => {
                         onClick={openSideBarHandler}
                     />
                 </div>
-                <div className="flex items-center text-gray-600 text-sm mt-6">
-                    <button className="mr-2 cursor-pointer mb-1" onClick={() => modalStateHandler(false)}><SlArrowLeftCircle /></button>
-                    <span className="mr-2">Leadership</span> /
-                    <span className="ml-2 px-2 py-1 bg-fadedBlue rounded-md text-deepBlue">
-                        Quiz
+                <div className="flex items-center text-gray-600 text-[12px] mt-6">
+                    <div onClick={() => modalStateHandler(false)} className="cursor-pointer">
+                    <button className="mr-2  mb-1 text-deepBlue"><SlArrowLeftCircle /></button>
+                    <span className="mr-2">Leadership</span>
+                    </div>
+                     /
+                    <span className="ml-2 px-1  bg-fadedBlue rounded-md font-[500]  text-deepBlue">
+                        {currentPage}
                     </span>
                 </div>
             </div>

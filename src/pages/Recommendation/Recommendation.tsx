@@ -3,13 +3,15 @@ import Button from "../../components/Button/Button";
 import nogticeBg from "../../../public/assets/image/book.jpeg"
 import TrackOptions from "./TrackOptions";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
+import { useNavigate } from "react-router";
 
 const Recommendation = () => {
 
   const [activeTrack, setActiveTrack] = useState<"foundational" | "advanced">("foundational");
+  const navigate = useNavigate()
 
   return (
-    <ConversionLayout>
+    <ConversionLayout currentPage="Quiz">
       <div className="min-h-screen  flex flex-col items-center py-16 pb-[80px] ">
         <div className="text-center mb-8 z-4">
           <div className="px-4 py-1 text-sm font-medium border border-2 font-[600] rounded-full text-slateBlue border-slateBlue inline-block">Recommendation</div>
@@ -49,7 +51,7 @@ const Recommendation = () => {
           </div>
 
           <div className="max-sm:mt-8 max-sm:w-full">
-            <Button text="Stay Updated" bgType="whiteBg" style="mt-3 px-4 bg-white text-blue-900 hover:bg-gray-200 max-sm:w-full" />
+            <Button text="Stay Updated" bgType="whiteBg" style="mt-3 px-4 bg-white text-blue-900 hover:bg-gray-200 max-sm:w-full" onClick={() => navigate("/subscription-page")} />
           </div>
         </div>
       </div>

@@ -1,28 +1,34 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { countries } from "../../provider/data";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
 import Button from "../../components/Button/Button";
 import { Crown, Puzzle } from "lucide-react";
 import { useNavigate } from "react-router";
 
-const FormTemplate = ({ heading, formType }: {
+type formDataType = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    confirmEmail: string;
+    phone: string;
+    countryCode: string;
+    country?: string;
+    track?: string;
+    termsAccepted: boolean;
+};
+
+
+const FormTemplate = ({ heading, formType, formData, setFormData }: {
     heading: string,
     formType: string,
+    formData: formDataType,
+    setFormData: React.Dispatch<React.SetStateAction<formDataType>>
 }) => {
 
     const navigate = useNavigate()
 
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        confirmEmail: "",
-        phone: "",
-        countryCode: "NG",
-        country: "NG",
-        track: "",
-        termsAccepted: false,
-    });
+
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -64,12 +70,16 @@ const FormTemplate = ({ heading, formType }: {
             return;
         }
         console.log("Form submitted:", formData)
-        navigate("/")
+        if (formType === "Registration Form") {
+            navigate("/registration-success")
+        } else {
+            navigate("/")
+        }
     };
 
 
     return (
-        <ConversionLayout>
+        <ConversionLayout currentPage={formType === "Registration Form" ? "Registration" : "Subscription Form"}>
             <div className="flex flex-col items-center">
                 <p className="header mt-8">{heading}</p>
                 <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6 text-center">{formType}</h1>
@@ -78,7 +88,7 @@ const FormTemplate = ({ heading, formType }: {
 
             <div className="flex justify-center py-10 px-4">
                 <form onSubmit={handleSubmit} className="w-full max-w-2xl">
-                    <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl">
+                    <div className="w-full bg-registrationPageForm border border-inputBorder p-8 max-sm:px-4 rounded-xl">
                         <div>
                             <h1 className="text-[25px] font-[500]">Personal Information</h1>
                             <p className="text-[14px] text-gray mt-0">
@@ -91,13 +101,13 @@ const FormTemplate = ({ heading, formType }: {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     First Name <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px] " required />
                             </div>
                             <div>
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Last Name <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
                             </div>
                         </div>
 
@@ -106,13 +116,13 @@ const FormTemplate = ({ heading, formType }: {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Email Address <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
                             </div>
                             <div>
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Confirm Email Address <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="email" name="confirmEmail" value={formData.confirmEmail} onChange={handleChange} className="w-full h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <input type="email" name="confirmEmail" value={formData.confirmEmail} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
                             </div>
                         </div>
 
@@ -121,12 +131,12 @@ const FormTemplate = ({ heading, formType }: {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Phone Number <span className="text-asteriskRed">*</span>
                                 </label>
-                                <div className="flex border rounded-md p-2 h-[50px]">
+                                <div className="flex border border-inputBorder rounded-md p-2 h-[50px]">
                                     <select
                                         name="countryCode"
                                         value={formData.countryCode}
                                         onChange={handleChange}
-                                        className="border-r focus:outline-none"
+                                        className="focus:outline-none"
                                     >
                                         {countries.map((country) => (
                                             <option key={country.code} value={country.code}>
@@ -153,15 +163,15 @@ const FormTemplate = ({ heading, formType }: {
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <label className="block text-gray text-[14px] font-medium mb-1">
+                            {formType === "Registration Form" && <div>
+                                <label className="block  text-gray text-[14px] font-medium mb-1">
                                     Country of Residence <span className="text-asteriskRed">*</span>
                                 </label>
                                 <select
                                     name="country"
                                     value={formData.country}
                                     onChange={handleChange}
-                                    className="w-full h-[50px] border rounded-md text-[16px] px-[10px]"
+                                    className="w-full h-[50px] border border-inputBorder rounded-md text-[16px] px-[10px]"
                                 >
                                     {countries.map((country) => (
                                         <option key={country.code} value={country.code}>
@@ -170,11 +180,11 @@ const FormTemplate = ({ heading, formType }: {
                                     ))}
                                 </select>
 
-                            </div>
+                            </div>}
                         </div>
                     </div>
 
-                    {formType === "Registration Form" && <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
+                    {formType === "Registration Form" && <div className="w-full bg-registrationPageForm border border-inputBorder p-8 rounded-xl mt-8">
                         <div>
                             <h3 className="text-[24px] font-medium">Select a track</h3>
                             <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline cursor-pointer">Click here</span> to find out</p>
@@ -204,11 +214,12 @@ const FormTemplate = ({ heading, formType }: {
                     </div>}
 
 
-                    <div className="w-full bg-registrationPageForm border border-registrationPageFormBorder p-8 rounded-xl mt-8">
+                    <div className="w-full bg-registrationPageForm border border-inputBorder p-8 rounded-xl mt-8">
                         <div className="mt-4 flex items-center">
-                            <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2" required />
-                            <label className="text-14px">
-                                I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a>
+                            <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2 text-[70px]" required />
+                            <label className="text-[14px] mt-[2px]">
+                            {formType === "Registration Form" ? <span>I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a></span>
+                               : <span>I agree to receive updates and promotions from FEES Leadership Academy</span> }
                             </label>
                         </div>
 

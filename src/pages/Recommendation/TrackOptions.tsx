@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router";
 import Button from "../../components/Button/Button";
 import { infos } from "../../provider/data";
 
 const TrackOptions = ({ activeTrack }: { activeTrack: string }) => {
+    const navigate = useNavigate()
+
 
     return (
         infos.map(info => (
-            <div className={`border border-[1.5px] max-md:w-[80%] max-sm:w-[90%] mx-auto 
+            <div key={info.id} className={`border border-[1.5px] max-md:w-[80%] max-sm:w-[90%] mx-auto 
         ${info.id === 1 ? "rounded-tl-[10px] rounded-bl-[10px]" : "rounded-tr-[10px] rounded-br-[10px]  md:border-l-0"} max-md:rounded-[10px] shadow-md bg-white 
         ${activeTrack === info.name.toLowerCase().split(" ")[0] ? "block" : "hidden"} md:block`}>
                 <div className={`w-[100%] h-2 ${info.id === 1 ? "bg-deepBlue rounded-tl-[10px] " : "bg-[#d92d20] rounded-tr-[10px]"} max-md:rounded-tl-[10px] max-md:rounded-tr-[10px]`}></div>
@@ -19,7 +22,7 @@ const TrackOptions = ({ activeTrack }: { activeTrack: string }) => {
                 <p className=" py-6 text-[14px] h-[300px] max-md:h-auto px-6" dangerouslySetInnerHTML={{ __html: info.shortNote }} />
 
                 <div className={`h-[80px] flex items-center border-t-[1.5px] border-[#e0e0e0] bg-fadedBlue ${info.id === 1 ? "rounded-bl-[10px]" : "rounded-br-[10px]"} max-md:rounded-bl-[10px] max-md:rounded-br-[10px] `}>
-                    <Button style={`w-full py-[8px] border-[1px] mx-6 rounded-md  ${info.id === 1 ? "" : "border border-deepBlue"}`} bgType={info.buttonType} text="Start your journey" />
+                    <Button style={`w-full py-[8px] border-[1px] mx-6 rounded-md  ${info.id === 1 ? "" : "border border-deepBlue"}`} bgType={info.buttonType} text="Start your journey" onClick={() => navigate("/registration-page")} />
                 </div>
             </div>
         ))

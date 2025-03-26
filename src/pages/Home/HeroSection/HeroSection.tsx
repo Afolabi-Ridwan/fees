@@ -21,7 +21,7 @@ const HeroSection = () => {
             <img src={donotIcon} loading="lazy" alt="donotIcon" className="bubbleIcon donotIcon absolute bottom-0 md:left-[40%] left-[30%] lg:w-[362px] w-[150px] lg:h-[345px] h-[200px] z-2 lg:translate-y-[150px] translate-y-[100px]" />
 
             <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-white z-10 md:px-0 px-8">
-                <h1 className="lg:text-[60px] text-[35px] font-extrabold lg:w-[800px] md:w-[600px] w-[100%] text-center lg:leading-[70px] leading-[40px] tracking-[-3px]">
+                <h1 className="lg:text-[60px] text-[35px] font-extrabold lg:w-[800px] md:w-[600px] w-[100%] text-center lg:leading-[70px] leading-[40px] tracking-[-1px]">
                     We <span className="textGradient"> Shape Leaders</span>  Who Define Tomorrow
                 </h1>
                 <p className="lg:w-[830px] md:w-[600px] w-[100%] text-center lg:text-[18px] text-[18px] mt-4">

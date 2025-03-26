@@ -61,7 +61,7 @@ const QuizModal: React.FC = () => {
 
     return (
         <div id="quiz-modal">
-            {isMobile ? <PagesHeader /> : ""}
+            {isMobile ? <PagesHeader currentPage={"Quiz"} /> : ""}
             <div className={`fixed inset-0 flex justify-center items-center z-30 ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
                 <div className="bg-white flex flex-col justify-center items-center p-6 rounded-lg w-[65%] max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg relative">
                     <i
