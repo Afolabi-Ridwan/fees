@@ -5,6 +5,8 @@ import ConversionLayout from "../../components/Layout/ConversionLayout";
 import Button from "../../components/Button/Button";
 import { Crown, Puzzle } from "lucide-react";
 import { useNavigate } from "react-router";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoPersonOutline } from "react-icons/io5";
 
 type formDataType = {
     firstName: string;
@@ -101,13 +103,19 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     First Name <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px] " required />
+                                <div className="w-full h-full relative">
+                                    <input type="text" name="firstName" value={formData.firstName} placeholder="John" onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px] " required />
+                                    <IoPersonOutline className="absolute top-[20%] text-[18px] ml-2 text-gray" />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Last Name <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <div className="w-full h-full relative">
+                                    <input type="text" name="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <IoPersonOutline className="absolute top-[20%] text-[18px] ml-2 text-gray" />
+                                </div>
                             </div>
                         </div>
 
@@ -116,13 +124,20 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Email Address <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <div className="w-full h-full relative">
+                                    <input type="email" name="email" placeholder="johndoe@yahoo.com" value={formData.email} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <MdOutlineEmail className="absolute top-[20%] text-[18px] ml-2 text-gray" />
+                                </div>
                             </div>
-                            <div>
+                            <div >
                                 <label className="block text-gray text-[14px] font-medium mb-1">
                                     Confirm Email Address <span className="text-asteriskRed">*</span>
                                 </label>
-                                <input type="email" name="confirmEmail" value={formData.confirmEmail} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[10px]" required />
+                                <div className="w-full h-full relative">
+                                    <input type="email" name="confirmEmail" placeholder="johndoe@yahoo.com" value={formData.confirmEmail} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <MdOutlineEmail className="absolute top-[20%] text-[18px] ml-2 text-gray" />
+                                </div>
+
                             </div>
                         </div>
 
