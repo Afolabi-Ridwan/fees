@@ -4,7 +4,6 @@ import { SlArrowLeftCircle } from "react-icons/sl";
 
 import { FaBars } from "react-icons/fa6";
 import MobileNav from "../MobileNav/MobileNav";
-import { useModalStateContext } from "../../contexts/ModalContext";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useNavigate } from "react-router";
 
@@ -12,7 +11,6 @@ const PagesHeader = ({currentPage}: {currentPage: string}) => {
     const [sideBarState, updateSideBarState] = useState(false);
 
 
-    const { modalStateHandler } = useModalStateContext()
 
     const openSideBarHandler = () => updateSideBarState(true);
     const closeSideBarHandler = () => updateSideBarState(false);
@@ -58,8 +56,8 @@ const PagesHeader = ({currentPage}: {currentPage: string}) => {
                     />
                 </div>
                 <div className="flex items-center text-gray-600 text-[12px] mt-6">
-                    <div onClick={() => modalStateHandler(false)} className="cursor-pointer">
-                    <button className="mr-2  mb-1 text-deepBlue"><SlArrowLeftCircle /></button>
+                    <div onClick={() => navigate(-1)} className="cursor-pointer">
+                    <button className="mr-2  mb-1 text-deepBlue cursor-pointer"><SlArrowLeftCircle /></button>
                     <span className="mr-2">Leadership</span>
                     </div>
                      /
