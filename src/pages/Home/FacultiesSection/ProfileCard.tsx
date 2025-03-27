@@ -10,6 +10,25 @@ const ProfileCard = () => {
     const [activeHeight, setActiveHeight] = useState<number | null>(null);
     const activeCardRef = useRef<HTMLDivElement>(null);
 
+    const [stepOffset, setStepOffset] = useState(30);
+    const [thirdCardAdjustment, setThirdCardAdjustment] = useState(60);
+    useEffect(() => {
+        const updateAdjustment = () => {
+            if (window.innerWidth < 768) {
+                setThirdCardAdjustment(40);
+                setStepOffset(20)
+            } else {
+                setThirdCardAdjustment(60);
+                setStepOffset(30)
+            }
+        };
+
+        updateAdjustment();
+        window.addEventListener("resize", updateAdjustment);
+
+        return () => window.removeEventListener("resize", updateAdjustment);
+    }, []);
+
     useEffect(() => {
         if (!activeCardRef.current) return;
 
@@ -32,7 +51,7 @@ const ProfileCard = () => {
     const prevSlide = () => {
         setIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
     };
-    
+
     return (
         <div
             className="cards-container w-[1000px]  max-lg:w-[85%]"
@@ -45,21 +64,27 @@ const ProfileCard = () => {
                         key={card.id}
                         ref={position === 0 ? activeCardRef : null}
                         className={`card ${position === 0 ? "active" : ""}`}
+
+
+
+
                         style={{
                             zIndex: cardsData.length - position,
-                            transform: `translateX(${position === 0 ? 0 : position * 10}px)`,
-                            opacity: position === 0 ? 1 : 0.9 - position * 0.05,
-                            height: 
+                            transform: `translateX(${position * 10}px)`,
+                            opacity: 1 - position * 0.1,
+                            height:
                                 position === 0
                                     ? "auto"
-                                    : activeHeight
-                                        ? `${activeHeight * (1 - (0.05 + (position - 1) * 0.15))}px`
-                                        : "auto",
-                            top: position === 0 ? "0" : `${position * 35}px`,
-                            right: position === 0 ? "auto" : `-${position * 7}px`,
+                                    : position === 2
+                                        ? `${activeHeight && activeHeight - thirdCardAdjustment}px`
+                                        : `${activeHeight}px`,
+                            top: `${position * stepOffset}px`,
+                            right: position === 0 ? "auto" : `-${position * 5}px`,
                             display: position < 3 ? "block" : "none",
                             overflow: "hidden",
                         }}
+
+
                     >
                         {position === 0 && (
                             <>
