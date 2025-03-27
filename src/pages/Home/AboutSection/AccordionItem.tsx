@@ -33,7 +33,7 @@ const AccordionItem: React.FC<AccordionItemPropType> = ({ header, text, icon, id
 
       <div
         className={`overflow-hidden transition-[max-height] duration-1000 ease-in-out ${
-          isOpen ? "max-h-[300px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          isOpen ? " opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}
       >
         <div className="text-justify leading-relaxed text-gray text-[14px]">
