@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import Loader from "../../components/Loader/Loader";
 import HeroSection from "./HeroSection/HeroSection"
 import AboutSection from "./AboutSection/AboutSection";
 import WhoYouAreSection from "./WhoYouAreSection/WhoYouAreSection";
@@ -13,19 +11,12 @@ import QuizModal from "./QuizModal/QuizModal";
 
 const Home = () => {
 
-  const [loadingComplete, setLoadingComplete] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoadingComplete(true);
-    }, 12000);
-  }, []);
 
 
 
   return (
     <div className="w-full">
-      {!loadingComplete ? <Loader /> : null}
         <Layout >
           <HeroSection />
           <div className="relative z-10 bg-white">

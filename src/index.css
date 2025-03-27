@@ -72,10 +72,20 @@ input:focus{
 
 .navigation.navOnScroll .navLink {
     color: rgb(45, 61, 112);
+    transition: 0.3s ease-in-out;
+}
+
+.navigation.navOnScroll .navLink:hover {
+    border-bottom: 2px solid rgb(45, 61, 112);
 }
 
 .navigation.navOnHeroSection .navLink {
     color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.navigation.navOnHeroSection .navLink:hover {
+    border-bottom: 2px solid white;
 }
 
 .heroBgImg {

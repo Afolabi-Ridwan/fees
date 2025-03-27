@@ -59,7 +59,7 @@ const Header = () => {
       />
 
       <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex`}>
-        <li className="navLink">Home</li>
+        <li className="navLink ">Home</li>
         <li className="navLink">About FEES</li>
         <li className="navLink relative group flex items-center cursor-pointer">
           Services
