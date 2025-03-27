@@ -26,6 +26,7 @@
     --colorGray: rgb(96, 100, 111);
     --blueOnAccordion: rgb(167, 190, 251);
     --sectionGreyBg: rgb(248, 249, 252);
+    --fadedBlue: rgba(237, 242, 255, 1);
 }
 
 body {
@@ -99,6 +100,8 @@ input:focus{
     font-weight: normal;
 }
 
+
+
 .navigation .subMenu {
     box-shadow: var(--greyBoxShadow);
     opacity: 0;
@@ -107,16 +110,34 @@ input:focus{
     transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
+.navigation .subMenu li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 0;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.navigation .subMenu li span{
+    font-size: 25px;
+    opacity: 0;
+}
+
+.navigation .subMenu li:hover{
+    
+    background-color: var(--fadedBlue);
+}
+
+.navigation .subMenu li:hover span{
+    opacity: 1;
+}
+
 .group:hover .subMenu {
     opacity: 1;
     max-height: 300px;
 }
 
-.navigation .subMenu li {
-    margin-left: 0;
-    padding: 0 20px;
-    font-weight: 500;
-}
 
 /*  */
 .border-bottom {
