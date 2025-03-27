@@ -11,7 +11,7 @@ const HeroSection = () => {
     const navigate = useNavigate()
 
     return (
-        <div id="hero-section" className="relative w-full h-[100vh]">
+        <div id="hero-section" className="relative w-full h-[100vh] heroSection">
             <img src={heroBgImg} loading="lazy" alt="heroBgImg" className="heroBgImg w-full h-full" />
             <div className="blueRedGradient absolute top-0 left-0 w-full h-full"></div>
 

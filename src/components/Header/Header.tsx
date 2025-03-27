@@ -58,7 +58,7 @@ const Header = () => {
         onClick={() => navigate('/')}
       />
 
-      <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex`}>
+      <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex o`}>
         <li className="navLink ">Home</li>
         <li className="navLink">About FEES</li>
         <li className="navLink relative group flex items-center cursor-pointer">

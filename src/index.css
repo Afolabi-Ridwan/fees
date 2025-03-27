@@ -58,7 +58,6 @@ input:focus{
 }
 
 
-
 /* header */
 
 .headerOnHeroSection {
@@ -155,6 +154,8 @@ input:focus{
 .cubeIcon {
     opacity: 0.6;
 }
+
+
 
 .textGradient {
     background-image: linear-gradient(90deg, #7CB1FF 31.5%, #FE12AB 88.5%);
@@ -685,8 +686,22 @@ border: solid 2px rgba(236, 74, 10, 1);
     }
 }
 
+
 @media (min-height: 600px) {
-    .onSmallHeight {
-      margin-top: 100px;
+    .progressBar {
+        margin-top: 100px;
+    }
+}
+
+
+@media (max-height: 600px) {
+    .heroSection{
+        height: 700px;
+    }
+    .progressBar {
+        margin-top: 250px;
+    }
+    .quizCont{
+        height: 900px;
     }
   }

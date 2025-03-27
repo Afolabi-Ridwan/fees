@@ -17,7 +17,7 @@ const MobileNav = ({ sideBarState, closeSideBar }: SideBarProps) => {
             <div className="fixed inset-0 bg-black bg-opacity-40" ></div>
 
             <div
-                className={`fixed left-1/2 top-0 w-[100%] h-[100%] bg-white shadow-lg transition-all duration-600 transform ${
+                className={`fixed left-1/2 top-0 w-[100%] h-[100%] bg-white overflow-y-auto shadow-lg transition-all duration-600 transform ${
                     sideBarState ? "translate-x-[-50%] translate-y-0 opacity-100" : "translate-x-[-50%] translate-y-[-100%] opacity-0"
                 }`}
             >
