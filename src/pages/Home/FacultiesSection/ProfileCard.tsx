@@ -56,7 +56,7 @@ const ProfileCard = () => {
                                         ? `${activeHeight * (1 - (0.05 + (position - 1) * 0.15))}px`
                                         : "auto",
                             top: position === 0 ? "0" : `${position * 35}px`,
-                            right: position === 0 ? "auto" : `-${position * 10}px`,
+                            right: position === 0 ? "auto" : `-${position * 7}px`,
                             display: position < 3 ? "block" : "none",
                             overflow: "hidden",
                         }}
