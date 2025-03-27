@@ -14,7 +14,7 @@
     --color-borderGrey: rgb(214, 218, 227);
     --color-slateBlue: rgb(74, 97, 170);
     --color-asteriskRed: rgb(217, 45, 32);
-    --color-registrationPageForm: rgba(251, 252, 254, 1);
+    --color-registrationForm: rgba(251, 252, 254, 1);
     --color-inputBorder:rgba(202, 207, 218, 1)
 }
 
@@ -653,3 +653,9 @@ border: solid 2px rgba(236, 74, 10, 1);
         margin-top: -350px;
     }
 }
+
+@media (min-height: 600px) {
+    .onSmallHeight {
+      margin-top: 100px;
+    }
+  }

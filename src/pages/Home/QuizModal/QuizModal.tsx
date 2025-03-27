@@ -71,7 +71,7 @@ const QuizModal: React.FC = () => {
                         <FaTimes />
                     </i>
 
-                    <div className="w-[80%] max-md:w-[100%] ">
+                    <div className="w-[80%] max-md:w-[100%] onSmallHeight">
                         <div className="flex items-center">
                             <p className="flex w-[40px] justify-between mr-4 text-[12px] font-[600]">
                                 <span>{currentQuestion + 1}</span>
@@ -88,7 +88,7 @@ const QuizModal: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="mt-6 overflow-hidden mt-16">
+                        <div className=" overflow-hidden mt-16 max-sm:mt-8">
                             <div className="h-[280px] max-sm:h-[370px]">
                                 <AnimatePresence mode="wait">
                                     {isSubmitting ? (

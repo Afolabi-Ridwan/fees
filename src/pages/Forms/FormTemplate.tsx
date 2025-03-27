@@ -88,7 +88,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
 
             <div className="flex justify-center py-10 px-4">
                 <form onSubmit={handleSubmit} className="w-full max-w-2xl">
-                    <div className="w-full bg-registrationPageForm border border-inputBorder p-8 max-sm:px-4 rounded-xl">
+                    <div className="w-full bg-registrationForm border border-inputBorder p-8 max-sm:px-4 rounded-xl">
                         <div>
                             <h1 className="text-[25px] font-[500]">Personal Information</h1>
                             <p className="text-[14px] text-gray mt-0">
@@ -184,7 +184,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                         </div>
                     </div>
 
-                    {formType === "Registration Form" && <div className="w-full bg-registrationPageForm border border-inputBorder p-8 rounded-xl mt-8">
+                    {formType === "Registration Form" && <div className="w-full bg-registrationForm border border-inputBorder p-8 max-sm:px-4 rounded-xl mt-8">
                         <div>
                             <h3 className="text-[24px] font-medium">Select a track</h3>
                             <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline cursor-pointer">Click here</span> to find out</p>
@@ -214,7 +214,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                     </div>}
 
 
-                    <div className="w-full bg-registrationPageForm border border-inputBorder p-8 rounded-xl mt-8">
+                    <div className="w-full bg-registrationForm border border-inputBorder p-8 max-sm:px-4 rounded-xl mt-8">
                         <div className="mt-4 flex items-center">
                             <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2 text-[70px]" required />
                             <label className="text-[14px] mt-[2px]">
