@@ -7,7 +7,7 @@ import MobileNav from "../MobileNav/MobileNav";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useNavigate } from "react-router";
 
-const PagesHeader = ({currentPage}: {currentPage: string}) => {
+const PagesHeader = ({ currentPage }: { currentPage: string }) => {
     const [sideBarState, updateSideBarState] = useState(false);
 
 
@@ -32,23 +32,23 @@ const PagesHeader = ({currentPage}: {currentPage: string}) => {
                     />
 
                     <ul className={`navigation  text-deepBlue hidden md:flex`}>
-                            <li className="navLink">Home</li>
-                            <li className="navLink">About FEES</li>
-                            <li className="navLink relative group flex items-center cursor-pointer">
-                              Services
-                              <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
-                              <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] py-6 space-y-4 text-deepBlue bg-white 
-                              transition-all duration-1000 overflow-hidden rounded-md opacity-0 max-h-0 
-                              group-hover:opacity-100 group-hover:max-h-[300px] shadow-md">
+                        <li className="navLink">Home</li>
+                        <li className="navLink">About FEES</li>
+                        <li className="navLink relative group flex items-center cursor-pointer">
+                            Services
+                            <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
+                            <ul className="subMenu absolute top-[-300px] left-0 w-[300px] translate-x-[-90px] p-2  text-deepBlue bg-white 
+          transition-all duration-1000 overflow-hidden rounded-[5px] group-hover:top-[40px] shadow-md">
+          {/* i saw what you did and i dint want to say a thing but i wanted to tell you i dont really care like that and i saw that you dont reciprocate like that so its fine no to be cool with me  */}
                                 <li>Skill Acquisition</li>
                                 <li>Leadership Academy</li>
                                 <li>Community Engagement</li>
                                 <li>Talent Resourcing</li>
-                              </ul>
-                            </li>
-                            <li className="navLink">Team</li>
-                            <li className="navLink">Contact</li>
-                          </ul>
+                            </ul>
+                        </li>
+                        <li className="navLink">Team</li>
+                        <li className="navLink">Contact</li>
+                    </ul>
 
                     <FaBars
                         className={`md:hidden inline  text-deepBlue text-[25px] cursor-pointer`}
@@ -57,10 +57,10 @@ const PagesHeader = ({currentPage}: {currentPage: string}) => {
                 </div>
                 <div className="flex items-center text-gray-600 text-[12px] mt-6">
                     <div onClick={() => navigate(-1)} className="cursor-pointer">
-                    <button className="mr-2  mb-1 text-deepBlue cursor-pointer"><SlArrowLeftCircle /></button>
-                    <span className="mr-2">Leadership</span>
+                        <button className="mr-2  mb-1 text-deepBlue cursor-pointer"><SlArrowLeftCircle /></button>
+                        <span className="mr-2">Leadership</span>
                     </div>
-                     /
+                    /
                     <span className="ml-2 px-1  bg-fadedBlue rounded-md font-[500]  text-deepBlue">
                         {currentPage}
                     </span>

@@ -17,7 +17,7 @@ const Header = () => {
       const scrollY = window.scrollY;
 
       if (scrollY === 0) {
-        setHasUserScrolled(false); 
+        setHasUserScrolled(false);
       } else {
         setHasUserScrolled(true);
       }
@@ -34,7 +34,7 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
 
   const openSideBarHandler = () => updateSideBarState(true);
   const closeSideBarHandler = () => updateSideBarState(false);
@@ -44,10 +44,10 @@ const Header = () => {
   return (
     <div
       className={`flex items-center justify-between xl:px-[80px] px-[30px] py-4 fixed top-0 w-[100%] z-20 transition-all duration-500 ${!hasUserScrolled
-          ? "bg-none border-none"
-          : isHeroSectionInView
-            ? "headerOnHeroSection"
-            : "headerOnScroll"
+        ? "bg-none border-none"
+        : isHeroSectionInView
+          ? "headerOnHeroSection"
+          : "headerOnScroll"
         }`}
     >
       <img
@@ -64,13 +64,12 @@ const Header = () => {
         <li className="navLink relative group flex items-center cursor-pointer">
           Services
           <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
-          <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] py-6  text-deepBlue bg-white 
-          transition-all duration-1000 overflow-hidden rounded-md opacity-0 max-h-0 
-          group-hover:opacity-100 group-hover:max-h-[300px] shadow-md">
-            <li>Skill Acquisition <span ><MdArrowRightAlt/></span></li>
-            <li>Leadership Academy <span ><MdArrowRightAlt/></span></li>
-            <li>Community Engagement <span ><MdArrowRightAlt/></span></li>
-            <li>Talent Resourcing <span ><MdArrowRightAlt/></span></li>
+          <ul className="subMenu absolute top-[-300px] left-0 w-[300px] translate-x-[-90px] p-2  text-deepBlue bg-white 
+          transition-all duration-1000 overflow-hidden rounded-[5px] group-hover:top-[40px] shadow-md">
+            <li>Skill Acquisition <span ><MdArrowRightAlt /></span></li>
+            <li>Leadership Academy <span ><MdArrowRightAlt /></span></li>
+            <li>Community Engagement <span ><MdArrowRightAlt /></span></li>
+            <li>Talent Resourcing <span ><MdArrowRightAlt /></span></li>
           </ul>
         </li>
         <li className="navLink">Team</li>
