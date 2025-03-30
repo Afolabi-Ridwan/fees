@@ -21,7 +21,7 @@
 :root {
     --blueRedGradient: linear-gradient(244.31deg, rgba(148, 39, 53, 0.66) -13.65%, rgba(27, 41, 90, 0.88) 50.44%);
     --deepBlue: rgb(45, 61, 112);
-    --greyBoxShadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    --greyBoxShadow: 0px 1px 12px 0px rgba(27, 41, 90, 0.15);
     --slateBlue: rgb(74, 97, 170);
     --colorGray: rgb(96, 100, 111);
     --blueOnAccordion: rgb(167, 190, 251);
