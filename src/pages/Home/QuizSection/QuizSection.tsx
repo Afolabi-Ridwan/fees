@@ -5,11 +5,13 @@ import quizImg from "/assets/image/Quiz-Coloured.png";
 
 const QuizSection = () => {
 
-    const {modalStateHandler} = useModalStateContext()
+    const { modalStateHandler } = useModalStateContext()
     return (
         <div className='relative lg:min-h-[600px] md:min-h-[400px] min-h-[900px]'>
             <div className='xl:pl-64 lg:pl-32 md:pl-12 mt-20 max-md:flex flex-col justify-center items-center max-md:text-center'>
-                <p className="header w-[150px]">Quiz</p>
+                <div className="w-fit">
+                    <p className="header">Quiz</p>
+                </div>
                 <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] font-[600] mt-6">
                     What Track is Right for You?
                 </h1>
@@ -17,7 +19,7 @@ const QuizSection = () => {
                     Discover the track that best aligns with your leadership journey.
                     Take our quick quiz to find your fit!
                 </p>
-                <Button text='Take the quiz' bgType='deepBlueBg' style='mt-6 z-4 w-[200px]' onClick={() => modalStateHandler(true)}/>
+                <Button text='Take the quiz' bgType='deepBlueBg' style='mt-6 z-4 w-[200px]' onClick={() => modalStateHandler(true)} />
             </div>
 
             <div className="relative w-full h-full">

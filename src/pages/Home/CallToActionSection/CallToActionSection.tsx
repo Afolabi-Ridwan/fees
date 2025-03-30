@@ -10,7 +10,7 @@ const CallToActionSection = () => {
     return (
         <div className="callToActionSection relative">
             <img src={spiralPattern} loading="lazy" alt="spiralPattern" className="absolute top-0 w-[349px] max-sm:hidden" />
-            <p className="header z-[2]">Ready</p>
+            <p className="header">Ready?</p>
             <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center">
                 Are you primed to lead?
             </h1>
