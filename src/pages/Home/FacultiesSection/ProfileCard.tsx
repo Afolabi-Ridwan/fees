@@ -15,8 +15,8 @@ const ProfileCard = () => {
     useEffect(() => {
         const updateAdjustment = () => {
             if (window.innerWidth < 768) {
-                setThirdCardAdjustment(40);
-                setStepOffset(20)
+                setThirdCardAdjustment(30);
+                setStepOffset(15)
             } else {
                 setThirdCardAdjustment(60);
                 setStepOffset(30)
@@ -54,7 +54,7 @@ const ProfileCard = () => {
 
     return (
         <div
-            className="cards-container w-[1000px]  max-lg:w-[85%]"
+            className="cards-container w-[980px]  max-lg:w-[85%]"
             style={{ height: activeHeight ? `${activeHeight}px` : "auto" }}
         >
             {cardsData.map((card, i) => {
@@ -64,8 +64,6 @@ const ProfileCard = () => {
                         key={card.id}
                         ref={position === 0 ? activeCardRef : null}
                         className={`card ${position === 0 ? "active" : ""}`}
-
-
 
 
                         style={{
@@ -101,7 +99,7 @@ const ProfileCard = () => {
                                         />
                                         <div>
                                             <img src={headingIcon} loading="lazy" alt="headingIcon" />
-                                            <p className="mt-4">
+                                            <p className="mt-2 text-[14px]">
                                                 Leadership is not about being in charge; it's about
                                                 taking care of those in your charge.
                                             </p>
