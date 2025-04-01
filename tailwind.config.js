@@ -11,7 +11,7 @@ export default {
       colors: {
          primary: '#1a202c',
          deepBlue: "rgb(45, 61, 112)", 
-         green: rgb(45, 112, 63), 
+         green: "rgb(45, 112, 63)", 
        },
     },
   },

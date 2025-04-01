@@ -6,7 +6,7 @@ import { FaTimes } from "react-icons/fa";
 
 const FaqsSection = () => {
 
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -27,7 +27,8 @@ const FaqsSection = () => {
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
-                        className={`mb-6 border border-[1.5px] ${openIndex === index ? "border-blueOnAccordion" : "border-borderGrey"} rounded-[10px]`}
+                        className={`mb-6 border border-[1.5px] ${openIndex === index ? "border-blueOnAccordion bg-white" : "border-borderGrey"}
+                             rounded-[10px] hover:border-blueOnAccordion hover:bg-white shake-hover`}
                     >
                         <button
                             className="w-full text-left px-4 py-4 flex justify-between cursor-pointer"
