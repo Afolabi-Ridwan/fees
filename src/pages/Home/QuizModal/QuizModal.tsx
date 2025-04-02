@@ -11,7 +11,7 @@ import { IoMdCheckmark } from "react-icons/io";
 
 const QuizModal: React.FC = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [direction, setDirection] = useState(0);
+    const [direction, setDirection] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null)); // Store answers
     const navigate = useNavigate();
@@ -98,10 +98,9 @@ const QuizModal: React.FC = () => {
                                             key={currentQuestion}
                                             initial={{ x: direction === 1 ? "100%" : "-100%", opacity: 0 }}
                                             animate={{ x: "0%", opacity: 1 }}
-                                            exit={{ x: "-100%", opacity: 0 }} 
+                                            exit={{ x: direction === 1 ? "-100%" : "100%", opacity: 0 }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
                                         >
-
                                             <h2 className="flex max-sm:flex-col font-semibold text-[#60646f] items-start">
                                                 <span className="text-[18px] flex items-center min-w-[40px] justify-between mr-4 flex-shrink-0">
                                                     <span>{`0${currentQuestion + 1}`}</span>
