@@ -98,9 +98,10 @@ const QuizModal: React.FC = () => {
                                             key={currentQuestion}
                                             initial={{ x: direction === 1 ? "100%" : "-100%", opacity: 0 }}
                                             animate={{ x: "0%", opacity: 1 }}
-                                            exit={{ x: direction === 1 ? "-100%" : "100%", opacity: 0 }}
-                                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                                            exit={{ x: "-100%", opacity: 0 }} 
+                                            transition={{ duration: 0.5, ease: "easeInOut" }}
                                         >
+
                                             <h2 className="flex max-sm:flex-col font-semibold text-[#60646f] items-start">
                                                 <span className="text-[18px] flex items-center min-w-[40px] justify-between mr-4 flex-shrink-0">
                                                     <span>{`0${currentQuestion + 1}`}</span>
