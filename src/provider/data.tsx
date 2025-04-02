@@ -1,11 +1,5 @@
 import consultant1 from "/assets/image/consultantOne.png";
 import consultant2 from "/assets/image/consultantTwo.png";
-import consultant3 from "/assets/image/consultantThree.jpg";
-import consultant4 from "/assets/image/consultantFour.jpg";
-import consultant5 from "/assets/image/consultantFive.jpg";
-import consultant6 from "/assets/image/consultantSix.jpg";
-import consultant7 from "/assets/image/consultantSeven.jpg";
-import consultant8 from "/assets/image/consultantEight.jpg";
 import mapPinIcon from "/assets/icons/MapPinArea.png"
 import pathIcon from "/assets/icons/Path.png"
 import chartLineIcon from "/assets/icons/ChartLineUp.png"
@@ -17,6 +11,7 @@ interface CardData {
   image: string;
   title: string;
   bio: string;
+  comment: string;
   courses: string[];
 }
 
@@ -27,6 +22,7 @@ export const cardsData: CardData[] = [
     image: consultant1,
     title: "HR Consultant",
     bio: "<strong>Pelumi Akinsika</strong> is a highly decorated Leadership Strategist with over 10 years of experience in team management, organizational growth, and leadership training. He has worked with notable companies like Microsoft, Astra, etc. Pelumi is dedicated to helping emerging leaders unlock their full potential.",
+    comment: "Leadership is not about being in charge; it's about taking care of those in your charge.",
     courses: [
       "Strategic Decision-Making",
       "Emotional Intelligence for Leaders",
@@ -35,10 +31,11 @@ export const cardsData: CardData[] = [
   },
   {
     id: 2,
-    name: "Afolabi Ridwan",
+    name: "Pelumi Akinsika",
     image: consultant2,
-    title: "Leadership Coach",
-    bio: "<strong>Afolabi Ridwan</strong> is a seasoned Leadership Coach with extensive experience in executive coaching and leadership development. He has worked with top-tier organizations to enhance their leadership capabilities.",
+    title: "HR Consultant",
+    bio: "<strong>Pelumi Akinsika</strong> is a seasoned Leadership Coach with extensive experience in executive coaching and leadership development. He has worked with top-tier organizations to enhance their leadership capabilities.",
+    comment: "Leadership is not about being in charge; it's about taking care of those in your charge.",
     courses: [
       "Executive Coaching",
       "Leadership Development",
@@ -47,74 +44,15 @@ export const cardsData: CardData[] = [
   },
   {
     id: 3,
-    name: "Kabeer Hammed",
-    image: consultant3,
-    title: "Business Consultant",
-    bio: "<strong>Kabeer Hammed</strong> is a Business Consultant specializing in strategic planning and organizational efficiency. She has helped numerous companies achieve their business goals.",
+    name: "Pelumi Akinsika",
+    image: consultant1,
+    title: "HR Consultant",
+    bio: "<strong>Pelumi Akinsika</strong> is a highly decorated Leadership Strategist with over 10 years of experience in team management, organizational growth, and leadership training. He has worked with notable companies like Microsoft, Astra, etc. Pelumi is dedicated to helping emerging leaders unlock their full potential.",
+    comment: "Leadership is not about being in charge; it's about taking care of those in your charge.",
     courses: [
-      "Strategic Planning",
-      "Organizational Efficiency",
-      "Business Growth Strategies",
-    ],
-  },
-  {
-    id: 4,
-    name: "Idowu Valentine",
-    image: consultant6,
-    title: "HR Specialist",
-    bio: "<strong>Idowu Valentine</strong> is an HR Specialist with a focus on talent management and employee engagement. She has a proven track record of improving workplace culture.",
-    courses: [
-      "Talent Management",
-      "Employee Engagement",
-      "Workplace Culture",
-    ],
-  },
-  {
-    id: 5,
-    name: "Esther Akinloose",
-    image: consultant5,
-    title: "Change Management Expert",
-    bio: "<strong>Esther Akinloose</strong> is a Change Management Expert with over 15 years of experience guiding organizations through transformational change.",
-    courses: [
-      "Change Management",
-      "Transformational Leadership",
-      "Organizational Change",
-    ],
-  },
-  {
-    id: 6,
-    name: "Gbadamosi Olamide",
-    image: consultant7,
-    title: "Team Building Specialist",
-    bio: "<strong>Gbadamosi Olamide</strong> is a Team Building Specialist known for creating cohesive and high-performing teams across various industries.",
-    courses: [
-      "Team Building",
-      "Conflict Resolution",
-      "High-Performance Teams",
-    ],
-  },
-  {
-    id: 7,
-    name: "Edoh Tina",
-    image: consultant4,
-    title: "Motivational Speaker",
-    bio: "<strong>Edoh Tina</strong> is a Motivational Speaker who empowers individuals and organizations to reach their highest potential.",
-    courses: [
-      "Public Speaking",
-      "Personal Development",
-      "Motivational Strategies",
-    ],
-  },
-  {
-    id: 8,
-    name: "Kolade Olaide",
-    image: consultant8,
-    title: "Executive Coach",
-    bio: "<strong>Kolade Olaide</strong> is an Executive Coach with a focus on helping leaders achieve their professional and personal goals.",
-    courses: [
-      "Executive Leadership",
-      "Goal Setting",
-      "Performance Coaching",
+      "Strategic Decision-Making",
+      "Emotional Intelligence for Leaders",
+      "Driving Organizational Change",
     ],
   },
 ];
@@ -128,21 +66,22 @@ export const faqs = [
         },
         {
             question: "Can the tuition fee be paid in installments?",
-            answer: "Yes, we offer flexible installment payment options.",
+            answer: "Our fees are structured to be affordable, and payment is expected to be made in a single installment.",
         },
         {
             question: "If absent, do we get access to the resources shared in class?",
-            answer: "Yes, all resources will be available online for registered students.",
+            answer: "Yes, class recordings and resources will be available on request.",
         },
         {
             question:
                 "Beside the designated days, can we have physical interactions with the faculties?",
-            answer: "Faculty members are available during office hours for interactions.",
+            answer: `Our training is delivered in a hybrid format, allowing opportunities for in-person 
+            interactions with faculty. With valid reasons, special arrangements may be considered outside the designated days.`,
         },
         {
             question:
                 "Do we automatically advance to the next track after the foundational track?",
-            answer: "No, progression to the next track depends on performance evaluation.",
+            answer: "Both tracks run concurrently, but you can enroll in the advanced class in the next fellowship.",
         },
     ];
 

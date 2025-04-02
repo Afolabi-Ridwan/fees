@@ -77,12 +77,10 @@ const ProfileCard = () => {
                                         ? `${activeHeight && activeHeight - thirdCardAdjustment}px`
                                         : `${activeHeight}px`,
                             top: `${position * stepOffset}px`,
-                            right: position === 0 ? "auto" : `-${position * 5}px`,
+                            right: position === 0 ? "auto" : `-${position * 10}px`,
                             display: position < 3 ? "block" : "none",
                             overflow: "hidden",
                         }}
-
-
                     >
                         {position === 0 && (
                             <>
@@ -100,8 +98,7 @@ const ProfileCard = () => {
                                         <div>
                                             <img src={headingIcon} loading="lazy" alt="headingIcon" />
                                             <p className="mt-2 text-[14px]">
-                                                Leadership is not about being in charge; it's about
-                                                taking care of those in your charge.
+                                                {card.comment}
                                             </p>
                                         </div>
                                         <div className="courses mt-6">
