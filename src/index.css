@@ -713,13 +713,6 @@ input:focus {
 }
 
 
-@media (min-height: 600px) {
-    .progressBar {
-        margin-top: 100px;
-    }
-}
-
-
 @media (max-height: 600px) {
     .heroSection {
         height: 700px;

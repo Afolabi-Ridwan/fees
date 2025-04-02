@@ -27,7 +27,7 @@ const QuizModal: React.FC = () => {
             document.body.style.overflow = "auto";
         };
     }, [modalState]);
-    
+
     useEffect(() => {
         document.body.style.overflow = modalState ? "hidden" : "auto";
         return () => {
@@ -69,28 +69,31 @@ const QuizModal: React.FC = () => {
         }, 3000);
     };
 
-    
+
 
     return (
         <div id="quiz-modal">
             {isMobile ? <PagesHeader currentPage={"Quiz"} /> : ""}
-            <div className={`fixed inset-0 flex justify-center items-center z-30 overflow-y-auto ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
-                <div className="bg-white flex flex-col justify-center items-center p-6 rounded-lg w-[65%] max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg relative quizCont">
+            <div className={`fixed inset-0  flex justify-center items-center  z-30 overflow-y-auto ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+                <div className="bg-white flex flex-col sm:justify-center sm:items-center p-6 rounded-lg w-[65%] 
+                max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg relative quizCont">
                     <i
-                        className="border border-2 border-white text-white text-[10px] rounded-full p-1 cursor-pointer absolute right-0 top-0 translate-y-[-25px] translate-x-[25px] hover:text-[14px] duration-400"
+                        className="border border-2 border-white text-white text-[10px] rounded-full p-1 
+                        cursor-pointer absolute right-0 top-0 translate-y-[-25px] translate-x-[25px] 
+                        hover:text-[14px] duration-400 max-sm:hidden"
                         onClick={() => modalStateHandler(false)}
                     >
                         <FaTimes />
                     </i>
 
-                    <div className="w-[80%] max-md:w-[100%] progressBar">
-                        <div className="flex items-center">
-                            <p className="flex w-[40px] justify-between mr-4 text-[12px] font-[600]">
+                    <div className="w-[80%] max-md:w-[100%] max-sm:mt-[130px] progressBar">
+                        <div className="sm:flex items-center">
+                            <p className="flex  w-[40px] justify-between mr-4 text-[13px] font-[600]">
                                 <span>{currentQuestion + 1}</span>
                                 <span>/</span>
                                 <span>{questions.length}</span>
                             </p>
-                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md">
+                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md mt-3">
                                 <motion.div
                                     className="bg-deepBlue h-1 transition-all duration-300"
                                     style={{
@@ -107,21 +110,21 @@ const QuizModal: React.FC = () => {
                                         <LoaderModal isOpen={isSubmitting} />
                                     ) : (
                                         <motion.div
-    key={currentQuestion}
-    initial={{ 
-        x: direction === -1 ? "-100%" : "100%",  // Always enter from right unless going back
-        opacity: 0 
-    }}
-    animate={{ 
-        x: "0%", 
-        opacity: 1 
-    }}
-    exit={{ 
-        x: direction === -1 ? "100%" : "-100%",  // Exit opposite to entry
-        opacity: 0 
-    }}
-    transition={{ duration: 0.5, ease: "easeInOut" }}
->
+                                            key={currentQuestion}
+                                            initial={{
+                                                x: direction === -1 ? "-100%" : "100%",
+                                                opacity: 0
+                                            }}
+                                            animate={{
+                                                x: "0%",
+                                                opacity: 1
+                                            }}
+                                            exit={{
+                                                x: direction === -1 ? "100%" : "-100%",
+                                                opacity: 0
+                                            }}
+                                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                                        >
                                             <h2 className="flex max-sm:flex-col font-semibold text-[#60646f] items-start">
                                                 <span className="text-[18px] flex items-center min-w-[40px] justify-between mr-4 flex-shrink-0">
                                                     <span>{`0${currentQuestion + 1}`}</span>
@@ -166,7 +169,7 @@ const QuizModal: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="flex mt-8">
+                        <div className=" flex sm:mt-8 max-sm:absolute bottom-8 left-0 w-full max-sm:p-4  max-sm:justify-between">
                             <div className={`w-[40px] max-sm:w-0 max-sm:mr-0 mr-4 ${currentQuestion > questions.length - 1 && ""}`}></div>
                             {currentQuestion > 0 && (
                                 <button
@@ -183,9 +186,7 @@ const QuizModal: React.FC = () => {
                                     onClick={handleNext}
                                     disabled={!selectedAnswers[currentQuestion]}
                                     className={`px-4 py-2 max-sm:w-[100%] focus:outline-none bg-deepBlue text-white rounded-md cursor-pointer 
-                                    hover:bg-[#1e2d5e] ${currentQuestion > 0 && "ml-4"} ${!selectedAnswers[currentQuestion] && "opacity-50 cursor-not-allowed"
-                                        }`}
-                                >
+                                    hover:bg-[#1e2d5e] ${currentQuestion > 0 && "ml-4"} ${!selectedAnswers[currentQuestion] && "opacity-50 cursor-not-allowed"}`}>
                                     Next
                                 </button>
                             )}
@@ -195,7 +196,7 @@ const QuizModal: React.FC = () => {
                                     onClick={handleSubmit}
                                     disabled={!selectedAnswers[currentQuestion]}
                                     className={`px-4 py-2 max-sm:w-[100%] focus:outline-none bg-deepBlue text-white rounded-md cursor-pointer 
-        hover:bg-[#1e2d5e] ml-4 ${!selectedAnswers[currentQuestion] && "opacity-50 cursor-not-allowed"}`}
+                                                hover:bg-[#1e2d5e] ml-4 ${!selectedAnswers[currentQuestion] && "opacity-50 cursor-not-allowed"}`}
                                 >
                                     Submit
                                 </button>
