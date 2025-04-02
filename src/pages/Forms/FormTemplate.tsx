@@ -28,9 +28,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
     setFormData: React.Dispatch<React.SetStateAction<formDataType>>
 }) => {
 
-    const navigate = useNavigate()
-
-
+    const navigate = useNavigate();
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -205,18 +203,23 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                             <p className=" mb-6 text-[14px] text-gray">Not sure what track is right for you? <span className="text-deepBlue underline cursor-pointer">Click here</span> to find out</p>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {[
-                                    { label: "Foundational Track", price: "₦100,000", value: "Foundational", icon: <Puzzle /> },
-                                    { label: "Advanced Track", price: "₦200,000", value: "Advanced", icon: <Crown /> }
+                                    { label: "Foundational Track", price: "₦100,000", value: "Foundational", recommended: true },
+                                    { label: "Advanced Track", price: "₦200,000", value: "Advanced" }
                                 ].map((track) => (
                                     <button
                                         key={track.value}
                                         type="button"
-                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:bg-blueOnAccordion ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
+                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                             }`}
                                         onClick={() => setFormData({ ...formData, track: track.value })}
                                     >
-                                        <div className={`text-[24px]  ${formData.track === track.value && "text-deepBlue"}`}>
-                                            {track.icon}
+                                        <div className="flex justify-between">
+                                            <span className={`text-[24px]  ${formData.track === track.value && "text-deepBlue"}`}>
+                                                {track.value === "Foundational" ?
+                                                    <Puzzle fill={`${formData.track === track.value ? "#2d3d70" : "transparent"}`} />
+                                                    : <Crown fill={`${formData.track === track.value ? "#2d3d70" : "transparent"}`} />}
+                                            </span>
+                                            <p className="text-[12px] text-slateBlue font-[500]">{track.recommended && "Recommended"}</p>
                                         </div>
                                         <div className="flex items-center justify-between mt-6">
                                             <span className="block font-medium text-[18px]">{track.label}</span>

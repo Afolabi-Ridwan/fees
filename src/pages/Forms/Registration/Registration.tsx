@@ -22,7 +22,7 @@ const RegistrationForm = () => {
         phone: "",
         countryCode: "NG",
         country: "NG",
-        track: "",
+        track: "Foundational",
         termsAccepted: false,
     });
     

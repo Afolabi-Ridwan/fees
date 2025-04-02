@@ -17,7 +17,17 @@ const QuizModal: React.FC = () => {
     const navigate = useNavigate();
     const isMobile = useIsMobile();
     const { modalState, modalStateHandler } = useModalStateContext();
+    useEffect(() => {
+        document.body.style.overflow = modalState ? "hidden" : "auto";
+        if (modalState) {
 
+            setDirection(1); // Reset to forward direction when modal opens
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [modalState]);
+    
     useEffect(() => {
         document.body.style.overflow = modalState ? "hidden" : "auto";
         return () => {
@@ -59,6 +69,8 @@ const QuizModal: React.FC = () => {
         }, 3000);
     };
 
+    
+
     return (
         <div id="quiz-modal">
             {isMobile ? <PagesHeader currentPage={"Quiz"} /> : ""}
@@ -95,12 +107,21 @@ const QuizModal: React.FC = () => {
                                         <LoaderModal isOpen={isSubmitting} />
                                     ) : (
                                         <motion.div
-                                            key={currentQuestion}
-                                            initial={{ x: direction === 1 ? "100%" : "-100%", opacity: 0 }}
-                                            animate={{ x: "0%", opacity: 1 }}
-                                            exit={{ x: direction === 1 ? "-100%" : "100%", opacity: 0 }}
-                                            transition={{ duration: 0.5, ease: "easeInOut" }}
-                                        >
+    key={currentQuestion}
+    initial={{ 
+        x: direction === -1 ? "-100%" : "100%",  // Always enter from right unless going back
+        opacity: 0 
+    }}
+    animate={{ 
+        x: "0%", 
+        opacity: 1 
+    }}
+    exit={{ 
+        x: direction === -1 ? "100%" : "-100%",  // Exit opposite to entry
+        opacity: 0 
+    }}
+    transition={{ duration: 0.5, ease: "easeInOut" }}
+>
                                             <h2 className="flex max-sm:flex-col font-semibold text-[#60646f] items-start">
                                                 <span className="text-[18px] flex items-center min-w-[40px] justify-between mr-4 flex-shrink-0">
                                                     <span>{`0${currentQuestion + 1}`}</span>
