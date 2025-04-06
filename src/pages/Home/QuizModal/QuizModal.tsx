@@ -74,9 +74,8 @@ const QuizModal: React.FC = () => {
     return (
         <div id="quiz-modal">
             {isMobile ? <PagesHeader currentPage={"Quiz"} /> : ""}
-            <div className={`fixed inset-0  flex justify-center items-center  z-30 overflow-y-auto ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
-                <div className="bg-white flex flex-col sm:justify-center sm:items-center p-6 rounded-lg w-[65%] 
-                max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg relative quizCont">
+            <div className={`fixed inset-0 flex justify-center items-center z-30 overflow-y-auto ${isSubmitting && "z-50"}`} style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+                <div className="bg-white sm:flex flex-col justify-center items-center  p-6 rounded-lg w-[65%] max-lg:w-[80%] max-sm:w-[100%] h-[620px] max-sm:h-[100%] shadow-lg relative quizCont">
                     <i
                         className="border border-2 border-white text-white text-[10px] rounded-full p-1 
                         cursor-pointer absolute right-0 top-0 translate-y-[-25px] translate-x-[25px] 
@@ -93,7 +92,7 @@ const QuizModal: React.FC = () => {
                                 <span>/</span>
                                 <span>{questions.length}</span>
                             </p>
-                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md mt-3">
+                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md max-sm:mt-2">
                                 <motion.div
                                     className="bg-deepBlue h-1 transition-all duration-300"
                                     style={{
@@ -125,7 +124,7 @@ const QuizModal: React.FC = () => {
                                             }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
                                         >
-                                            <h2 className="flex max-sm:flex-col font-semibold text-[#60646f] items-start">
+                                            <h2 className="flex max-sm:flex-col font-[500] text-[#60646f] items-start">
                                                 <span className="text-[18px] flex items-center min-w-[40px] justify-between mr-4 flex-shrink-0">
                                                     <span>{`0${currentQuestion + 1}`}</span>
                                                     <span className={`font-light ${isMobile && "text-[22px]"}`}>
@@ -169,7 +168,7 @@ const QuizModal: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className=" flex sm:mt-8 max-sm:absolute bottom-8 left-0 w-full max-sm:p-4  max-sm:justify-between">
+                        <div className=" flex sm:mt-8 max-sm:absolute bottom-6 left-0 w-full max-sm:p-4  max-sm:justify-between">
                             <div className={`w-[40px] max-sm:w-0 max-sm:mr-0 mr-4 ${currentQuestion > questions.length - 1 && ""}`}></div>
                             {currentQuestion > 0 && (
                                 <button
