@@ -132,7 +132,7 @@ const QuizModal: React.FC = () => {
                                                     </span>
                                                 </span>
 
-                                                <span className="sm:text-[24px] text-[20px] max-sm:mt-6 leading-tight">{questions[currentQuestion].question}</span>
+                                                <span className="sm:text-[24px] text-[20px] max-sm:mt-2 leading-tight">{questions[currentQuestion].question}</span>
                                             </h2>
 
                                             <div className="mt-4">

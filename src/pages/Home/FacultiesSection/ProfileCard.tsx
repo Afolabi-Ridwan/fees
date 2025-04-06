@@ -77,7 +77,7 @@ const ProfileCard = () => {
                                         ? `${activeHeight && activeHeight - thirdCardAdjustment}px`
                                         : `${activeHeight}px`,
                             top: `${position * stepOffset}px`,
-                            right: position === 0 ? "auto" : `-${position * 10}px`,
+                            right: position === 0 ? "auto" : `-${position * 7}px`,
                             display: position < 3 ? "block" : "none",
                             overflow: "hidden",
                         }}
