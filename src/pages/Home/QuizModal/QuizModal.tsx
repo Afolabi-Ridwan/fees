@@ -85,14 +85,14 @@ const QuizModal: React.FC = () => {
                         <FaTimes />
                     </i>
 
-                    <div className="w-[80%] max-md:w-[100%] max-sm:mt-[130px] progressBar">
+                    <div className="w-[80%] max-md:w-[100%] max-sm:mt-[110px] progressBar">
                         <div className="sm:flex items-center">
                             <p className="flex  w-[40px] justify-between mr-4 text-[13px] font-[600]">
                                 <span>{currentQuestion + 1}</span>
                                 <span>/</span>
                                 <span>{questions.length}</span>
                             </p>
-                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md max-sm:mt-2">
+                            <div className="w-full bg-[#d0dfff] h-1 overflow-hidden rounded-md max-sm:mt-4">
                                 <motion.div
                                     className="bg-deepBlue h-1 transition-all duration-300"
                                     style={{
@@ -132,7 +132,7 @@ const QuizModal: React.FC = () => {
                                                     </span>
                                                 </span>
 
-                                                <span className="text-[24px] max-sm:mt-6 leading-tight">{questions[currentQuestion].question}</span>
+                                                <span className="sm:text-[24px] text-[20px] max-sm:mt-6 leading-tight">{questions[currentQuestion].question}</span>
                                             </h2>
 
                                             <div className="mt-4">
@@ -146,8 +146,8 @@ const QuizModal: React.FC = () => {
                                                                 && "border-blueOnAccordion"
                                                                 }`}
                                                         >
-                                                            <div>
-                                                                <span className={`mr-4 mt-[2px] px-[5px] pt-[3px] text-[14px] border border-[#d6dae3] inline-flex leading-none 
+                                                            <div className="flex">
+                                                                <span className={`mr-4 mt-[2px] w-[30px] h-[23px] text-[14px] border border-[#d6dae3] inline-flex items-center justify-center leading-none 
                                                                 group-hover:bg-deepBlue group-hover:text-white duration-500 ${selectedAnswers[currentQuestion] === answer.text && "bg-deepBlue text-white"}`}>
                                                                     {answer.id}
                                                                 </span>
