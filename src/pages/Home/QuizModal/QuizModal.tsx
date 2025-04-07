@@ -102,7 +102,7 @@ const QuizModal: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className=" overflow-hidden mt-16 max-sm:mt-4">
+                        <div className=" overflow-hidden mt-16 max-sm:mt-6">
                             <div className="h-[280px] max-sm:h-[370px]">
                                 <AnimatePresence mode="wait">
                                     {isSubmitting ? (

@@ -1,5 +1,5 @@
 import spiralPattern from "/assets/image/Vector 11.png";
-import ProfileCard from "./ProfileCard";
+import ProfileCard from "../ProfileCard";
 
 
 const FacultiesSection = () => {

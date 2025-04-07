@@ -22,15 +22,15 @@ const Recommendation = () => {
         </div>
 
         <div className="w-[600px] max-md:w-[100%] flex flex-col items-center ">
-          <div className=" max-md:w-[90%] md:hidden flex justify-center bg-[#f7f9ff] py-1 gap-4 mb-4">
+          <div className=" max-md:w-[90%] md:hidden flex justify-center bg-[#f7f9ff] py-1 gap-3 mb-4">
             <button
-              className={`px-4 w-[47%] py-2 rounded-lg text-sm font-[500] ${activeTrack === "foundational" ? "bg-deepBlue text-white" : " bg-white"}`}
+              className={`px-4 w-[48%] py-2 rounded-[4px] text-sm font-[500] ${activeTrack === "foundational" ? "bg-deepBlue text-white" : " bg-white"}`}
               onClick={() => setActiveTrack("foundational")}
             >
               Foundational 
             </button>
             <button
-              className={`px-4 w-[47%] py-2 rounded-lg text-sm font-[500] ${activeTrack === "advanced" ? "bg-[#d92d20] text-white" : "bg-white"}`}
+              className={`px-4 w-[48%] py-2 rounded-[4px] text-sm font-[500] ${activeTrack === "advanced" ? "bg-deepBlue text-white" : "bg-white"}`}
               onClick={() => setActiveTrack("advanced")}
             >
               Advanced 

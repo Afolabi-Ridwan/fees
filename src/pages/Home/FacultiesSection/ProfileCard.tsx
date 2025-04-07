@@ -1,17 +1,21 @@
 import { cardsData } from "../../../provider/data";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { BsArrowsAngleContract } from "react-icons/bs";
-import headingIcon from "/assets/icons/Vector.png";
 import { useEffect, useRef, useState } from "react";
+import ProfileImageAndBio from "./components/ProfileImageAndBio";
+import Comment from "./components/Comment";
+import CardNav from "./components/CardNav";
 
 const ProfileCard = () => {
 
-    const [index, setIndex] = useState(0);
     const [activeHeight, setActiveHeight] = useState<number | null>(null);
     const activeCardRef = useRef<HTMLDivElement>(null);
 
     const [stepOffset, setStepOffset] = useState(30);
     const [thirdCardAdjustment, setThirdCardAdjustment] = useState(60);
+    const [index, setIndex] = useState(0);
+    const [isExpanded, setIsExpanded] = useState(false);
+
+
     useEffect(() => {
         const updateAdjustment = () => {
             if (window.innerWidth < 768) {
@@ -85,73 +89,31 @@ const ProfileCard = () => {
                         {position === 0 && (
                             <>
                                 <div className="card-content">
-                                    <div className="card-image">
-                                        <img src={card.image} alt={card.name} />
+                                    <div onClick={() => setIsExpanded(!isExpanded)} className={`md:hidden flex justify-between items-center mb-[20px] ${!isExpanded && "hidden"}`}>
+                                        <button className="text-white">
+                                            Click to close
+                                        </button>
+                                        <BsArrowsAngleContract className="text-[20px] font-[800]" />
                                     </div>
 
-                                    <div className="card-info max-md:hidden">
-                                        <p className="heading">BIO</p>
-                                        <p
-                                            className="bio"
-                                            dangerouslySetInnerHTML={{ __html: card.bio }}
+                                    <div>
+                                        <ProfileImageAndBio card={card} index={index} />
+
+                                        <CardNav
+                                            isExpanded={isExpanded}
+                                            setIsExpanded={setIsExpanded}
+                                            card={card}
+                                            index={index}
+                                            prevSlide={prevSlide}
+                                            nextSlide={nextSlide}
                                         />
-                                        <div>
-                                            <img src={headingIcon} loading="lazy" alt="headingIcon" />
-                                            <p className="mt-2 text-[14px]">
-                                                {card.comment}
-                                            </p>
-                                        </div>
-                                        <div className="courses mt-6">
-                                            <p className="heading">Courses Taught</p>
-                                            <ul>
-                                                {card.courses.map((course, idx) => (
-                                                    <li key={idx}>{course}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                    </div>
+
+                                    <div className="md:hidden">
+                                        <Comment isExpanded={isExpanded} card={card} />
                                     </div>
                                 </div>
 
-                                <div className="flex justify-between items-center max-md:flex-col max-md:items-start max-md:mt-6">
-                                    <div>
-                                        <h1 className="text-[40px] font-[600]">
-                                            {card.name.split(" ")[0]}
-                                        </h1>
-                                        <h1 className="text-[40px] font-[600]">
-                                            {card.name.split(" ")[1]}
-                                        </h1>
-                                    </div>
-                                    <div>
-                                        <span className="text-[45px] font-[600] max-md:hidden">
-                                            {index + 1}/{cardsData.length}
-                                        </span>
-                                    </div>
-                                    <p className="border-l-2 pl-2 italic md:hidden">
-                                        {card.title}
-                                    </p>
-                                </div>
-                                <div className="card-footer">
-                                    <div>
-                                        <p className="border-l-2 pl-2 italic">{card.title}</p>
-                                        <span className="text-[45px] font-[600] md:hidden">
-                                            {index + 1}/{cardsData.length}
-                                        </span>
-                                    </div>
-                                    <div className="slider-buttons">
-                                        <button onClick={prevSlide}>
-                                            <FaArrowLeftLong />
-                                        </button>
-                                        <button onClick={nextSlide}>
-                                            <FaArrowRightLong />
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="md:hidden flex justify-between items-center mt-[40px]">
-                                    <p className="flex items-center">
-                                        Click to read more <FaArrowRightLong className="ml-2" />
-                                    </p>
-                                    <BsArrowsAngleContract className="text-[25px] font-[800]" />
-                                </div>
                             </>
                         )}
                     </div>
