@@ -1,11 +1,10 @@
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { cardsData } from "../../../../provider/data";
 import { BsArrowsAngleContract } from "react-icons/bs";
+import { cardNavType } from "../../../../types/types";
 
 
-const CardNav = ({isExpanded, setIsExpanded, card, index, prevSlide, nextSlide}: any) => {
-
-    
+const CardNav = ({isExpanded, setIsExpanded, card, index, prevSlide, nextSlide}: cardNavType) => {
 
     return (
         <div>

@@ -1,7 +1,8 @@
+import { commentType } from "../../../../types/types";
 import headingIcon from "/public/assets/icons/Vector.png";
 
 
-const Comment = ({isExpanded, card}: any) => {
+const Comment = ({isExpanded, card}: commentType) => {
     return (
         <div className={`card-info ${isExpanded ? "block" : "hidden"} md:block`}>
             <p className="heading">BIO</p>

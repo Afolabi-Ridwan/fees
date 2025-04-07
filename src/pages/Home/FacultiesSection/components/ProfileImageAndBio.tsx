@@ -1,7 +1,8 @@
 import { cardsData } from "../../../../provider/data";
+import { profileImageAndBioType } from "../../../../types/types";
 import Comment from "./Comment";
 
-const ProfileImageAndBio = ({ card, index }: any) => {
+const ProfileImageAndBio = ({ card, index }: profileImageAndBioType) => {
     return (
         <div>
             <div className="image-and-comment">
