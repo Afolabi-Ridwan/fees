@@ -667,10 +667,15 @@ input:focus {
     }
 
     .card-info {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-left: 0;
+            width: 100%;
+            max-height: 150px;
+            margin-top: 20px;
+            margin-left: 0;
+            overflow: auto;
+    }
+
+    .card-info-content {
+        padding-bottom: 15px; 
     }
 
     .faqsSection {
