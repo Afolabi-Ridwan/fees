@@ -13,7 +13,7 @@ const Comment = ({ isExpanded, card }: commentType) => {
                 />
                 <div>
                     <img src={headingIcon} loading="lazy" alt="headingIcon" />
-                    <p className="mt-2 text-[14px]">
+                    <p className="mt-2 text-[14px] text-align-justify">
                         {card.comment}
                     </p>
                 </div>
