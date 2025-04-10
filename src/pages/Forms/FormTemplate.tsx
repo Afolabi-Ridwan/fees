@@ -16,7 +16,10 @@ type formDataType = {
     phone: string;
     countryCode: string;
     country?: string;
-    track?: string;
+    track?: {
+        value: string,
+        price: string
+    };
     termsAccepted: boolean;
 };
 
@@ -69,9 +72,9 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
         if (!isFormValid()) {
             return;
         }
-        console.log("Form submitted:", formData)
+        const track = JSON.stringify(formData.track)
         if (formType === "Registration Form") {
-            navigate("/registration-success")
+            navigate(`/registration-success/${track}`)
         } else {
             navigate("/")
         }
@@ -209,15 +212,15 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     <button
                                         key={track.value}
                                         type="button"
-                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track === track.value ? "border-blueOnAccordion" : "border-gray-300"
+                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track?.value === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                             }`}
-                                        onClick={() => setFormData({ ...formData, track: track.value })}
+                                        onClick={() => setFormData({ ...formData, track: { value: track.value, price: track.price } })}
                                     >
                                         <div className="flex justify-between">
-                                            <span className={`text-[24px]  ${formData.track === track.value && "text-deepBlue"}`}>
+                                            <span className={`text-[24px]  ${formData.track?.value === track.value && "text-deepBlue"}`}>
                                                 {track.value === "Foundational" ?
-                                                    <Puzzle fill={`${formData.track === track.value ? "#2d3d70" : "transparent"}`} />
-                                                    : <Crown fill={`${formData.track === track.value ? "#2d3d70" : "transparent"}`} />}
+                                                    <Puzzle fill={`${formData.track?.value === track.value ? "#2d3d70" : "transparent"}`} />
+                                                    : <Crown fill={`${formData.track?.value === track.value ? "#2d3d70" : "transparent"}`} />}
                                             </span>
                                             <p className="text-[12px] text-slateBlue font-[500]">{track.recommended && "Recommended"}</p>
                                         </div>

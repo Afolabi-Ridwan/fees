@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/recommendation-page" element={<Recommendation />} />
             <Route path="/registration-page" element={<RegistrationForm />} />
-            <Route path="/registration-success" element={<RegistrationSuccess />} />
+            <Route path="/registration-success/:track" element={<RegistrationSuccess />} />
             <Route path="/subscription-page" element={<SubscriptionForm />} />
           </Routes>
         </BrowserRouter>

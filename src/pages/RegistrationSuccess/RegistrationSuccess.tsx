@@ -1,29 +1,18 @@
+import { useParams } from "react-router";
 import Button from "../../components/Button/Button";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Check, Ribbon } from "../../components/Lottie/Lottie";
+    
 
-const Check = () => {
-    return (
-        <DotLottieReact
-            src="https://lottie.host/c5fb47f3-f361-4354-b71c-ea15c8545625/qML8SfRAOF.lottie"
-            loop
-            autoplay
-        />
-    );
-};
-const Ribbon = () => {
-    return (
-        <DotLottieReact
-            src="https://lottie.host/4281eb35-7b77-4173-b7fd-d8c0e2c0448d/ozv18FLxxh.lottie"
-            loop
-            autoplay
-        />
-    );
-};
 
 const RegistrationSuccess = () => {
+
+    const { track } = useParams()
+
+    const trackPrice = track && JSON.parse(track).price
+
     return (
-        <ConversionLayout currentPage="Registration"> 
+        <ConversionLayout currentPage="Registration">
             <div className="flex flex-col w-full items-center justify-center md:px-4 relative overflow-x-hidden">
                 <div className="w-[250px]  md:pt-30 pt-6">
                     <Check />
@@ -37,7 +26,7 @@ const RegistrationSuccess = () => {
                             You are on the right track to building a solid base in leadership principles.
                             Kindly proceed to payment to complete your registration.
                         </p>
-                        <Button text="Pay ₦100,000" bgType="deepBlueBg" style="mt-8 bg-deepBlue text-white px-6 py-2 rounded-lg" />
+                        <Button text={`Pay ${trackPrice}`} bgType="deepBlueBg" style="mt-8 bg-deepBlue text-white px-6 py-2 rounded-lg" />
                     </div>
 
                     <div className="w-full flex justify-center mt-20">
