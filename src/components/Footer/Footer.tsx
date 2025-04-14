@@ -3,14 +3,18 @@ import logoWhite from "/assets/image/Logo Horizontal white 2.png";
 
 const Footer = () => {
 
-    const home = "/" === useLocation().pathname
-    return (
+    const isHomePage = "/" === useLocation().pathname
 
-        <footer className={`footer ${home && "polygon h-[500px] max-md:h-[700px] mt-[-130px]" } px-[100px] max-lg:px-[30px] py-[40px]`}>
+    return (
+        <footer className={`
+        footer
+        px-[100px] py-[40px]
+        max-lg:px-[30px]
+        ${isHomePage ? "polygon h-[500px] max-md:h-[700px] mt-[-130px]" : ""} `}>
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-section">
-                        <img src={logoWhite} loading="lazy" alt="logoWhite" className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px]" />
+                        <img src={logoWhite} loading="lazy" alt="Company Logo" className="w-[170px] h-[35px] sm:w-[200px] sm:h-[40px]" />
 
                     </div>
                     <div className="footer-section">
@@ -20,11 +24,19 @@ const Footer = () => {
                         <p>Leadership Academy</p>
                         <p>Community Engagement</p>
                     </div>
-                    <div className="footer-section">
+                    <address className="footer-section flex flex-col not-italic">
                         <h4>CONTACT US</h4>
-                        <p>+2348166864408</p>
-                        <p>hello@thefeeshub.com</p>
-                    </div>
+                        <a
+                            href="tel:+2348166864408"
+                            className="hover:text-blue-200 transition-colors"
+                        >
+                            +2348166864408
+                        </a>
+                        <a  href="mailto:hello@thefeeshub.com"
+                            className="hover:text-blue-200 transition-colors">
+                            hello@thefeeshub.com
+                        </a>
+                    </address>
                     <div className="footer-section">
                         <h4>FIND US</h4>
                         <p>Sholanke Str, Off Chemist B/Stop, Akoka</p>
