@@ -7,10 +7,10 @@ import MobileNav from "../MobileNav/MobileNav";
 import { useNavigate } from "react-router";
 
 const Header = () => {
-  const [isHeroSecScrolled, setIsHeroSecScrolled] = useState(false);
-  const [isHeroSectionInView, setIsHeroSectionInView] = useState(true);
-  const [hasUserScrolled, setHasUserScrolled] = useState(false);
-  const [sideBarState, updateSideBarState] = useState(false);
+  const [isHeroSecScrolled, setIsHeroSecScrolled] = useState<boolean>(false);
+  const [isHeroSectionInView, setIsHeroSectionInView] = useState<boolean>(true);
+  const [hasUserScrolled, setHasUserScrolled] = useState<boolean>(false);
+  const [sideBarState, updateSideBarState] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {

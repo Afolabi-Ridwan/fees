@@ -9,9 +9,6 @@ import { useNavigate } from "react-router";
 
 const PagesHeader = ({ currentPage }: { currentPage: string }) => {
     const [sideBarState, updateSideBarState] = useState(false);
-
-
-
     const openSideBarHandler = () => updateSideBarState(true);
     const closeSideBarHandler = () => updateSideBarState(false);
     const navigate = useNavigate()
@@ -39,7 +36,6 @@ const PagesHeader = ({ currentPage }: { currentPage: string }) => {
                             <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
                             <ul className="subMenu absolute top-[-300px] left-0 w-[300px] translate-x-[-90px] p-2  text-deepBlue bg-white 
           transition-all duration-1000 overflow-hidden rounded-[5px] group-hover:top-[40px] shadow-md">
-          {/* i saw what you did and i dint want to say a thing but i wanted to tell you i dont really care like that and i saw that you dont reciprocate like that so its fine no to be cool with me  */}
                                 <li>Skill Acquisition</li>
                                 <li>Leadership Academy</li>
                                 <li>Community Engagement</li>

@@ -150,7 +150,6 @@ export const faqs = [
     ]
 
 
-
     export const infos = [
         {
             id: 1,
@@ -247,6 +246,3 @@ export const faqs = [
     { code: "CN", name: "China", dialCode: "+86" },
     { code: "AE", name: "United Arab Emirates", dialCode: "+971" },
   ];
-
-
-  
