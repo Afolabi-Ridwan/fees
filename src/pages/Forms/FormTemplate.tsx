@@ -7,78 +7,12 @@ import { Crown, Puzzle } from "lucide-react";
 import { useNavigate } from "react-router";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
-
-type formDataType = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    confirmEmail: string;
-    phone: string;
-    countryCode: string;
-    country?: string;
-    track?: {
-        value: string,
-        price: string
-    };
-    termsAccepted: boolean;
-};
+import { formTemplateParams } from "../../types/types";
+import { handleChange, handleSubmit, isFormValid } from "./helpers";
 
 
-const FormTemplate = ({ heading, formType, formData, setFormData }: {
-    heading: string,
-    formType: string,
-    formData: formDataType,
-    setFormData: React.Dispatch<React.SetStateAction<formDataType>>
-}) => {
-
+const FormTemplate = ({ heading, formType, formData, setFormData }: formTemplateParams) => {
     const navigate = useNavigate();
-
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value, type } = e.target;
-
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-        }));
-    };
-
-
-
-
-    const isFormValid = () => {
-        const requiredFields = ["firstName", "lastName", "email", "confirmEmail", "phone"];
-
-        if (formType === "Registration Form") {
-            requiredFields.push("track");
-        }
-
-        const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
-
-        if (missingFields.length > 0) {
-            return false;
-        }
-
-        if (formData.email !== formData.confirmEmail) {
-            return false;
-        }
-
-        return formData.termsAccepted;
-    };
-
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!isFormValid()) {
-            return;
-        }
-        const track = JSON.stringify(formData.track)
-        if (formType === "Registration Form") {
-            navigate(`/registration-success/${track}`)
-        } else {
-            navigate("/")
-        }
-    };
 
 
     return (
@@ -90,7 +24,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
             </div>
 
             <div className="flex justify-center py-10 px-4">
-                <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+                <form onSubmit={(e) => handleSubmit({ e, formData, formType, navigate })} className="w-full max-w-2xl">
                     <div className="w-full bg-registrationForm border border-inputBorder p-8 max-sm:px-4 rounded-xl">
                         <div>
                             <h1 className="text-[25px] font-[500]">Personal Information</h1>
@@ -105,7 +39,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     First Name <span className="text-asteriskRed">*</span>
                                 </label>
                                 <div className="w-full h-full relative">
-                                    <input type="text" name="firstName" value={formData.firstName} placeholder="John" onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px] " required />
+                                    <input type="text" name="firstName" value={formData.firstName} placeholder="John" onChange={(e) => handleChange({e, setFormData})} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px] " required />
                                     <IoPersonOutline className="absolute top-[20%] text-[18px] ml-2 text-gray" />
                                 </div>
                             </div>
@@ -114,7 +48,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     Last Name <span className="text-asteriskRed">*</span>
                                 </label>
                                 <div className="w-full h-full relative">
-                                    <input type="text" name="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <input type="text" name="lastName" placeholder="Doe" value={formData.lastName} onChange={(e) => handleChange({e, setFormData})} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
                                     <IoPersonOutline className="absolute top-[20%] text-[18px] ml-2 text-gray" />
                                 </div>
                             </div>
@@ -126,7 +60,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     Email Address <span className="text-asteriskRed">*</span>
                                 </label>
                                 <div className="w-full h-full relative">
-                                    <input type="email" name="email" placeholder="johndoe@yahoo.com" value={formData.email} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <input type="email" name="email" placeholder="johndoe@yahoo.com" value={formData.email} onChange={(e) => handleChange({e, setFormData})} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
                                     <MdOutlineEmail className="absolute top-[20%] text-[18px] ml-2 text-gray" />
                                 </div>
                             </div>
@@ -135,7 +69,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     Confirm Email Address <span className="text-asteriskRed">*</span>
                                 </label>
                                 <div className="w-full h-full relative">
-                                    <input type="email" name="confirmEmail" placeholder="johndoe@yahoo.com" value={formData.confirmEmail} onChange={handleChange} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
+                                    <input type="email" name="confirmEmail" placeholder="johndoe@yahoo.com" value={formData.confirmEmail} onChange={(e) => handleChange({e, setFormData})} className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]" required />
                                     <MdOutlineEmail className="absolute top-[20%] text-[18px] ml-2 text-gray" />
                                 </div>
 
@@ -151,7 +85,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                     <select
                                         name="countryCode"
                                         value={formData.countryCode}
-                                        onChange={handleChange}
+                                        onChange={(e) => handleChange({e, setFormData})}
                                         className="focus:outline-none"
                                     >
                                         {countries.map((country) => (
@@ -171,7 +105,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                             type="tel"
                                             name="phone"
                                             value={formData.phone}
-                                            onChange={handleChange}
+                                            onChange={(e) => handleChange({e, setFormData})}
                                             placeholder="Enter phone number"
                                             className="w-full p-2 focus:outline-none"
                                             required
@@ -186,7 +120,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                                 <select
                                     name="country"
                                     value={formData.country}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChange({e, setFormData})}
                                     className="w-full h-[50px] border border-inputBorder rounded-md text-[16px] px-[10px]"
                                 >
                                     {countries.map((country) => (
@@ -237,7 +171,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
 
                     <div className="w-full bg-registrationForm border border-inputBorder p-8 max-sm:px-4 rounded-xl mt-8">
                         <div className="mt-4 flex items-center">
-                            <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} className="mr-2 text-[70px]" required />
+                            <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={(e) => handleChange({e, setFormData})} className="mr-2 text-[70px]" required />
                             <label className="text-[14px] mt-[2px]">
                                 {formType === "Registration Form" ? <span>I agree to the <a href="#" className="text-deepBlue underline">terms and conditions</a></span>
                                     : <span>I agree to receive updates and promotions from FEES Leadership Academy</span>}
@@ -245,11 +179,11 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: {
                         </div>
 
                         <div className="mt-6 flex max-sm:justify-between">
-                            <Button bgType="transparentBgBlueBorder" text="Cancel" style="sm:w-[188px] w-[48%] px-6 py-2 border border-deepBlue text-deepBlue border-[1.5px] cursor-pointer rounded-md" />
+                            <Button variant="blueBorder" text="Cancel" className="sm:w-[188px] w-[48%] px-6 py-2 border border-deepBlue text-deepBlue border-[1.5px] cursor-pointer rounded-md" />
                             <button
                                 type="submit"
                                 className="sm:w-[188px] w-[48%] px-6 py-2 sm:ml-8 bg-deepBlue cursor-pointer text-white rounded-md disabled:bg-[#d0dfff]"
-                                disabled={!isFormValid()}
+                                disabled={!isFormValid({formType, formData})}
                             >
                                 Submit
                             </button>

@@ -19,8 +19,8 @@ const CallToActionSection = () => {
             </p>
 
             <div className="flex">
-                <Button text="Join the academy" bgType="deepBlueBg"   style='mr-2 sm:w-[200px] w-[170px]' onClick={() => navigate("/registration-page")}/>
-                <Button text="Stay updated!" bgType="transparentBgBlueBorder" style="ml-4 sm:w-[200px] w-[170px]" onClick={() => navigate("/subscription-page")}/>
+                <Button text="Join the academy" variant="deepBlue"   className='mr-2 sm:w-[200px] w-[170px]' onClick={() => navigate("/registration-page")}/>
+                <Button text="Stay updated!" variant="blueBorder" className="ml-4 sm:w-[200px] w-[170px]" onClick={() => navigate("/subscription-page")}/>
             </div>
         </div>
     )

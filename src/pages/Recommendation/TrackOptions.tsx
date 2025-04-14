@@ -22,7 +22,7 @@ const TrackOptions = ({ activeTrack }: { activeTrack: string }) => {
                 <p className=" py-6 text-[14px] h-[300px] max-md:h-auto px-6" dangerouslySetInnerHTML={{ __html: info.shortNote }} />
 
                 <div className={`h-[80px] flex items-center border-t-[1.5px] border-[#e0e0e0] bg-fadedBlue ${info.id === 1 ? "rounded-bl-[10px]" : "rounded-br-[10px]"} max-md:rounded-bl-[10px] max-md:rounded-br-[10px] `}>
-                    <Button style={`w-full py-[8px] border-[1px] mx-6 rounded-md  ${info.id === 1 ? "" : "border border-deepBlue"}`} bgType={info.buttonType} text="Start your journey" onClick={() => navigate("/registration-page")} />
+                    <Button className={`w-full py-[8px] border-[1px] mx-6 rounded-md  ${info.id === 1 ? "" : "border border-deepBlue"}`} variant={info.buttonType as 'deepBlue' | 'transparent' | 'white' | 'blueBorder'} text="Start your journey" onClick={() => navigate("/registration-page")} />
                 </div>
             </div>
         ))

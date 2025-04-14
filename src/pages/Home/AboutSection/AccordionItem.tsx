@@ -1,13 +1,7 @@
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { AccordionItemPropType } from "../../../types/types";
 
-interface AccordionItemPropType {
-  header: string;
-  text?: string;
-  icon: string;
-  id: number;
-  isOpen: boolean;
-  setOpenItem: React.Dispatch<React.SetStateAction<number>>;
-}
+
 
 const AccordionItem: React.FC<AccordionItemPropType> = ({ header, text, icon, id, isOpen, setOpenItem }) => {
   return (

@@ -30,11 +30,11 @@ const HeroSection = () => {
                     leaders  who inspire change and drive impact
                     in their communities and workplaces.</p>
                 <div className="mt-12 md:flex">
-                    <Button text="Join the Academy" bgType="whiteBg" style="md:w-[200px] w-[300px]" onClick={() => navigate('/registration-page')} />
+                    <Button text="Join the Academy" variant="white" className="md:w-[200px] w-[300px]" onClick={() => navigate('/registration-page')} />
                     <Button
                         text="Learn More"
-                        bgType="transparentBg"
-                        style="md:mt-0 mt-6 md:ml-8 border-2 md:w-[200px] w-[300px]"
+                        variant="transparent"
+                        className="md:mt-0 mt-6 md:ml-8 border-2 md:w-[200px] w-[300px]"
                         onClick={() => {
                             document.getElementById("about-section")?.scrollIntoView({
                                 behavior: "smooth",

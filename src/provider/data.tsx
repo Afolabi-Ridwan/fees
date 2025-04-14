@@ -161,7 +161,7 @@ export const faqs = [
                     If your answers lean toward building core skills, mastering communication basics, and
                     understanding essential strategies, the Foundational Level Curriculum will provide the stepping stones you need.`,
     
-            buttonType: "deepBlueBg"
+            buttonType: "deepBlue"
         }, {
             id: 2,
             icon: <Crown />,
@@ -171,13 +171,13 @@ export const faqs = [
                     you’re comfortable with the basics and seeking to deepen your expertise in complex areas like emotional intelligence, advanced
                     financial management, and team dynamics, the Advanced Level Curriculum will help you achieve those goals`,
     
-            buttonType: "whiteBg"
+            buttonType: "white"
         }
     
     ]
     
 
-    export const questions = [
+    export const quizData = [
       {
           question: "How do you typically approach learning new skills?",
           answers: [

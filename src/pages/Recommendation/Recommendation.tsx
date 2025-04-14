@@ -51,7 +51,7 @@ const Recommendation = () => {
           </div>
 
           <div className="max-sm:mt-8 max-sm:w-full">
-            <Button text="Stay Updated" bgType="whiteBg" style="mt-3 px-4 bg-white text-blue-900 hover:bg-gray-200 max-sm:w-full" onClick={() => navigate("/subscription-page")} />
+            <Button text="Stay Updated" variant="white" className="mt-3 px-4 bg-white text-blue-900 hover:bg-gray-200 max-sm:w-full" onClick={() => navigate("/subscription-page")} />
           </div>
         </div>
       </div>

@@ -43,7 +43,6 @@ input:focus {
     outline: none;
 }
 
-
 .header {
     color: var(--slateBlue);
     border: 2px solid var(--slateBlue);

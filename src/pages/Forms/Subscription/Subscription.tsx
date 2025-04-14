@@ -14,7 +14,12 @@ const SubscriptionForm = () => {
     });
 
     return (
-        <FormTemplate formData={formData} setFormData={setFormData} formType="Subscription Form" heading="Subscribe" />
+        <FormTemplate
+            formData={formData}
+            setFormData={setFormData}
+            formType="Subscription Form"
+            heading="Subscribe"
+        />
     );
 };
 

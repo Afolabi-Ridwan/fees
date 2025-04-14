@@ -1,9 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
+import { ModalStateContextType } from "../types/types";
 
-interface ModalStateContextType {
-  modalState: boolean;
-  modalStateHandler: (state?: boolean) => void;
-}
+
 
 const ModalStateContext = createContext<ModalStateContextType | undefined>(undefined);
 

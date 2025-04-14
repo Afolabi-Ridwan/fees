@@ -7,9 +7,7 @@ import { Check, Ribbon } from "../../components/Lottie/Lottie";
 
 const RegistrationSuccess = () => {
 
-    const { track } = useParams()
-
-    const trackPrice = track && JSON.parse(track).price
+    const { trackPrice } = useParams()
 
     return (
         <ConversionLayout currentPage="Registration">
@@ -26,7 +24,7 @@ const RegistrationSuccess = () => {
                             You are on the right track to building a solid base in leadership principles.
                             Kindly proceed to payment to complete your registration.
                         </p>
-                        <Button text={`Pay ${trackPrice}`} bgType="deepBlueBg" style="mt-8 bg-deepBlue text-white px-6 py-2 rounded-lg" />
+                        <Button text={`Pay ${trackPrice}`} variant="deepBlue" className="mt-8 bg-deepBlue text-white px-6 py-2 rounded-lg" />
                     </div>
 
                     <div className="w-full flex justify-center mt-20">
