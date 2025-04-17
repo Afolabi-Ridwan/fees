@@ -25,7 +25,7 @@ const Header = () => {
       const heroSection = document.getElementById("hero-section");
       if (heroSection) {
         const { bottom } = heroSection.getBoundingClientRect();
-        setIsHeroSectionInView(bottom > 0);
+        setIsHeroSectionInView(bottom > 70);
       }
 
       setIsHeroSecScrolled(scrollY > 50);
