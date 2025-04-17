@@ -1,9 +1,13 @@
 import { useState } from "react";
 import FormTemplate from "../FormTemplate"
 import { formDataType } from "../../../types/types";
+import { useLocation } from "react-router";
 
 
 const RegistrationForm = () => {
+  const location = useLocation()
+  const recommendation = location.state?.recommendation
+
   const [formData, setFormData] = useState<formDataType>({
     firstName: "",
     lastName: "",
@@ -12,7 +16,7 @@ const RegistrationForm = () => {
     phone: "",
     countryCode: "NG",
     country: "NG",
-    track: { value: "Foundational", price: "₦100,000" },
+    track: { value: recommendation && "Foundational", price: "₦100,000" },
     termsAccepted: false,
   });
 

@@ -4,7 +4,7 @@ import { countries } from "../../provider/data";
 import ConversionLayout from "../../components/Layout/ConversionLayout";
 import Button from "../../components/Button/Button";
 import { Crown, Puzzle } from "lucide-react";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
 import { formTemplateParams } from "../../types/types";
@@ -13,7 +13,8 @@ import { handleChange, handleSubmit, isFormValid } from "./helpers";
 
 const FormTemplate = ({ heading, formType, formData, setFormData }: formTemplateParams) => {
     const navigate = useNavigate();
-
+    const location = useLocation()
+    const recommendation = location.state?.recommendation
 
     return (
         <ConversionLayout currentPage={formType === "Registration Form" ? "Registration" : "Subscription Form"}>
@@ -146,7 +147,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: formTemplate
                                     <button
                                         key={track.value}
                                         type="button"
-                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track?.value === track.value ? "border-blueOnAccordion" : "border-gray-300"
+                                        className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${  formData.track?.value === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                             }`}
                                         onClick={() => setFormData({ ...formData, track: { value: track.value, price: track.price } })}
                                     >
@@ -156,7 +157,7 @@ const FormTemplate = ({ heading, formType, formData, setFormData }: formTemplate
                                                     <Puzzle fill={`${formData.track?.value === track.value ? "#2d3d70" : "transparent"}`} />
                                                     : <Crown fill={`${formData.track?.value === track.value ? "#2d3d70" : "transparent"}`} />}
                                             </span>
-                                            <p className="text-[12px] text-slateBlue font-[500]">{track.recommended && "Recommended"}</p>
+                                            {recommendation && <p className="text-[12px] text-slateBlue font-[500]">{track.recommended && "Recommended"}</p>}
                                         </div>
                                         <div className="flex items-center justify-between mt-6">
                                             <span className="block font-medium text-[18px]">{track.label}</span>
