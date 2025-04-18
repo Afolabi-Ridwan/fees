@@ -55,15 +55,18 @@ const QandA = ({
               <button
                 onClick={() => handleAnswerSelect(answer.text)}
                 className={`flex justify-between w-full p-3 border border-[1.5px] border-[#d6dae3] rounded-md mt-2 text-left text-[16px] font-[600] cursor-pointer transition 
-                                                                ${selectedAnswers[currentQuestion] === answer.text
-                  && "border-blueOnAccordion"
-                  }`}
-              >
+                            ${selectedAnswers[currentQuestion] === answer.text && "border-blueOnAccordion"}`}>
                 <div className="flex">
-                  <span className={`mr-4 mt-[2px] w-[30px] h-[23px] text-[14px] border border-[#d6dae3] inline-flex items-center justify-center leading-none 
-                                                                group-hover:bg-deepBlue group-hover:text-white duration-500 ${selectedAnswers[currentQuestion] === answer.text && "bg-deepBlue text-white"}`}>
-                    {answer.id}
+                  <span className={`mr-4 w-[22px] h-[22px] text-[13px] border border-[#d6dae3] 
+                                    flex items-center justify-center
+                                    relative  
+                                    group-hover:bg-deepBlue group-hover:text-white 
+                                    duration-500 
+                                    ${selectedAnswers[currentQuestion] === answer.text && "bg-deepBlue text-white"}
+                                  `}>
+                    <span className="relative top-[0.5px]">{answer.id}</span>
                   </span>
+
                   <span>{answer.text}</span>
                 </div>
                 {selectedAnswers[currentQuestion] === answer.text &&
