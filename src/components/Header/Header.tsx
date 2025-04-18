@@ -61,17 +61,23 @@ const Header = () => {
       <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex o`}>
         <li className="navLink ">Home</li>
         <li className="navLink">About FEES</li>
-        <li className="navLink relative group flex items-center cursor-pointer">
-          Services
-          <i><MdOutlineKeyboardArrowDown className="text-[20px]" /></i>
-          <ul className="subMenu absolute top-[-300px] left-0 w-[300px] translate-x-[-90px] p-2  text-deepBlue bg-white 
-          transition-all duration-1000 overflow-hidden rounded-[5px] group-hover:top-[40px] shadow-md">
-            <li>Skill Acquisition <span ><MdArrowRightAlt /></span></li>
-            <li>Leadership Academy <span ><MdArrowRightAlt /></span></li>
-            <li>Community Engagement <span ><MdArrowRightAlt /></span></li>
-            <li>Talent Resourcing <span ><MdArrowRightAlt /></span></li>
-          </ul>
+        <li className="navLink relative">
+          <div className="group relative flex items-center cursor-pointer">
+            Services
+            <i>
+              <MdOutlineKeyboardArrowDown className="text-[20px]" />
+            </i>
+
+            <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] p-2 text-deepBlue bg-white 
+              transition-all duration-1000 overflow-hidden rounded-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-md z-10">
+              <li>Skill Acquisition <span><MdArrowRightAlt /></span></li>
+              <li>Leadership Academy <span><MdArrowRightAlt /></span></li>
+              <li>Community Engagement <span><MdArrowRightAlt /></span></li>
+              <li>Talent Resourcing <span><MdArrowRightAlt /></span></li>
+            </ul>
+          </div>
         </li>
+
         <li className="navLink">Team</li>
         <li className="navLink">Contact</li>
       </ul>
