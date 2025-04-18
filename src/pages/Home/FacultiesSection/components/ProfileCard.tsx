@@ -1,9 +1,9 @@
-import { cardsData } from "../../../provider/data";
+import { cardsData } from "../../../../provider/data";
 import { BsArrowsAngleContract } from "react-icons/bs";
 import { useEffect, useRef, useState } from "react";
-import ProfileImageAndBio from "./components/ProfileImageAndBio";
-import Comment from "./components/Comment";
-import CardNav from "./components/CardNav";
+import ProfileImageAndBio from "./ProfileImageAndBio";
+import Comment from "./Comment";
+import CardNav from "./CardNav";
 
 const ProfileCard = () => {
 

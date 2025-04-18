@@ -1,5 +1,5 @@
 import spiralPattern from "/assets/image/Vector 11.png";
-import ProfileCard from "../ProfileCard";
+import ProfileCard from "./components/ProfileCard";
 
 
 const FacultiesSection = () => {
@@ -10,7 +10,10 @@ const FacultiesSection = () => {
         src={spiralPattern}
         loading="lazy"
         alt="spiralPattern"
-        className="absolute top-0 left-[10%] max-md:left-[-100px] md:w-[500px] w-[300px]"
+        className="
+        w-[300px] md:w-[350px] lg:w-[470px] lg:h-[350px]
+        lg:mr-[600px] max-lg:left-[-100px] 
+        absolute top-0 flex justify-center"
       />
       <p className="header z-[2]">Faculty</p>
       <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center">

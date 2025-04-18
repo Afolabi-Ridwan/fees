@@ -282,7 +282,7 @@ input:focus {
     background: var(--sectionGreyBg);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    padding: 70px 0 110px 0;
+    padding: 100px 0 150px 0;
 }
 
 .cards-container {
@@ -469,6 +469,7 @@ input:focus {
 .footer {
     background: #0b132b;
     color: white;
+    font-size: 14px;
 }
 
 
@@ -622,6 +623,11 @@ input:focus {
     .headerOnNoScroll {
         background: none;
         border-bottom: none;
+    }
+
+    .facultiesSection{
+    padding: 70px 0 110px 0;
+
     }
 
     .brochureTab {
