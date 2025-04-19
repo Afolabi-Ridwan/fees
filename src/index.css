@@ -428,6 +428,7 @@ input:focus {
 /* FAQS section */
 .faqsSection {
     width: 100%;
+    min-height: 950px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -435,7 +436,7 @@ input:focus {
     background: var(--sectionGreyBg);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .shake-hover:hover {
