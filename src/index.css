@@ -432,7 +432,6 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: var(--sectionGreyBg);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
