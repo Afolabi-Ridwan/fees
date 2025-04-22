@@ -35,57 +35,69 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   const openSideBarHandler = () => updateSideBarState(true);
   const closeSideBarHandler = () => updateSideBarState(false);
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   return (
     <div
-      className={`flex items-center justify-between xl:px-[80px] px-[30px] py-4 fixed top-0 w-[100%] z-20 transition-all duration-500 ${!hasUserScrolled
-        ? "bg-none border-none"
-        : isHeroSectionInView
+      className={`fixed top-0 z-20 flex w-[100%] items-center justify-between px-[30px] py-4 xl:px-[80px] transition-all duration-500 ${
+        !hasUserScrolled
+          ? "bg-none border-none"
+          : isHeroSectionInView
           ? "headerOnHeroSection"
           : "headerOnScroll"
-        }`}
+      }`}
     >
       <img
         src={!hasUserScrolled ? logoWhite : isHeroSectionInView ? logoWhite : logoColored}
         loading="lazy"
         alt="Logo"
-        className="sm:w-[200px] w-[170px] sm:h-[40px] h-[35px] cursor-pointer"
-        onClick={() => navigate('/')}
+        className="h-[35px] w-[170px] cursor-pointer sm:h-[40px] sm:w-[200px]"
+        onClick={() => navigate("/")}
       />
 
-      <ul className={`navigation ${isHeroSecScrolled ? "navOnScroll" : ""} ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white hidden md:flex o`}>
-        <li className="navLink ">Home</li>
+      <ul
+        className={`navigation hidden md:flex ${
+          isHeroSecScrolled ? "navOnScroll" : ""
+        } ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white o`}
+      >
+        <li className="navLink">Home</li>
         <li className="navLink">About FEES</li>
         <li className="navLink relative">
-          <div className="group relative flex items-center cursor-pointer">
+          <div className="group relative flex cursor-pointer items-center">
             Services
             <i>
               <MdOutlineKeyboardArrowDown className="text-[20px]" />
             </i>
 
-            <ul className="subMenu absolute top-[40px] left-0 w-[300px] translate-x-[-90px] p-2 text-deepBlue bg-white 
-              transition-all duration-1000 overflow-hidden rounded-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-md z-10">
-              <li>Skill Acquisition <span><MdArrowRightAlt /></span></li>
-              <li>Leadership Academy <span><MdArrowRightAlt /></span></li>
-              <li>Community Engagement <span><MdArrowRightAlt /></span></li>
-              <li>Talent Resourcing <span><MdArrowRightAlt /></span></li>
+            <ul className="subMenu absolute top-[40px] left-0 z-10 w-[300px] translate-x-[-90px] overflow-hidden rounded-[5px] bg-white p-2 text-deepBlue opacity-0 shadow-md transition-all duration-1000 invisible group-hover:visible group-hover:opacity-100">
+              <li>
+                Skill Acquisition <span><MdArrowRightAlt /></span>
+              </li>
+              <li>
+                Leadership Academy <span><MdArrowRightAlt /></span>
+              </li>
+              <li>
+                Community Engagement <span><MdArrowRightAlt /></span>
+              </li>
+              <li>
+                Talent Resourcing <span><MdArrowRightAlt /></span>
+              </li>
             </ul>
           </div>
         </li>
-
         <li className="navLink">Team</li>
         <li className="navLink">Contact</li>
       </ul>
 
       <FaBars
-        className={`md:hidden inline ${!hasUserScrolled ? "text-white" : isHeroSectionInView ? "text-white" : "text-deepBlue"} text-[25px] cursor-pointer`}
+        className={`inline text-[25px] cursor-pointer md:hidden ${
+          !hasUserScrolled ? "text-white" : isHeroSectionInView ? "text-white" : "text-deepBlue"
+        }`}
         onClick={openSideBarHandler}
       />
+
       <MobileNav sideBarState={sideBarState} closeSideBar={closeSideBarHandler} />
     </div>
   );

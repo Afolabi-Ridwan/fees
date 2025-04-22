@@ -60,9 +60,11 @@ export type formDataType = {
 };
 
 
-export interface formTemplateParams {
-    heading: string,
-    formType: string,
+export interface formParams {
+    heading?: string,
+    formType?: string,
+    formErrors?: { [key: string]: string };
+    setFormErrors?: React.Dispatch<React.SetStateAction<{ [key: string]: string }>>;
     formData: formDataType,
     setFormData: React.Dispatch<React.SetStateAction<formDataType>>
 }
@@ -70,7 +72,7 @@ export interface formTemplateParams {
 
 export type handleSubmitParams = {
     e?: React.FormEvent
-    formType: string,
+    formType?: string,
     formData: formDataType,
     navigate?: NavigateFunction
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormTemplate from "../FormTemplate";
+import FormTemplate from "../FormTemplate/FormTemplate";
 
 
 const SubscriptionForm = () => {
