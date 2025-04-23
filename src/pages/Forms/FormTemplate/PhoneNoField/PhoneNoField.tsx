@@ -8,7 +8,7 @@ const PhoneNoField = ({ formData, setFormData }: formParams) => {
             <label className="block text-gray text-[14px] font-medium mb-1">
                 Phone Number <span className="text-asteriskRed">*</span>
             </label>
-            <div className="flex border border-inputBorder rounded-md p-2 h-[50px]">
+            <div className="flex border border-inputBorder rounded-md p-2 h-[50px] bg-white">
                 <select
                     name="countryCode"
                     value={formData.countryCode}

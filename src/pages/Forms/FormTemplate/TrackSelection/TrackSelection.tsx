@@ -22,7 +22,7 @@ const TrackSelection = ({setFormData, formData, }: formParams) => {
                         <button
                             key={track.value}
                             type="button"
-                            className={`border border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track?.value === track.value ? "border-blueOnAccordion" : "border-gray-300"
+                            className={`border bg-white border-[1.5px] rounded-md p-4 text-center cursor-pointer hover:border-blueOnAccordion ${formData.track?.value === track.value ? "border-blueOnAccordion" : "border-gray-300"
                                 }`}
                             onClick={() => setFormData({ ...formData, track: { value: track.value, price: track.price } })}
                         >

@@ -42,7 +42,7 @@ const FormField = ({
           value={value}
           placeholder={placeholder}
           onChange={(e) => handleChange({ e, setFormData, setFormErrors })}
-          className="w-full border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]"
+          className="w-full bg-white border-inputBorder h-[50px] text-[16px] border rounded-md py-2 px-[30px]"
           required
         />
 
