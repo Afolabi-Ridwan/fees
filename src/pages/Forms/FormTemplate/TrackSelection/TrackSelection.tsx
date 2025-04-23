@@ -34,9 +34,9 @@ const TrackSelection = ({setFormData, formData, }: formParams) => {
                                 </span>
                                 {recommendation && <p className="text-[12px] text-slateBlue font-[500]">{track.recommended && "Recommended"}</p>}
                             </div>
-                            <div className="flex items-center justify-between mt-6">
-                                <span className="block font-medium text-[18px]">{track.label}</span>
-                                <span className="block text-[12px] text-gray">{track.price}</span>
+                            <div className="flex items-center justify-between mt-6 text-left">
+                                <span className="block font-medium text-[18px] max-md:text-[15px]">{track.label}</span>
+                                <span className="block text-[12px] text-gray ml-4">{track.price}</span>
                             </div>
                         </button>
                     ))}
