@@ -46,7 +46,7 @@ const FormField = ({
           required
         />
 
-        <Icon className="absolute top-[20%] text-[18px] ml-2 text-gray" />
+        <Icon className=" absolute translate-y-[-35px] text-[18px] ml-2 text-gray" />
       {error && <p className="text-red-500 text-[12px]">{error}</p>}
       </div>
 
