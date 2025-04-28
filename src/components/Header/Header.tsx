@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import logoWhite from "/assets/image/Logo Horizontal white 2.png";
 import logoColored from "/assets/image/Logo Horizontal color .png";
-import { MdArrowRightAlt, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import MobileNav from "../MobileNav/MobileNav";
 import { useNavigate } from "react-router";
+import { scrollToSection } from "../Utils/Utils";
 
 const Header = () => {
   const [isHeroSecScrolled, setIsHeroSecScrolled] = useState<boolean>(false);
@@ -58,43 +58,22 @@ const Header = () => {
       />
 
       <ul
-        className={`navigation hidden md:flex ${
+        className={`navigation hidden lg:flex ${
           isHeroSecScrolled ? "navOnScroll" : ""
         } ${isHeroSectionInView ? "navOnHeroSection" : ""} text-white o`}
       >
-        <li className="navLink">Home</li>
-        <li className="navLink">About FEES</li>
-        <li className="navLink relative">
-          <div className="group relative flex cursor-pointer items-center">
-            Services
-            <i>
-              <MdOutlineKeyboardArrowDown className="text-[20px]" />
-            </i>
-
-            <ul className="subMenu absolute top-[40px] left-0 z-10 w-[300px] translate-x-[-90px] overflow-hidden rounded-[5px] bg-white p-2 text-deepBlue opacity-0 shadow-md transition-all duration-1000 invisible group-hover:visible group-hover:opacity-100">
-              <li>
-                Skill Acquisition <span><MdArrowRightAlt /></span>
-              </li>
-              <li>
-                Leadership Academy <span><MdArrowRightAlt /></span>
-              </li>
-              <li>
-                Community Engagement <span><MdArrowRightAlt /></span>
-              </li>
-              <li>
-                Talent Resourcing <span><MdArrowRightAlt /></span>
-              </li>
-            </ul>
-          </div>
+        <li className="navLink" onClick={() => scrollToSection("hero-section")}>Home</li>
+        <li className="navLink" onClick={() => scrollToSection("about-section")}>About FLA</li>
+        <li className="navLink relative" onClick={() => scrollToSection("track-section")}>
+            Find your track
         </li>
-        <li className="navLink">Team</li>
-        <li className="navLink">Contact</li>
+        <li className="navLink" onClick={() => scrollToSection("faculty-section")}>Faculty</li>
+        <li className="navLink" onClick={() => scrollToSection("faq-section")}>FAQ</li>
       </ul>
 
       <FaBars
-        className={`inline text-[25px] cursor-pointer md:hidden ${
-          !hasUserScrolled ? "text-white" : isHeroSectionInView ? "text-white" : "text-deepBlue"
-        }`}
+        className={`inline text-[25px] cursor-pointer lg:hidden ${
+        !hasUserScrolled ? "text-white" : isHeroSectionInView ? "text-white" : "text-deepBlue"}`}
         onClick={openSideBarHandler}
       />
 

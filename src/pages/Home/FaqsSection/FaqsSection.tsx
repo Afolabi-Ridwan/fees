@@ -13,7 +13,7 @@ const FaqsSection = () => {
     };
 
     return (
-        <div className="faqsSection">
+        <div id="faq-section" className="faqsSection">
             <p className="header">FAQS</p>
             <h1 className="text-[29px] max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-4 text-center">
                 Frequently Asked Questions

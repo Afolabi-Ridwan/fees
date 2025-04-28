@@ -43,3 +43,23 @@ export const useIsMobile = () => {
 
   return isMobile;
 };
+
+
+export const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    if (id === "track-section" ) {
+      const headerOffset = 100; 
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+};
+

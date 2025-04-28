@@ -5,7 +5,7 @@ import ProfileCard from "./components/ProfileCard";
 const FacultiesSection = () => {
 
   return (
-    <div className="facultiesSection lg:mt-[-100px] mt-[-100px] relative">
+    <div id="faculty-section" className="facultiesSection lg:mt-[-100px] mt-[-100px] relative">
       <img
         src={spiralPattern}
         loading="lazy"
