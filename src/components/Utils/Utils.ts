@@ -45,11 +45,11 @@ export const useIsMobile = () => {
 };
 
 
-export const scrollToSection = (id: string) => {
+export const scrollToSection = (id: string, updateSideBarState?: React.Dispatch<React.SetStateAction<boolean>>) => {
   const element = document.getElementById(id);
   if (element) {
-    if (id === "track-section" ) {
-      const headerOffset = 100; 
+    if (id === "track-section") {
+      const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
 
@@ -61,5 +61,8 @@ export const scrollToSection = (id: string) => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
+  if (updateSideBarState) {
+    updateSideBarState(false)
+  };
 };
 

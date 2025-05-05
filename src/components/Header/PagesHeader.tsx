@@ -3,8 +3,9 @@ import logoColored from "/assets/image/Logo Horizontal color .png";
 import { SlArrowLeftCircle } from "react-icons/sl";
 import { FaBars } from "react-icons/fa6";
 import MobileNav from "../MobileNav/MobileNav";
-import { MdArrowRightAlt, MdOutlineKeyboardArrowDown } from "react-icons/md";
+// import { MdArrowRightAlt, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useNavigate } from "react-router";
+import { scrollToSection } from "../Utils/Utils";
 
 const PagesHeader = ({ currentPage }: { currentPage: string }) => {
     const [sideBarState, updateSideBarState] = useState(false);
@@ -25,30 +26,14 @@ const PagesHeader = ({ currentPage }: { currentPage: string }) => {
                     />
 
                     <ul className="navigation hidden items-center text-deepBlue md:flex">
-                        <li className="navLink">Home</li>
-                        <li className="navLink">About FEES</li>
-                        <li className="navLink relative group flex cursor-pointer items-center">
-                            Services
-                            <i>
-                                <MdOutlineKeyboardArrowDown className="text-[20px]" />
-                            </i>
-                            <ul className="subMenu absolute left-0 top-[40px] z-10 w-[300px] translate-x-[-90px] overflow-hidden rounded-[5px] bg-white p-2 text-deepBlue opacity-0 shadow-md transition-all duration-1000 invisible group-hover:visible group-hover:opacity-100">
-                                <li>
-                                    Skill Acquisition <span><MdArrowRightAlt /></span>
-                                </li>
-                                <li>
-                                    Leadership Academy <span><MdArrowRightAlt /></span>
-                                </li>
-                                <li>
-                                    Community Engagement <span><MdArrowRightAlt /></span>
-                                </li>
-                                <li>
-                                    Talent Resourcing <span><MdArrowRightAlt /></span>
-                                </li>
-                            </ul>
+
+                        <li className="navLink" onClick={() => scrollToSection("hero-section")}>Home</li>
+                        <li className="navLink" onClick={() => scrollToSection("about-section")}>About FLA</li>
+                        <li className="navLink relative" onClick={() => scrollToSection("track-section")}>
+                            Find your track
                         </li>
-                        <li className="navLink">Team</li>
-                        <li className="navLink">Contact</li>
+                        <li className="navLink" onClick={() => scrollToSection("faculty-section")}>Faculty</li>
+                        <li className="navLink" onClick={() => scrollToSection("faq-section")}>FAQ</li>
                     </ul>
 
                     <FaBars
@@ -71,7 +56,7 @@ const PagesHeader = ({ currentPage }: { currentPage: string }) => {
                 </div>
             </div>
 
-            <MobileNav sideBarState={sideBarState} closeSideBar={closeSideBarHandler} />
+            <MobileNav sideBarState={sideBarState} updateSideBarState={updateSideBarState} closeSideBar={closeSideBarHandler} />
         </div>
     );
 };

@@ -77,7 +77,7 @@ const Header = () => {
         onClick={openSideBarHandler}
       />
 
-      <MobileNav sideBarState={sideBarState} closeSideBar={closeSideBarHandler} />
+      <MobileNav sideBarState={sideBarState} updateSideBarState={updateSideBarState} closeSideBar={closeSideBarHandler} />
     </div>
   );
 };
