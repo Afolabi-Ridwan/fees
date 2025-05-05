@@ -15,7 +15,8 @@
     --color-slateBlue: rgb(74, 97, 170);
     --color-asteriskRed: rgb(217, 45, 32);
     --color-registrationForm: rgba(251, 252, 254, 1);
-    --color-inputBorder: rgba(202, 207, 218, 1)
+    --color-inputBorder: rgba(202, 207, 218, 1);
+    --color-navInActive: rgba(182, 187, 203, 1);
 }
 
 :root {

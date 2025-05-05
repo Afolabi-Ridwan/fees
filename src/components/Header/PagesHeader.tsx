@@ -27,18 +27,17 @@ const PagesHeader = ({ currentPage }: { currentPage: string }) => {
 
                     <ul className="navigation hidden items-center text-deepBlue md:flex">
 
-                        <li className="navLink" onClick={() => scrollToSection("hero-section")}>Home</li>
-                        <li className="navLink" onClick={() => scrollToSection("about-section")}>About FLA</li>
-                        <li className="navLink relative" onClick={() => scrollToSection("track-section")}>
+                        <li className="navLink text-gray" onClick={() => scrollToSection("hero-section")}>Home</li>
+                        <li className="navLink text-navInActive" onClick={() => scrollToSection("about-section")}>About FLA</li>
+                        <li className="navLink text-navInActive relative" onClick={() => scrollToSection("track-section")}>
                             Find your track
                         </li>
-                        <li className="navLink" onClick={() => scrollToSection("faculty-section")}>Faculty</li>
-                        <li className="navLink" onClick={() => scrollToSection("faq-section")}>FAQ</li>
+                        <li className="navLink text-navInActive" onClick={() => scrollToSection("faculty-section")}>Faculty</li>
+                        <li className="navLink text-navInActive" onClick={() => scrollToSection("faq-section")}>FAQ</li>
                     </ul>
 
                     <FaBars
                         className="inline cursor-pointer text-[25px] text-deepBlue md:hidden"
-                        onClick={openSideBarHandler}
                     />
                 </div>
 
