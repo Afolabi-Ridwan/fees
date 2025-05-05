@@ -9,7 +9,7 @@ import { scrollToSection } from "../Utils/Utils";
 
 const PagesHeader = ({ currentPage }: { currentPage: string }) => {
     const [sideBarState, updateSideBarState] = useState(false);
-    const openSideBarHandler = () => updateSideBarState(true);
+    // const openSideBarHandler = () => updateSideBarState(true);
     const closeSideBarHandler = () => updateSideBarState(false);
     const navigate = useNavigate();
 
