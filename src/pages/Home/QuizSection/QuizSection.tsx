@@ -9,7 +9,7 @@ const QuizSection = () => {
     return (
         <div id="track-section">
             <div className='relative lg:min-h-[600px] md:min-h-[400px] min-h-[900px] '>
-                <div className='xl:pl-64 lg:pl-32 md:pl-12 mt-20 max-md:flex flex-col justify-center items-center max-md:text-center'>
+                <div className='relative z-4 xl:pl-64 lg:pl-32 md:pl-12 mt-20 max-md:flex flex-col justify-center items-center max-md:text-center'>
                     <div className="w-fit">
                         <p className="header">Quiz</p>
                     </div>
@@ -20,7 +20,7 @@ const QuizSection = () => {
                         Discover the track that best aligns with your leadership journey.
                         Take our quick quiz to find your fit!
                     </p>
-                    <Button text='Take the quiz' variant='deepBlue' className='mt-6 z-4 w-[200px]' onClick={() => modalStateHandler(true)} />
+                    <Button text='Take the quiz' variant='deepBlue' className='mt-6 w-[200px]' onClick={() => modalStateHandler(true)} />
                 </div>
 
                 <div className="relative w-full h-full">

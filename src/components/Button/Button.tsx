@@ -24,7 +24,7 @@ interface ButtonProps {
       <button
         type={type}
         onClick={onClick}
-        className={`cursor-pointer flex items-center justify-center font-semibold rounded-[7px] py-2 duration-500 ${variantClasses[variant]} ${className}`}
+        className={`cursor-pointer flex items-center justify-center font-semibold z-20 rounded-[7px] py-2 duration-500 ${variantClasses[variant]} ${className}`}
       >
         {text}
       </button>

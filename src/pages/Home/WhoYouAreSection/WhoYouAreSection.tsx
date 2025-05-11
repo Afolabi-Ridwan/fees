@@ -10,8 +10,8 @@ const WhoYouAreSection = () => {
 
             <h1 className="text-[29px]  max-md:text-[24px] max-sm:text-[21px] z-[2] font-[600] mt-6 text-center"> Where do you fit in?</h1>
             <p className="text-gray text-[14px] max-sm:text-[12px] leading-[10px]">Journey into who you are and where you fit in below </p>
-            <div className="w-[100%]  h-[100%] flex max-lg:flex-col items-stretch gap-20 max-lg:gap-8 mt-16">
-                    <img src={displayImg} loading="lazy" alt="displayImg" className="w-[30%] max-lg:w-[100%] max-lg:h-[600px]  rounded-[10px] h-auto object-cover object-top z-2" />
+            <div className="w-[100%]  h-[100%] flex max-xl:flex-col items-stretch gap-20 max-xl:gap-8 mt-16">
+                    <img src={displayImg} loading="lazy" alt="displayImg" className="w-[30%] max-xl:w-[100%] max-xl:h-[600px]  rounded-[10px] h-auto object-cover object-top z-2" />
                     <LeadershipFeatures />
             </div>
         </section>
