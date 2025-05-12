@@ -12,7 +12,7 @@ const Footer = () => {
                 max-lg:px-[30px]
                 ${isHomePage ? `
                     polygon
-                    mt-[-130px]
+                    mt-[-140px]
                     h-[500px]
                     lgplus:h-[500px]
                     max-mdplus:h-[600px]
