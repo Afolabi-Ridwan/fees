@@ -19,8 +19,8 @@ const AboutSection = () => {
         Discover the nitty gritty, the perks of the Academy
       </p>
 
-      <div className="relative lg:mt-16 mt-8 flex justify-between items-start max-lg:flex-col-reverse outline-none select-none lg:h-[500px] overflow-hidden">
-        <div className="lg:w-[48%] overflow-y-auto">
+      <div className="relative lgplus:mt-16 mt-8 flex justify-between items-start max-lgplus:flex-col-reverse outline-none select-none lgplus:h-[500px] overflow-hidden">
+        <div className="lgplus:w-[48%] overflow-y-auto">
           <ul>
             {aboutSectionData.map((item) => (
               <AccordionItem
@@ -36,12 +36,12 @@ const AboutSection = () => {
           </ul>
         </div>
 
-        <div className="lg:w-[48%] h-full">
+        <div className="lgplus:w-[48%] h-full">
           <img
             src={aboutSectionImg}
             loading="lazy"
             alt="aboutSectionImg"
-            className="h-full w-full max-lg:mb-14 object-cover rounded-[10px]"
+            className="h-full w-full max-lgplus:mb-14 object-cover rounded-[10px]"
           />
         </div>
       </div>
