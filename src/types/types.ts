@@ -18,7 +18,7 @@ export interface AccordionItemPropType {
     id: number;
     isOpen: boolean;
     setOpenItem: React.Dispatch<React.SetStateAction<number>>;
-  }
+}
 
 export type profileImageAndBioType = {
     card: cardType,
@@ -26,8 +26,12 @@ export type profileImageAndBioType = {
 }
 
 export interface ModalStateContextType {
-  modalState: boolean;
-  modalStateHandler: (state?: boolean) => void;
+    index: number,
+    setIndex: React.Dispatch<React.SetStateAction<number>>
+    quizModalState: boolean;
+    quizModalStateHandler: (state?: boolean) => void;
+    isExpanded: boolean
+    profileCardModalHandler: (state?: boolean) => void;
 }
 
 export type commentType = {
@@ -36,8 +40,6 @@ export type commentType = {
 }
 
 export type cardNavType = {
-    isExpanded: boolean,
-    setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>,
     card: cardType,
     index: number,
     prevSlide: () => void,

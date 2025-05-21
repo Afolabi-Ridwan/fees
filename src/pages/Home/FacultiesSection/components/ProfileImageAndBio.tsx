@@ -1,13 +1,17 @@
+import { useModalStateContext } from "../../../../contexts/ModalContext";
 import { cardsData } from "../../../../provider/data";
 import { profileImageAndBioType } from "../../../../types/types";
 import Comment from "./Comment";
 
 const ProfileImageAndBio = ({ card, index }: profileImageAndBioType) => {
+
+    const { isExpanded } = useModalStateContext();
+
     return (
         <div>
             <div className="image-and-comment">
-                <img src={card.image} alt={card.name} className="card-image"/>
-                <Comment card={card} />
+                <img src={card.image} alt={card.name} className="card-image" />
+                {!isExpanded && <Comment card={card} />}
             </div>
             <div className="flex justify-between items-center max-md:flex-col max-md:items-start  max-lg:mt-6">
                 <div>

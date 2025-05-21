@@ -4,16 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import ProfileImageAndBio from "./ProfileImageAndBio";
 import Comment from "./Comment";
 import CardNav from "./CardNav";
+import { useModalStateContext } from "../../../../contexts/ModalContext";
 
 const ProfileCard = () => {
 
     const [activeHeight, setActiveHeight] = useState<number | null>(null);
     const activeCardRef = useRef<HTMLDivElement>(null);
-
     const [stepOffset, setStepOffset] = useState(30);
     const [thirdCardAdjustment, setThirdCardAdjustment] = useState(60);
-    const [index, setIndex] = useState(0);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const {index, setIndex, isExpanded, profileCardModalHandler } = useModalStateContext();
 
 
     useEffect(() => {
@@ -58,7 +57,7 @@ const ProfileCard = () => {
 
     return (
         <div
-            className="cards-container w-[980px]  max-lg:w-[85%]"
+            className={`cards-container ${isExpanded && "modalView"} w-[980px]  max-lg:w-[85%]`}
             style={{ height: activeHeight ? `${activeHeight}px` : "auto" }}
         >
             {cardsData.map((card, i) => {
@@ -67,7 +66,7 @@ const ProfileCard = () => {
                     <div
                         key={card.id}
                         ref={position === 0 ? activeCardRef : null}
-                        className={`card ${position === 0 ? "active" : ""}`}
+                        className={`card  ${position === 0 ? "active" : ""}`}
 
 
                         style={{
@@ -82,26 +81,31 @@ const ProfileCard = () => {
                                         : `${activeHeight}px`,
                             top: `${position * stepOffset}px`,
                             right: position === 0 ? "auto" : `-${position * 7}px`,
-                            display: position < 3 ? "block" : "none",
+                            display: isExpanded
+                                ? position === 0
+                                    ? "block"
+                                    : "none"
+                                : position < 3
+                                    ? "block"
+                                    : "none",
+
                             overflow: "hidden",
                         }}
                     >
                         {position === 0 && (
                             <>
                                 <div className="card-content">
-                                    <div onClick={() => setIsExpanded(!isExpanded)} className={`md:hidden flex justify-between items-center mb-[20px] ${!isExpanded && "hidden"}`}>
+                                    {isExpanded && <div onClick={() => profileCardModalHandler(false)} className={`md:hidden flex justify-between items-center mb-[20px]`}>
                                         <button className="text-white">
                                             Click to close
                                         </button>
                                         <BsArrowsAngleContract className="text-[20px] font-[800]" />
-                                    </div>
+                                    </div>}
 
                                     <div>
                                         <ProfileImageAndBio card={card} index={index} />
 
                                         <CardNav
-                                            isExpanded={isExpanded}
-                                            setIsExpanded={setIsExpanded}
                                             card={card}
                                             index={index}
                                             prevSlide={prevSlide}
@@ -110,7 +114,7 @@ const ProfileCard = () => {
                                     </div>
 
                                     <div className="md:hidden">
-                                        <Comment isExpanded={isExpanded} card={card} />
+                                        <Comment card={card} />
                                     </div>
                                 </div>
 

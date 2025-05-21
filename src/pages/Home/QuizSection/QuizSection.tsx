@@ -5,7 +5,7 @@ import quizImg from "/assets/image/Quiz-Coloured.png";
 
 const QuizSection = () => {
 
-    const { modalStateHandler } = useModalStateContext()
+    const { quizModalStateHandler } = useModalStateContext()
     return (
         <div id="track-section">
             <div className='relative lg:min-h-[600px] md:min-h-[400px] min-h-[900px] '>
@@ -20,7 +20,7 @@ const QuizSection = () => {
                         Discover the track that best aligns with your leadership journey.
                         Take our quick quiz to find your fit!
                     </p>
-                    <Button text='Take the quiz' variant='deepBlue' className='mt-6 w-[200px]' onClick={() => modalStateHandler(true)} />
+                    <Button text='Take the quiz' variant='deepBlue' className='mt-6 w-[200px]' onClick={() => quizModalStateHandler(true)} />
                 </div>
 
                 <div className="relative w-full h-full">

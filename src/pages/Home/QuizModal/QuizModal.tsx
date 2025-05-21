@@ -16,36 +16,27 @@ const QuizModal: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(quizData.length).fill(null)); // Store answers
     const isMobile = useIsMobile();
-    const { modalState, modalStateHandler } = useModalStateContext();
+    const { quizModalState, quizModalStateHandler } = useModalStateContext();
+
+
     useEffect(() => {
-        document.body.style.overflow = modalState ? "hidden" : "auto";
-        if (modalState) {
+        document.body.style.overflow = quizModalState ? "hidden" : "auto";
+        if (quizModalState) {
 
             setDirection(1);
         }
         return () => {
             document.body.style.overflow = "auto";
         };
-    }, [modalState]);
+    }, [quizModalState]);
 
-    useEffect(() => {
-        document.body.style.overflow = modalState ? "hidden" : "auto";
-        return () => {
-            document.body.style.overflow = "auto";
-        };
-    }, [modalState]);
-
-    if (!modalState) return null;
+    if (!quizModalState) return null;
 
     const handleAnswerSelect = (answer: string) => {
         const updatedAnswers = [...selectedAnswers];
         updatedAnswers[currentQuestion] = answer;
         setSelectedAnswers(updatedAnswers);
     };
-
-
-
-
 
     return (
         <div id="quiz-modal">
@@ -56,7 +47,7 @@ const QuizModal: React.FC = () => {
                         className="border border-2 border-white text-white text-[10px] rounded-full p-1 
                         cursor-pointer absolute right-0 top-0 translate-y-[-25px] translate-x-[25px] 
                         hover:text-[14px] duration-400 max-sm:hidden"
-                        onClick={() => modalStateHandler(false)}
+                        onClick={() => quizModalStateHandler(false)}
                     >
                         <FaTimes />
                     </i>
@@ -91,7 +82,7 @@ const QuizModal: React.FC = () => {
                             setCurrentQuestion={setCurrentQuestion}
                             selectedAnswers={selectedAnswers}
                             setIsSubmitting={setIsSubmitting}
-                            modalStateHandler={modalStateHandler}
+                            modalStateHandler={quizModalStateHandler}
                         />
                     </div>
                 </div>

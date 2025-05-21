@@ -2,9 +2,12 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { cardsData } from "../../../../provider/data";
 import { BsArrowsAngleContract } from "react-icons/bs";
 import { cardNavType } from "../../../../types/types";
+import { useModalStateContext } from "../../../../contexts/ModalContext";
 
 
-const CardNav = ({isExpanded, setIsExpanded, card, index, prevSlide, nextSlide}: cardNavType) => {
+const CardNav = ({card, index, prevSlide, nextSlide}: cardNavType) => {
+
+    const {isExpanded, profileCardModalHandler} = useModalStateContext()
 
     return (
         <div>
@@ -24,7 +27,7 @@ const CardNav = ({isExpanded, setIsExpanded, card, index, prevSlide, nextSlide}:
                     </button>
                 </div>
             </div>
-            <div onClick={() => setIsExpanded(!isExpanded)} className={`md:hidden flex justify-between items-center mt-[40px] ${isExpanded && "hidden"}`}>
+            <div onClick={() => profileCardModalHandler(!isExpanded)} className={`md:hidden flex justify-between items-center mt-[40px] ${isExpanded && "hidden"}`}>
                 <button className="text-white">
                     Click to Read More
                 </button>

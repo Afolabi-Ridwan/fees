@@ -1,10 +1,14 @@
+import { useModalStateContext } from "../../../../contexts/ModalContext";
 import { commentType } from "../../../../types/types";
 import headingIcon from "/public/assets/icons/Vector.png";
 
 
-const Comment = ({ isExpanded, card }: commentType) => {
+const Comment = ({ card }: commentType) => {
+
+    const {isExpanded} = useModalStateContext()
+    
     return (
-        <div className={`card-info ${isExpanded ? "block" : "hidden"} md:block`}>
+        <div className={`card-info ${!isExpanded && "hidden"} md:block`}>
             <div className={`card-info-content`}>
                 <p className="heading">BIO</p>
                 <p

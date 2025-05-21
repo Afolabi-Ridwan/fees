@@ -8,6 +8,7 @@ import FaqsSection from "./FaqsSection/FaqsSection";
 import SlidingText from "./SlidingText/SlidingText";
 import Layout from "../../components/Layout/Layout";
 import QuizModal from "./QuizModal/QuizModal";
+import FacultiesMobileModal from "./FacultiesSection/components/FacultiesMobileModal";
 
 const Home = () => {
 
@@ -31,6 +32,7 @@ const Home = () => {
         </Layout>
 
       <QuizModal  />
+      <FacultiesMobileModal/>
     </div>
   );
 };
